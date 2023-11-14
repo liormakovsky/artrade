@@ -35,6 +35,11 @@ new Vue({
         stopVal() {
             this.calculateShares();
             this.cleanNumber();
+            this.calculatePercentFromStop();
+        },
+        stopPercent: function () {
+            this.calculateShares();
+            this.calculateStopFromPercent();
         },
         risk() {
             this.calculateShares();
@@ -50,12 +55,6 @@ new Vue({
         },
         targetProfit() {
             this.calculateProfit();
-        },
-        stopPercent: function() {
-            this.calculateStopFromPercent();
-        },
-        stopVal: function() {
-            this.calculatePercentFromStop();
         }
     },
     methods: {
@@ -124,9 +123,16 @@ new Vue({
             }
         },
         clearForm() {
-            [this.$refs.trigger, this.$refs.stopVal].forEach((val) => {
-                val.value = '';
-            });
+            [
+                this.$refs.trigger,
+                this.$refs.stopVal,
+                this.$refs.stopPercent,
+                this.$refs.firstTarget,
+                this.$refs.secondTarget,
+                this.$refs.thirdTarget,
+                this.$refs.fourthTarget].forEach((val) => {
+                    val.value = '';
+                });
         },
         clearRow() {
             event.currentTarget.value = ''
@@ -154,15 +160,15 @@ new Vue({
             this.stockOrEtfNameForUrl = stockOrEtfName;
         },
         showDetails(name) {
-            this.details = name?name:this.details;
+            this.details = name ? name : this.details;
             let chosenEtfArr = [];
             let chosenEtfstocks = [];
             let chosenEtfconnected = [];
-            let chosenEtfFromStocks=[];
+            let chosenEtfFromStocks = [];
             this.etfArr.forEach(etf => {
                 if (etf.stocks.includes(this.details) || etf.connected.includes(this.details)) {
                     chosenEtfFromStocks.push(etf.etf);
-                    if(etf.etf === this.details){
+                    if (etf.etf === this.details) {
                         chosenEtfArr.push(etf.stocks);
                     }
                     etf.stocks.forEach(element => {
@@ -173,26 +179,26 @@ new Vue({
                     });
                 }
             });
-            
+
             chosenEtfstocksLength = [];
             chosenEtfstocks.forEach((element, i) => {
                 let obj = {};
                 obj['name'] = element,
                     obj['length'] = chosenEtfstocks.filter((v) => (v === element)).length;
-                    if(element === this.details){
-                        obj['belongtoindex'] = 'isbelong';
-                    }
-                    if(chosenEtfArr.length){
-                        chosenEtfArr[0].forEach(el =>{
-                            if(el === element){
-                                obj['belongtoindex'] = 'isbelong';
-                            }
-                        });
-                    }
-               
+                if (element === this.details) {
+                    obj['belongtoindex'] = 'isbelong';
+                }
+                if (chosenEtfArr.length) {
+                    chosenEtfArr[0].forEach(el => {
+                        if (el === element) {
+                            obj['belongtoindex'] = 'isbelong';
+                        }
+                    });
+                }
+
                 chosenEtfstocksLength.push(obj);
             });
-            
+
             const map = {};
             const chosenEtfstocksLengthUniqe = [];
             chosenEtfstocksLength.forEach(el => {
@@ -230,47 +236,52 @@ new Vue({
                 });
             };
             let finalconnected = useFilter(chosenEtfconnected);
-            let finalconnectedObj=[];
-            finalconnected.forEach((element)=> {
+            let finalconnectedObj = [];
+            finalconnected.forEach((element) => {
                 let obj = {};
-                if(chosenEtfFromStocks.includes(element) && !finalconnected.includes(this.details) || element===this.details){
+                if (chosenEtfFromStocks.includes(element) && !finalconnected.includes(this.details) || element === this.details) {
                     obj['isChosenEtf'] = 'isbelong';
                 };
                 obj['name'] = element,
-                finalconnectedObj.push(obj);
+                    finalconnectedObj.push(obj);
             });
-           
+
             this.detailsResultsStocks = {
                 "etf": this.details,
                 "stocks": chosenEtfstocksLengthUniqe,
                 "connected": finalconnectedObj
             }
-            this.details ='';
+            this.details = '';
 
         },
         showUrlMethod() {
             this.showUrl = !this.showUrl;
         },
         calculateStopFromPercent() {
-            if (this.trigger && this.stopPercent) {
-                const stopPercentage = parseFloat(this.stopPercent) / 100; 
-                const stopValue = this.trigger - (this.trigger * stopPercentage);
-                this.stopVal = stopValue % 1 === 0 ? stopValue.toFixed(0) : stopValue.toFixed(2); 
-            }
+            const stopPercentage = parseFloat(this.stopPercent) / 100;
+            this.stopVal = this.formatNumber(this.trigger - this.trigger * stopPercentage);
+            this.calculateTargets();
         },
         calculatePercentFromStop() {
-            if (this.trigger && this.stopVal) {
-                const stopValue = parseFloat(this.stopVal);
-                const stopPercentage = ((this.trigger - stopValue) / this.trigger) * 100;
-                this.stopPercent = stopPercentage % 1 === 0 ? stopPercentage.toFixed(0) : stopPercentage.toFixed(2);
-            }
-        }
+            const stopValue = parseFloat(this.stopVal);
+            this.stopPercent = this.formatNumber(((this.trigger - stopValue) / this.trigger) * 100);
+            this.calculateTargets();
+        },
+        calculateTargets() {
+            const stopValue = parseFloat(this.stopVal);
+            this.firstTarget = this.formatNumber(parseFloat(this.trigger) + parseFloat(this.trigger - stopValue));
+            this.secondTarget = this.formatNumber(parseFloat(this.trigger) + 2 * parseFloat(this.trigger - stopValue));
+            this.thirdTarget = this.formatNumber(parseFloat(this.trigger) + 3 * parseFloat(this.trigger - stopValue));
+            this.fourthTarget = this.formatNumber(parseFloat(this.trigger) + 4 * parseFloat(this.trigger - stopValue));
+        },
+        formatNumber(value) {
+            const formattedValue = value % 1 === 0 ? value.toFixed(0) : value.toFixed(2);
+            return isNaN(formattedValue) ? '' : formattedValue;
+        },
     },
 
     mounted() {
         this.focusInput();
     },
-
-
 
 });

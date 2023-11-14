@@ -78,8 +78,9 @@
                     <div class="col-12 d-flex">
                         <!-- Equity -->
                         <div class="form-group mt-2 col-6">
-                            <label for="equity">Equity:</label><input style="margin-left: 10px" type="checkbox"
-                                v-model="activeEquity" :checked="{activeEquity:true}" />
+                            <label for="equity">Equity</label>
+                            <input style="margin-left: 10px" type="checkbox" v-model="activeEquity"
+                                :checked="{activeEquity:true}" />
                             <div class="input-group">
                                 <div class="input-group-prepend mt-2">
                                     <span class="input-group-text">$</span>
@@ -91,7 +92,7 @@
 
                         <!-- Position -->
                         <div class="form-group mt-2 col-6">
-                            <label for="position">Position Size:</label>
+                            <label for="position">Position Size</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend mt-2">
                                     <span class="input-group-text">$</span>
@@ -106,7 +107,7 @@
 
                     <!-- Trigger -->
                     <div class="form-group">
-                        <label for="trigger">Trigger:</label>
+                        <label for="trigger">Trigger</label>
                         <input type="text" @keydown.esc="clearRow" ref="trigger" @keyup.enter="enterDot"
                             class="form-control mt-2" v-model="trigger" placeholder="Enter Trigger">
                     </div>
@@ -114,24 +115,52 @@
                     <!-- Stop -->
                     <div class="d-flex justify-content-between align-items-end mt-2">
                         <div class="form-group col-6">
-                            <label for="stopVal">Stop:</label>
+                            <label for="stopVal">Stop</label>
                             <input type="text" @keydown.esc="clearRow" ref="stopVal" @keyup.enter="enterDot"
                                 class="form-control mt-2" v-model="stopVal" placeholder="By Price">
                         </div>
                         <div class="form-group col-6 d-flex justify-content-end">
                             <label for="stopPercent"></label>
-                            <input type="number" @keydown.esc="clearRow" ref="stopPercent" @change="calculateStopFromPercent"
-                                class="form-control mt-2 ml-2" v-model="stopPercent" placeholder="By Percent" style="width:98%">
+                            <input type="text" @keydown.esc="clearRow" ref="stopPercent"
+                                @change="calculateStopFromPercent" class="form-control mt-2 ml-2" v-model="stopPercent"
+                                placeholder="By Percent" style="width:98%">
+                        </div>
+                    </div>
+
+                    <!-- Target -->
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <div class="form-group col-6">
+                            <label for="firstTarget">Targets</label>
+                            <input type="text" @keydown.esc="clearRow" ref="firstTarget" @keyup.enter="enterDot"
+                                class="form-control mt-2" v-model="firstTarget" placeholder="1st Target" disabled>
+                        </div>
+                        <div class="form-group col-6 d-flex justify-content-end">
+                            <label for="secondTarget"></label>
+                            <input type="text" @keydown.esc="clearRow" ref="secondTarget"
+                                @change="calculateStopFromPercent" class="form-control mt-2 ml-2" v-model="secondTarget"
+                                placeholder="2nd Target" style="width:98%" disabled>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <div class="form-group col-6">
+                            <input type="text" @keydown.esc="clearRow" ref="thirdTarget" @keyup.enter="enterDot"
+                                class="form-control mt-2" v-model="thirdTarget" placeholder="3rd Target" disabled>
+                        </div>
+                        <div class="form-group col-6 d-flex justify-content-end">
+                            <label for="fourthTarget"></label>
+                            <input type="text" @keydown.esc="clearRow" ref="fourthTarget"
+                                @change="calculateStopFromPercent" class="form-control mt-2 ml-2" v-model="fourthTarget"
+                                placeholder="4th Target" style="width:98%" disabled>
                         </div>
                     </div>
 
                     <!-- Risk -->
                     <div class="form-group mt-2 col-12">
-                        <label for="risk">Risk:</label>
+                        <label for="risk">Risk</label>
                         <div class="input-group d-flex justify-content-between">
                             <div class="d-flex col-10">
                                 <span class="input-group-text mt-2 mb-2">$</span>
-                                <input ref="risk" type="number" class="form-control mt-2 mb-2" v-model="risk"
+                                <input disabled ref="risk" type="number" class="form-control mt-2 mb-2" v-model="risk"
                                     placeholder="Enter Risk">
                             </div>
 
@@ -145,7 +174,7 @@
 
                     <div class="form-group mt-2">
                         <!-- Shares -->
-                        <label for="shares">Shares:</label>
+                        <label for="shares">Shares</label>
                         <div class="input-group d-flex justify-content-between">
                             <div class="d-flex col-10">
                                 <input ref="shares" @keyup="calculateRisk" class="form-control  mt-2 mb-2"
@@ -167,7 +196,7 @@
                         <div class="form-group col-3">
                             <div class="d-flex">
                                 <div class="col-6">
-                                    <label for="profitTrigger">Trigger:</label>
+                                    <label for="profitTrigger">Trigger</label>
                                 </div>
                                 <div class="col-6 d-flex align-items-center">
                                     <span class="generic-btn btn-micro copy-button rounded"
@@ -180,7 +209,7 @@
 
                         <!-- Current Price -->
                         <div class="form-group col-3">
-                            <label for="target">Current Price:</label>
+                            <label for="target">Current Price</label>
                             <input type="text" @keydown.enter="enterDotProfit" class="form-control mt-2"
                                 placeholder="Enter Price" v-model="targetProfit">
                         </div>
@@ -189,7 +218,7 @@
                         <div class="form-group col-3">
                             <div class="d-flex">
                                 <div class="col-6">
-                                    <label for="profitShares">Shares:</label>
+                                    <label for="profitShares">Shares</label>
                                 </div>
                                 <div class="col-6 d-flex align-items-center">
                                     <span class="generic-btn btn-micro copy-button rounded"
@@ -202,7 +231,7 @@
 
                         <!-- Profit -->
                         <div class="form-group col-3">
-                            <label for="position">Profit:</label>
+                            <label for="position">Profit</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text mt-2">$</span>
@@ -223,7 +252,7 @@
                 <div class="d-flex justify-content-center flex-column">
                     <div class="d-flex justify-content-between col-12">
                         <div class="col-9 d-flex">
-                            <label style="margin-right: 10px; margin-top: 8px;" for="details">Information:</label>
+                            <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
                             <input @keyup.enter="showDetails()" class="form-control w-50" v-model="details" type="text">
                         </div>
                         <div class="col-3 d-flex justify-content-end">
@@ -236,7 +265,7 @@
 
                     <!-- Stocks list -->
                     <div class='mt-2' v-if="detailsResultsStocks">
-                        <label>Connected Stocks:</label>
+                        <label>Connected Stocks</label>
                         <div class="squarsGrid mt-2">
                             <div v-for="(detail, index) in detailsResultsStocks.stocks" :key="`detail-${index}`"
                                 class="rounded square" v-bind:class="[detail.length,detail.belongtoindex]"
@@ -250,7 +279,7 @@
 
                     <!-- Connected list -->
                     <div class='form-group mt-3 col-12' v-if="detailsResultsStocks">
-                        <label>Connected Indexes:</label>
+                        <label>Connected Indexes</label>
                         <div class="squarsGrid mt-2">
                             <div v-for="(connect, index) in detailsResultsStocks.connected"
                                 v-bind:class="connect.isChosenEtf" :key="`detail-${index}`"
