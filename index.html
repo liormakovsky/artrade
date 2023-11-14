@@ -127,26 +127,25 @@
                         </div>
                     </div>
 
-                    <!-- Target -->
+                    <!-- Targets -->
                     <div class="d-flex justify-content-between align-items-end mt-2">
-                        <div class="form-group col-6">
+                        <div class="form-group col-3">
                             <label for="firstTarget">Targets</label>
                             <input type="text" @keydown.esc="clearRow" ref="firstTarget" @keyup.enter="enterDot"
                                 class="form-control mt-2" v-model="firstTarget" placeholder="1st Target" disabled>
                         </div>
-                        <div class="form-group col-6 d-flex justify-content-end">
+                        <div class="form-group col-3 d-flex justify-content-end">
                             <label for="secondTarget"></label>
                             <input type="text" @keydown.esc="clearRow" ref="secondTarget"
                                 @change="calculateStopFromPercent" class="form-control mt-2 ml-2" v-model="secondTarget"
                                 placeholder="2nd Target" style="width:98%" disabled>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end mt-2">
-                        <div class="form-group col-6">
+                        <div class="form-group col-3 d-flex justify-content-end">
                             <input type="text" @keydown.esc="clearRow" ref="thirdTarget" @keyup.enter="enterDot"
-                                class="form-control mt-2" v-model="thirdTarget" placeholder="3rd Target" disabled>
+                                class="form-control mt-2" v-model="thirdTarget" placeholder="3rd Target"
+                                style="width:98%" disabled>
                         </div>
-                        <div class="form-group col-6 d-flex justify-content-end">
+                        <div class="form-group col-3 d-flex justify-content-end">
                             <label for="fourthTarget"></label>
                             <input type="text" @keydown.esc="clearRow" ref="fourthTarget"
                                 @change="calculateStopFromPercent" class="form-control mt-2 ml-2" v-model="fourthTarget"
