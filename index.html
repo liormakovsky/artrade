@@ -1,0 +1,282 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Artrade Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <meta name="description" content="The HTML5 Herald">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="root">
+        <!-- overlays -->
+        <div class="overlay" v-if="showStockModal" @click="showStockModal = false"></div>
+        <div class="overlay" v-if="showEtfModal" @click="showEtfModal = false"></div>
+        <div class="overlay" v-if="showFinvizModal" @click="showFinvizModal = false"></div>
+        <!-- End of overlays -->
+
+        <!-- Stock modal -->
+        <div class="linksModal" v-if="showStockModal">
+            <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildNasdaqUrl">
+                    <span>Nasdaq</span>
+                </div>
+                <div class=" rounded square generic-square" v-on:click="buildFinvizUrl">
+                    <span>Finviz</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="buildStockUrl">
+                    <span>Exposure</span>
+                </div>
+            </div>
+        </div>
+        <!-- END of Stock modal -->
+
+        <!-- ETF modal -->
+        <div class="linksModal" v-if="showEtfModal">
+            <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildFinvizUrl">
+                    <span>Finviz</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="buildEtfUrl">
+                    <span>ETFDB</span>
+                </div>
+            </div>
+        </div>
+        <!-- END of ETF modal -->
+
+        <!-- Finviz modal -->
+        <div class="linksModal" v-if="showFinvizModal">
+            <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="openStockMap">
+                    <span>Stocks</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="openEtfMap">
+                    <span>ETF</span>
+                </div>
+            </div>
+        </div>
+        <!-- END of Finviz modal -->
+
+        <div class="row mt-3">
+            <div class="col-1"></div>
+
+            <!-- Calculator section -->
+            <div class="col-5">
+                <div class="d-flex justify-content-center flex-column">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger" @click=clearForm>Clear</button>
+                    </div>
+
+                    <div class="col-12 d-flex">
+                        <!-- Equity -->
+                        <div class="form-group mt-2 col-6">
+                            <label for="equity">Equity:</label><input style="margin-left: 10px" type="checkbox"
+                                v-model="activeEquity" :checked="{activeEquity:true}" />
+                            <div class="input-group">
+                                <div class="input-group-prepend mt-2">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input ref="equity" type="number" :disabled="!activeEquity" class="form-control mt-2"
+                                    placeholder="Enter Equity" v-model="equity">
+                            </div>
+                        </div>
+
+                        <!-- Position -->
+                        <div class="form-group mt-2 col-6">
+                            <label for="position">Position Size:</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend mt-2">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input ref="position" type="number" disabled class="form-control mt-2"
+                                    v-bind:class="{ 'blinking': tradeNotValid}" placeholder="Position"
+                                    v-model="position">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Trigger -->
+                    <div class="form-group">
+                        <label for="trigger">Trigger:</label>
+                        <input type="text" @keydown.esc="clearRow" ref="trigger" @keyup.enter="enterDot"
+                            class="form-control mt-2" v-model="trigger" placeholder="Enter Trigger">
+                    </div>
+
+                    <!-- Stop -->
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <div class="form-group col-6">
+                            <label for="stopVal">Stop:</label>
+                            <input type="text" @keydown.esc="clearRow" ref="stopVal" @keyup.enter="enterDot"
+                                class="form-control mt-2" v-model="stopVal" placeholder="By Price">
+                        </div>
+                        <div class="form-group col-6 d-flex justify-content-end">
+                            <label for="stopPercent"></label>
+                            <input type="number" @keydown.esc="clearRow" ref="stopPercent" @change="calculateStopFromPercent"
+                                class="form-control mt-2 ml-2" v-model="stopPercent" placeholder="By Percent" style="width:98%">
+                        </div>
+                    </div>
+
+                    <!-- Risk -->
+                    <div class="form-group mt-2 col-12">
+                        <label for="risk">Risk:</label>
+                        <div class="input-group d-flex justify-content-between">
+                            <div class="d-flex col-10">
+                                <span class="input-group-text mt-2 mb-2">$</span>
+                                <input ref="risk" type="number" class="form-control mt-2 mb-2" v-model="risk"
+                                    placeholder="Enter Risk">
+                            </div>
+
+                            <!-- Reset Risk -->
+                            <div class="d-flex justify-content-end col-2">
+                                <span class="generic-btn btn-small copy-button mt-2 rounded"
+                                    @click=riskDefult>Reset</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <!-- Shares -->
+                        <label for="shares">Shares:</label>
+                        <div class="input-group d-flex justify-content-between">
+                            <div class="d-flex col-10">
+                                <input ref="shares" @keyup="calculateRisk" class="form-control  mt-2 mb-2"
+                                    v-model="shares" placeholder="Enter Shares">
+                            </div>
+                            <!-- Max Shares -->
+                            <div class="d-flex justify-content-end col-2">
+                                <span class="generic-btn btn-small copy-button mt-2 rounded"
+                                    @click="activeSharesFunc()">Max</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Calculator section -->
+
+                    <!-- Calculate Profit Section -->
+                    <div class="col-12 d-flex">
+
+                        <!-- Trigger -->
+                        <div class="form-group col-3">
+                            <div class="d-flex">
+                                <div class="col-6">
+                                    <label for="profitTrigger">Trigger:</label>
+                                </div>
+                                <div class="col-6 d-flex align-items-center">
+                                    <span class="generic-btn btn-micro copy-button rounded"
+                                        @click="getTriggerValue">Copy</span>
+                                </div>
+                            </div>
+                            <input type="text" @keydown.enter="enterDotProfit" class="form-control mt-2"
+                                placeholder="Enter Trigger" v-model="profitTrigger">
+                        </div>
+
+                        <!-- Current Price -->
+                        <div class="form-group col-3">
+                            <label for="target">Current Price:</label>
+                            <input type="text" @keydown.enter="enterDotProfit" class="form-control mt-2"
+                                placeholder="Enter Price" v-model="targetProfit">
+                        </div>
+
+                        <!-- Shares -->
+                        <div class="form-group col-3">
+                            <div class="d-flex">
+                                <div class="col-6">
+                                    <label for="profitShares">Shares:</label>
+                                </div>
+                                <div class="col-6 d-flex align-items-center">
+                                    <span class="generic-btn btn-micro copy-button rounded"
+                                        @click="getShares">Copy</span>
+                                </div>
+                            </div>
+                            <input type="text" @keydown.enter="enterDotProfit" class="form-control mt-2"
+                                placeholder="Enter Shares" v-model="profitShares">
+                        </div>
+
+                        <!-- Profit -->
+                        <div class="form-group col-3">
+                            <label for="position">Profit:</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text mt-2">$</span>
+                                </div>
+                                <input type="number" disabled class="form-control mt-2" placeholder="Profit"
+                                    v-model="profit">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Calculate Profit Section -->
+
+                </div>
+            </div>
+
+
+            <!-- Information section -->
+            <div class="col-5">
+                <div class="d-flex justify-content-center flex-column">
+                    <div class="d-flex justify-content-between col-12">
+                        <div class="col-9 d-flex">
+                            <label style="margin-right: 10px; margin-top: 8px;" for="details">Information:</label>
+                            <input @keyup.enter="showDetails()" class="form-control w-50" v-model="details" type="text">
+                        </div>
+                        <div class="col-3 d-flex justify-content-end">
+                            <div>
+                                <button class="btn btn-success border" @click="showFinvizModal = true">Finviz
+                                    Maps</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stocks list -->
+                    <div class='mt-2' v-if="detailsResultsStocks">
+                        <label>Connected Stocks:</label>
+                        <div class="squarsGrid mt-2">
+                            <div v-for="(detail, index) in detailsResultsStocks.stocks" :key="`detail-${index}`"
+                                class="rounded square" v-bind:class="[detail.length,detail.belongtoindex]"
+                                @click="showDetails(detail.name);"
+                                @contextmenu.prevent="showStockModal = true;dataToModal(detail.name);">
+                                <span>{{detail.name.toUpperCase()}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Stocks list -->
+
+                    <!-- Connected list -->
+                    <div class='form-group mt-3 col-12' v-if="detailsResultsStocks">
+                        <label>Connected Indexes:</label>
+                        <div class="squarsGrid mt-2">
+                            <div v-for="(connect, index) in detailsResultsStocks.connected"
+                                v-bind:class="connect.isChosenEtf" :key="`detail-${index}`"
+                                class="rounded square generic-square" @click="showDetails(connect.name);"
+                                @contextmenu.prevent="showEtfModal = true;dataToModal(connect.name);">
+                                <span>{{connect.name.toUpperCase()}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Connected list -->
+                </div>
+            </div>
+            <!-- END of Information section -->
+
+            <div class="col-1"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="etfDB.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

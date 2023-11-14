@@ -1,0 +1,182 @@
+.blinking {
+  animation: blinker ease-in-out 900ms infinite;
+}
+
+@keyframes blinker {
+  0% {
+      background: white;
+  }
+
+  25% {
+      background: #fbe9eb;
+  }
+
+  50% {
+      background: #f5c6cb;
+  }
+
+  75% {
+      background: #fbe9eb;
+  }
+
+  100% {
+      background: white;
+  }
+}
+
+.generic-btn {
+  float: left;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  color: #888;
+  text-align: center;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.btn-small {
+  font: bold 14px Arial, sans-serif;
+  line-height: 36px;
+  width: 70px;
+  height: 36px;
+  background: #007bff;
+  box-shadow: 0px 5px#000087;
+  color: #fff;
+}
+
+.btn-micro {
+  font: bold 8px Arial, sans-serif;
+  line-height: 20px;
+  width: 25px;
+  height: 18px;
+  background: #007bff;
+  box-shadow: 0px 5px#000087;
+  color: #fff;
+}
+
+.generic-btn:hover {
+  background: #0069D9;
+  box-shadow: 0px 4px#000087;
+  color: #fff;
+}
+
+.generic-btn:active {
+  box-shadow: 0px 0px #717a33;
+  top: 4px;
+}
+.squarsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    grid-gap: 1rem;
+}
+
+.square{
+  position:relative;
+  top:0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px #A9A9A9;
+  color: #fff;
+}
+
+.square.isbelong {
+  position:relative;
+  top:0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px gold;
+  color: #fff;
+}
+
+.square:active {
+  position:relative;
+  top: 4px;
+  box-shadow: 0px 0px #717a33;
+}
+
+.generic-square {
+  background: #454545;
+}
+
+.generic-square:hover {
+  background: #333333;
+}
+
+.lowest-quality{
+  background: powderblue;
+}
+
+.low-quality{
+  background: skyblue;
+}
+
+.lowest-quality:hover,.low-quality:hover {
+  background: #6AA0B6;
+
+}
+.normal-quality{
+  background: deepskyblue;
+}
+.normal-quality:hover{
+  background: #02A6DF;
+}
+
+.high-quality{
+  background: royalblue;
+}
+.high-quality:hover{
+  background: #1D38B2
+}
+
+.highest-quality{
+  background: darkblue;
+}
+.highest-quality:hover{
+  background: #0C2A57;
+}
+
+
+.squarsGrid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+.squarsGrid > div {
+  display: grid;
+}
+.squarsGrid > div::before,
+.squarsGrid > div > span {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.squarsGrid > div > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+.overlay {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.linksModal {
+  width: 300px;
+  z-index: 9999;
+  background-color: #fff;
+  position: absolute; 
+  top: 30%;
+  left: 50%;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
