@@ -21,11 +21,23 @@ new Vue({
         details: '',
         detailsResultsStocks: '',
         etfArr: etfDB,
+        dividendkingsArr: dividendkings,
+        dividendAristocratsArr: dividendAristocrats,
         showUrl: false,
         showStockModal: false,
         showEtfModal: false,
         showFinvizModal: false,
-        stockOrEtfNameForUrl: ''
+        stockOrEtfNameForUrl: '',
+        stopPercent: '',
+        firstTarget: '',
+        secondTarget: '',
+        thirdTarget: '',
+        fourthTarget: '',
+        displayDividendkings: false,
+        displayDividendAristocrats: false,
+        displayStocksAndEtfs: false,
+        dividendKingsList: [],
+        dividendAristocratsList: [],
     },
     watch: {
         trigger() {
@@ -150,6 +162,9 @@ new Vue({
         buildStockUrl() {
             window.open(`https://etfdb.com/stock/${this.stockOrEtfNameForUrl}`);
         },
+        buildFinanceUrl() {
+            window.open(`https://stockanalysis.com/stocks/${this.stockOrEtfNameForUrl}/financials/`);
+        },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
         },
@@ -160,6 +175,9 @@ new Vue({
             this.stockOrEtfNameForUrl = stockOrEtfName;
         },
         showDetails(name) {
+            this.displayDividendkings = false;
+            this.displayDividendAristocrats = false;
+            this.displayStocksAndEtfs = true;
             this.details = name ? name : this.details;
             let chosenEtfArr = [];
             let chosenEtfstocks = [];
@@ -277,6 +295,19 @@ new Vue({
         formatNumber(value) {
             const formattedValue = value % 1 === 0 ? value.toFixed(0) : value.toFixed(2);
             return isNaN(formattedValue) ? '' : formattedValue;
+        },
+        showDividendKingsList() {
+            this.displayDividendkings = true;
+            this.displayDividendAristocrats = false;
+            this.displayStocksAndEtfs = false;
+            const sortedDividendKings = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
+            this.dividendKingsList = sortedDividendKings.map(item => item.ticker);
+        },
+        showDividendAristocratsList() {
+            this.displayDividendkings = false;
+            this.displayDividendAristocrats = true;
+            this.displayStocksAndEtfs = false;
+            this.dividendAristocratsList = this.dividendAristocratsArr.map(item => item.ticker);
         },
     },
 

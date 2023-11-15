@@ -4,23 +4,23 @@
 
 @keyframes blinker {
   0% {
-      background: white;
+    background: white;
   }
 
   25% {
-      background: #fbe9eb;
+    background: #fbe9eb;
   }
 
   50% {
-      background: #f5c6cb;
+    background: #f5c6cb;
   }
 
   75% {
-      background: #fbe9eb;
+    background: #fbe9eb;
   }
 
   100% {
-      background: white;
+    background: white;
   }
 }
 
@@ -68,15 +68,16 @@
   box-shadow: 0px 0px #717a33;
   top: 4px;
 }
-.squarsGrid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-    grid-gap: 1rem;
+
+.squarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  grid-gap: 1rem;
 }
 
-.square{
-  position:relative;
-  top:0;
+.square {
+  position: relative;
+  top: 0;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -85,8 +86,8 @@
 }
 
 .square.isbelong {
-  position:relative;
-  top:0;
+  position: relative;
+  top: 0;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -95,7 +96,7 @@
 }
 
 .square:active {
-  position:relative;
+  position: relative;
   top: 4px;
   box-shadow: 0px 0px #717a33;
 }
@@ -108,58 +109,80 @@
   background: #333333;
 }
 
-.lowest-quality{
+.lowest-quality {
   background: powderblue;
 }
 
-.low-quality{
+.low-quality {
   background: skyblue;
 }
 
-.lowest-quality:hover,.low-quality:hover {
+.lowest-quality:hover,
+.low-quality:hover {
   background: #6AA0B6;
 
 }
-.normal-quality{
+
+.normal-quality {
   background: deepskyblue;
 }
-.normal-quality:hover{
+
+.normal-quality:hover {
   background: #02A6DF;
 }
 
-.high-quality{
+.high-quality {
   background: royalblue;
 }
-.high-quality:hover{
+
+.high-quality:hover {
   background: #1D38B2
 }
 
-.highest-quality{
+.highest-quality {
   background: darkblue;
 }
-.highest-quality:hover{
+
+.highest-quality:hover {
   background: #0C2A57;
 }
 
 
-.squarsGrid > div::before {
+.squarsGrid>div::before {
   content: "";
   padding-bottom: 100%;
   display: block;
 }
-.squarsGrid > div {
+
+.squarsGrid>div {
   display: grid;
 }
-.squarsGrid > div::before,
-.squarsGrid > div > span {
+
+.squarsGrid>div::before,
+.squarsGrid>div>span {
   grid-area: 1 / 1 / 2 / 2;
 }
-.squarsGrid > div > span {
+
+.squarsGrid>div>span {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white;
+  color: white;
+  text-align: center;
 }
+
+.squarsGrid .kings {
+  background-color: gold;
+}
+
+.squarsGrid .aristocrats {
+  background-color: #31D2F2;
+}
+
+.squarsGrid .kings span {
+  color: black;
+}
+
 .overlay {
   position: fixed;
   z-index: 9998;
@@ -174,7 +197,7 @@
   width: 300px;
   z-index: 9999;
   background-color: #fff;
-  position: absolute; 
+  position: absolute;
   top: 30%;
   left: 50%;
   margin: 0 auto;

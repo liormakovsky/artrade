@@ -35,6 +35,9 @@
                 <div class="rounded square generic-square" v-on:click="buildStockUrl">
                     <span>Exposure</span>
                 </div>
+                <div class="rounded square generic-square" v-on:click="buildFinanceUrl">
+                    <span>stock analysis</span>
+                </div>
             </div>
         </div>
         <!-- END of Stock modal -->
@@ -248,20 +251,21 @@
             <div class="col-5">
                 <div class="d-flex justify-content-center flex-column">
                     <div class="d-flex justify-content-between col-12">
-                        <div class="col-9 d-flex">
+                        <div class="col-6 d-flex">
                             <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
-                            <input @keyup.enter="showDetails()" class="form-control w-50" v-model="details" type="text">
+                            <input @keyup.enter="showDetails()" class="form-control" v-model="details" type="text">
                         </div>
-                        <div class="col-3 d-flex justify-content-end">
-                            <div>
-                                <button class="btn btn-success border" @click="showFinvizModal = true">Finviz
-                                    Maps</button>
-                            </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
+                            <button class="btn btn-info border ms-1"
+                                @click="showDividendAristocratsList">Aristocrats</button>
+                            <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
+                                Maps</button>
                         </div>
                     </div>
 
                     <!-- Stocks list -->
-                    <div class='mt-2' v-if="detailsResultsStocks">
+                    <div class='mt-2' v-if="displayStocksAndEtfs">
                         <label>Connected Stocks</label>
                         <div class="squarsGrid mt-2">
                             <div v-for="(detail, index) in detailsResultsStocks.stocks" :key="`detail-${index}`"
@@ -275,18 +279,42 @@
                     <!-- END of Stocks list -->
 
                     <!-- Connected list -->
-                    <div class='form-group mt-3 col-12' v-if="detailsResultsStocks">
+                    <div class='form-group mt-3 col-12' v-if="displayStocksAndEtfs">
                         <label>Connected Indexes</label>
                         <div class="squarsGrid mt-2">
                             <div v-for="(connect, index) in detailsResultsStocks.connected"
                                 v-bind:class="connect.isChosenEtf" :key="`detail-${index}`"
                                 class="rounded square generic-square" @click="showDetails(connect.name);"
-                                @contextmenu.prevent="showEtfModal = true;dataToModal(connect.name);">
+                                @contextmenu.prevent="showEtfModal = true;
+                                dataToModal(connect.name);">
                                 <span>{{connect.name.toUpperCase()}}</span>
                             </div>
                         </div>
                     </div>
                     <!-- END of Connected list -->
+
+                    <!-- Kings list -->
+                    <div class='mt-2' v-if="displayDividendkings">
+                        <div class="squarsGrid mt-2">
+                            <div v-for="(ticker, index) in dividendKingsList" :key="`detail-${index}`"
+                                class="rounded square kings">
+                                <span>{{ ticker.toUpperCase() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Kings list -->
+
+                    <!-- Aristocrates list -->
+                    <div class='mt-2' v-if="displayDividendAristocrats">
+                        <div class="squarsGrid mt-2">
+                            <div v-for="(ticker, index) in dividendAristocratsList" :key="`detail-${index}`"
+                                class="rounded square aristocrats">
+                                <span>{{ ticker.toUpperCase() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of Aristocrates list -->
+
                 </div>
             </div>
             <!-- END of Information section -->
