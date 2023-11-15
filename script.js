@@ -162,8 +162,8 @@ new Vue({
         buildStockUrl() {
             window.open(`https://etfdb.com/stock/${this.stockOrEtfNameForUrl}`);
         },
-        buildFinanceUrl() {
-            window.open(`https://stockanalysis.com/stocks/${this.stockOrEtfNameForUrl}/financials/`);
+        buildFinanceUrl(ticker = this.stockOrEtfNameForUrl) {
+            window.open(`https://stockanalysis.com/stocks/${ticker}/financials/`);
         },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);

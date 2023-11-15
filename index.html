@@ -35,7 +35,7 @@
                 <div class="rounded square generic-square" v-on:click="buildStockUrl">
                     <span>Exposure</span>
                 </div>
-                <div class="rounded square generic-square" v-on:click="buildFinanceUrl">
+                <div class="rounded square generic-square" v-on:click="buildFinanceUrl()">
                     <span>stock analysis</span>
                 </div>
             </div>
@@ -297,7 +297,7 @@
                     <div class='mt-2' v-if="displayDividendkings">
                         <div class="squarsGrid mt-2">
                             <div v-for="(ticker, index) in dividendKingsList" :key="`detail-${index}`"
-                                class="rounded square kings">
+                                class="rounded square kings" @click="buildFinanceUrl(ticker);">
                                 <span>{{ ticker.toUpperCase() }}</span>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                     <div class='mt-2' v-if="displayDividendAristocrats">
                         <div class="squarsGrid mt-2">
                             <div v-for="(ticker, index) in dividendAristocratsList" :key="`detail-${index}`"
-                                class="rounded square aristocrats">
+                                class="rounded square aristocrats" @click="buildFinanceUrl(ticker);">
                                 <span>{{ ticker.toUpperCase() }}</span>
                             </div>
                         </div>
