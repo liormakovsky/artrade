@@ -296,9 +296,10 @@
                     <!-- Kings list -->
                     <div class='mt-2' v-if="displayDividendkings">
                         <div class="squarsGrid mt-2">
-                            <div v-for="(ticker, index) in dividendKingsList" :key="`detail-${index}`"
-                                class="rounded square kings" @click="buildFinanceUrl(ticker);">
-                                <span>{{ ticker.toUpperCase() }}</span>
+                            <div v-for="(elem, index) in dividendKingsList" :key="`detail-${index}`"
+                                class="rounded square kings" :title="`${elem.dividendincrease} years`"
+                                @click="buildFinanceUrl(elem.ticker);">
+                                <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
                     </div>
@@ -307,9 +308,10 @@
                     <!-- Aristocrates list -->
                     <div class='mt-2' v-if="displayDividendAristocrats">
                         <div class="squarsGrid mt-2">
-                            <div v-for="(ticker, index) in dividendAristocratsList" :key="`detail-${index}`"
-                                class="rounded square aristocrats" @click="buildFinanceUrl(ticker);">
-                                <span>{{ ticker.toUpperCase() }}</span>
+                            <div v-for="(elem, index) in dividendAristocratsList" :key="`detail-${index}`"
+                                class="rounded square aristocrats" :title="`${elem.dividendincrease} years`"
+                                @click="buildFinanceUrl(elem.ticker);">
+                                <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
                     </div>

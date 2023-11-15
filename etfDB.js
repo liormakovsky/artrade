@@ -402,341 +402,409 @@ const dividendAristocrats = [
   {
     "ticker": "wba",
     "name": "walgreens boots alliance",
-    "industry": "drug retail"
+    "industry": "drug retail",
+    "dividendincrease": 47
   },
   {
     "ticker": "leg",
     "name": "leggett & platt",
-    "industry": "home furnishings"
+    "industry": "home furnishings",
+    "dividendincrease": 52
   },
   {
     "ticker": "mmm",
     "name": "3m",
-    "industry": "industrial conglomerates"
+    "industry": "industrial conglomerates",
+    "dividendincrease": 65
   },
   {
     "ticker": "o",
     "name": "realty income",
-    "industry": "retail reits"
+    "industry": "retail reits",
+    "dividendincrease": 29
   },
   {
     "ticker": "amcr",
     "name": "amcor",
-    "industry": "paper and plastic packaging products and materials"
+    "industry": "paper and plastic packaging products and materials",
+    "dividendincrease": 39
   },
   {
     "ticker": "trow",
     "name": "t. rowe price",
-    "industry": "asset management and custody banks"
+    "industry": "asset management and custody banks",
+    "dividendincrease": 39
   },
   {
     "ticker": "ben",
     "name": "franklin resources",
-    "industry": "asset management and custody banks"
+    "industry": "asset management and custody banks",
+    "dividendincrease": 42
   },
   {
     "ticker": "frt",
     "name": "federal realty",
-    "industry": "retail reits"
+    "industry": "retail reits",
+    "dividendincrease": 56
   },
   {
     "ticker": "abbv",
     "name": "abbvie",
-    "industry": "biotechnology"
+    "industry": "biotechnology",
+    "dividendincrease": 51
   },
   {
     "ticker": "ibm",
     "name": "international business machines",
-    "industry": "it consulting and other services"
+    "industry": "it consulting and other services",
+    "dividendincrease": 28
   },
   {
     "ticker": "ess",
     "name": "essex property trust",
-    "industry": "multi-family residential reits"
+    "industry": "multi-family residential reits",
+    "dividendincrease": 29
   },
   {
     "ticker": "cvx",
     "name": "chevron",
-    "industry": "integrated oil and gas"
+    "industry": "integrated oil and gas",
+    "dividendincrease": 36
   },
   {
     "ticker": "kvue",
     "name": "kenvue",
-    "industry": "personal care products"
+    "industry": "personal care products",
+    "dividendincrease": 61
   },
   {
     "ticker": "kmb",
     "name": "kimberly-clark",
-    "industry": "household products"
+    "industry": "household products",
+    "dividendincrease": 51
   },
   {
     "ticker": "sjm",
     "name": "j.m. smucker",
-    "industry": "packaged foods and meats"
+    "industry": "packaged foods and meats",
+    "dividendincrease": 21
   },
   {
     "ticker": "mdt",
     "name": "medtronic",
-    "industry": "health care equipment"
+    "industry": "health care equipment",
+    "dividendincrease": 46
   },
   {
     "ticker": "xom",
     "name": "exxon mobil",
-    "industry": "integrated oil and gas"
+    "industry": "integrated oil and gas",
+    "dividendincrease": 40
   },
   {
     "ticker": "ed",
     "name": "consolidated edison",
-    "industry": "multi-utilities"
+    "industry": "multi-utilities",
+    "dividendincrease": 49
   },
   {
     "ticker": "swk",
     "name": "stanley black & decker",
-    "industry": "industrial machinery and supplies and components"
+    "industry": "industrial machinery and supplies and components",
+    "dividendincrease": 56
   },
   {
     "ticker": "clx",
     "name": "clorox",
-    "industry": "household products"
+    "industry": "household products",
+    "dividendincrease": 60
   },
   {
     "ticker": "tgt",
     "name": "target",
-    "industry": "consumer staples merchandise retail"
+    "industry": "consumer staples merchandise retail",
+    "dividendincrease": 52
   },
   {
     "ticker": "hrl",
     "name": "hormel foods",
-    "industry": "packaged foods and meats"
+    "industry": "packaged foods and meats",
+    "dividendincrease": 57
   },
   {
     "ticker": "nee",
     "name": "nextera energy",
-    "industry": "electric utilities"
+    "industry": "electric utilities",
+    "dividendincrease": 28
   },
   {
     "ticker": "ko",
     "name": "coca-cola",
-    "industry": "soft drinks and non-alcoholic beverages"
+    "industry": "soft drinks and non-alcoholic beverages",
+    "dividendincrease": 61
   },
   {
     "ticker": "jnj",
     "name": "johnson & johnson",
-    "industry": "pharmaceuticals"
+    "industry": "pharmaceuticals",
+    "dividendincrease": 61
   },
   {
     "ticker": "pep",
     "name": "pepsico",
-    "industry": "soft drinks and non-alcoholic beverages"
+    "industry": "soft drinks and non-alcoholic beverages",
+    "dividendincrease": 51
   },
   {
     "ticker": "cinf",
     "name": "cincinnati financial",
-    "industry": "property and casualty insurance"
+    "industry": "property and casualty insurance",
+    "dividendincrease": 62
   },
   {
     "ticker": "chrw",
     "name": "c.h. robinson",
-    "industry": "air freight and logistics"
+    "industry": "air freight and logistics",
+    "dividendincrease": 25
   },
   {
     "ticker": "ato",
     "name": "atmos energy",
-    "industry": "gas utilities"
+    "industry": "gas utilities",
+    "dividendincrease": 39
   },
   {
     "ticker": "syy",
     "name": "sysco",
-    "industry": "food distributors"
+    "industry": "food distributors",
+    "dividendincrease": 54
   },
   {
     "ticker": "gpc",
     "name": "genuine parts company",
-    "industry": "distributors"
+    "industry": "distributors",
+    "dividendincrease": 67
   },
   {
     "ticker": "apd",
     "name": "air products and chemicals",
-    "industry": "industrial gases"
+    "industry": "industrial gases",
+    "dividendincrease": 41
   },
   {
     "ticker": "cl",
     "name": "colgate-palmolive",
-    "industry": "household products"
+    "industry": "household products",
+    "dividendincrease": 60
   },
   {
     "ticker": "pg",
     "name": "procter & gamble",
-    "industry": "household products"
+    "industry": "household products",
+    "dividendincrease": 67
   },
   {
     "ticker": "mcd",
     "name": "mcdonald's",
-    "industry": "restaurants"
+    "industry": "restaurants",
+    "dividendincrease": 46
   },
   {
     "ticker": "afl",
     "name": "aflac",
-    "industry": "life and health insurance"
+    "industry": "life and health insurance",
+    "dividendincrease": 40
   },
   {
     "ticker": "adp",
     "name": "automatic data processing",
-    "industry": "human resource and employment services"
+    "industry": "human resource and employment services",
+    "dividendincrease": 48
   },
   {
     "ticker": "adm",
     "name": "archer-daniels-midland",
-    "industry": "agricultural products and services"
+    "industry": "agricultural products and services",
+    "dividendincrease": 50
   },
   {
     "ticker": "emr",
     "name": "emerson electric",
-    "industry": "electrical components and equipment"
+    "industry": "electrical components and equipment",
+    "dividendincrease": 66
   },
   {
     "ticker": "mkc",
     "name": "mccormick & company",
-    "industry": "packaged foods and meats"
+    "industry": "packaged foods and meats",
+    "dividendincrease": 37
   },
   {
     "ticker": "itw",
     "name": "illinois tool works",
-    "industry": "industrial machinery and supplies and components"
+    "industry": "industrial machinery and supplies and components",
+    "dividendincrease": 53
   },
   {
     "ticker": "low",
     "name": "lowe's",
-    "industry": "home improvement retail"
+    "industry": "home improvement retail",
+    "dividendincrease": 51
   },
   {
     "ticker": "gd",
     "name": "general dynamics",
-    "industry": "aerospace and defense"
+    "industry": "aerospace and defense",
+    "dividendincrease": 30
   },
   {
     "ticker": "abt",
     "name": "abbott laboratories",
-    "industry": "health care equipment"
+    "industry": "health care equipment",
+    "dividendincrease": 51
   },
   {
     "ticker": "cat",
     "name": "caterpillar",
-    "industry": "construction machinery and heavy transportation equipment"
+    "industry": "construction machinery and heavy transportation equipment",
+    "dividendincrease": 30
   },
   {
     "ticker": "cah",
     "name": "cardinal health",
-    "industry": "health care distributors"
+    "industry": "health care distributors",
+    "dividendincrease": 38
   },
   {
     "ticker": "ppg",
     "name": "ppg industries",
-    "industry": "specialty chemicals"
+    "industry": "specialty chemicals",
+    "dividendincrease": 52
   },
   {
     "ticker": "aos",
     "name": "a. o. smith",
-    "industry": "building products"
+    "industry": "building products",
+    "dividendincrease": 30
   },
   {
     "ticker": "bdx",
     "name": "becton, dickinson and company",
-    "industry": "health care equipment"
+    "industry": "health care equipment",
+    "dividendincrease": 51
   },
   {
     "ticker": "cb",
     "name": "chubb",
-    "industry": "property and casualty insurance"
+    "industry": "property and casualty insurance",
+    "dividendincrease": 29
   },
   {
     "ticker": "dov",
     "name": "dover",
-    "industry": "industrial machinery and supplies and components"
+    "industry": "industrial machinery and supplies and components",
+    "dividendincrease": 68
   },
   {
     "ticker": "bf.b",
     "name": "brown-forman",
-    "industry": "distillers and vintners"
+    "industry": "distillers and vintners",
+    "dividendincrease": 39
   },
   {
     "ticker": "pnr",
     "name": "pentair",
-    "industry": "industrial machinery and supplies and components"
+    "industry": "industrial machinery and supplies and components",
+    "dividendincrease": 47
   },
   {
     "ticker": "wmt",
     "name": "walmart",
-    "industry": "consumer staples merchandise retail"
+    "industry": "consumer staples merchandise retail",
+    "dividendincrease": 50
   },
   {
     "ticker": "nue",
     "name": "nucor",
-    "industry": "steel"
+    "industry": "steel",
+    "dividendincrease": 50
   },
   {
     "ticker": "lin",
     "name": "linde",
-    "industry": "industrial gases"
+    "industry": "industrial gases",
+    "dividendincrease": 31
   },
   {
     "ticker": "alb",
     "name": "albemarle",
-    "industry": "specialty chemicals"
+    "industry": "specialty chemicals",
+    "dividendincrease": 29
   },
   {
     "ticker": "chd",
     "name": "church & dwight",
-    "industry": "household products"
+    "industry": "household products",
+    "dividendincrease": 27
   },
   {
     "ticker": "expd",
     "name": "expeditors international of washington",
-    "industry": "air freight and logistics"
+    "industry": "air freight and logistics",
+    "dividendincrease": 29
   },
   {
     "ticker": "ndsn",
     "name": "nordson corporation",
-    "industry": "industrial machinery and supplies and components"
+    "industry": "industrial machinery and supplies and components",
+    "dividendincrease": 60
   },
   {
     "ticker": "ecl",
     "name": "ecolab",
-    "industry": "specialty chemicals"
+    "industry": "specialty chemicals",
+    "dividendincrease": 31
   },
   {
     "ticker": "ctas",
     "name": "cintas",
-    "industry": "diversified support services"
+    "industry": "diversified support services",
+    "dividendincrease": 40
   },
   {
     "ticker": "gww",
     "name": "w.w. grainger",
-    "industry": "trading companies and distributors"
+    "industry": "trading companies and distributors",
+    "dividendincrease": 52
   },
   {
     "ticker": "shw",
     "name": "sherwin-williams",
-    "industry": "specialty chemicals"
+    "industry": "specialty chemicals",
+    "dividendincrease": 45
   },
   {
     "ticker": "spgi",
     "name": "s&p global",
-    "industry": "financial exchanges and data"
+    "industry": "financial exchanges and data",
+    "dividendincrease": 50
   },
   {
     "ticker": "bro",
     "name": "brown & brown",
-    "industry": "insurance brokers"
+    "industry": "insurance brokers",
+    "dividendincrease": 29
   },
   {
     "ticker": "rop",
     "name": "roper technologies",
-    "industry": "application software"
+    "industry": "application software",
+    "dividendincrease": 30
   },
   {
     "ticker": "wst",
     "name": "west pharmaceutical services",
-    "industry": "life sciences tools and services"
+    "industry": "life sciences tools and services",
+    "dividendincrease": 30
   }
-]
+];

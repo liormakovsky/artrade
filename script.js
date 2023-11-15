@@ -300,14 +300,13 @@ new Vue({
             this.displayDividendkings = true;
             this.displayDividendAristocrats = false;
             this.displayStocksAndEtfs = false;
-            const sortedDividendKings = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
-            this.dividendKingsList = sortedDividendKings.map(item => item.ticker);
+            this.dividendKingsList = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
         },
         showDividendAristocratsList() {
             this.displayDividendkings = false;
             this.displayDividendAristocrats = true;
             this.displayStocksAndEtfs = false;
-            this.dividendAristocratsList = this.dividendAristocratsArr.map(item => item.ticker);
+            this.dividendAristocratsList = this.dividendAristocratsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
         },
     },
 
