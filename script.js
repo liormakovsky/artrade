@@ -25,6 +25,7 @@ new Vue({
         dividendAristocratsArr: dividendAristocrats,
         showUrl: false,
         showStockModal: false,
+        showDividendModal: false,
         showEtfModal: false,
         showFinvizModal: false,
         stockOrEtfNameForUrl: '',
@@ -162,8 +163,11 @@ new Vue({
         buildStockUrl() {
             window.open(`https://etfdb.com/stock/${this.stockOrEtfNameForUrl}`);
         },
-        buildFinanceUrl(ticker = this.stockOrEtfNameForUrl) {
-            window.open(`https://www.gurufocus.com/stock/${ticker}/summary`);
+        buildGuruUrl() {
+            window.open(`https://www.gurufocus.com/stock/${this.stockOrEtfNameForUrl}/summary`);
+        },
+        buildStockAnalysisUrl() {
+            window.open(`https://stockanalysis.com/stocks/${this.stockOrEtfNameForUrl}/financials/`);
         },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);

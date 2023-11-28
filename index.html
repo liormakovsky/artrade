@@ -19,6 +19,7 @@
     <div id="root">
         <!-- overlays -->
         <div class="overlay" v-if="showStockModal" @click="showStockModal = false"></div>
+        <div class="overlay" v-if="showDividendModal" @click="showDividendModal = false"></div>
         <div class="overlay" v-if="showEtfModal" @click="showEtfModal = false"></div>
         <div class="overlay" v-if="showFinvizModal" @click="showFinvizModal = false"></div>
         <!-- End of overlays -->
@@ -41,6 +42,19 @@
             </div>
         </div>
         <!-- END of Stock modal -->
+
+        <!-- Dividend modal -->
+        <div class="linksModal" v-if="showDividendModal">
+            <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildGuruUrl">
+                    <span>Guru Focus</span>
+                </div>
+                <div class=" rounded square generic-square" v-on:click="buildStockAnalysisUrl">
+                    <span>Stock Analysis</span>
+                </div>
+            </div>
+        </div>
+        <!-- END of Dividend modal -->
 
         <!-- ETF modal -->
         <div class="linksModal" v-if="showEtfModal">
@@ -299,7 +313,7 @@
                         <div class="squarsGrid mt-2">
                             <div v-for="(elem, index) in dividendKingsList" :key="`detail-${index}`"
                                 class="rounded square kings" :title="`${elem.dividendincrease} years`"
-                                @click="buildFinanceUrl(elem.ticker);">
+                                @contextmenu.prevent="showDividendModal = true;dataToModal(elem.ticker);">
                                 <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
@@ -311,7 +325,7 @@
                         <div class="squarsGrid mt-2">
                             <div v-for="(elem, index) in dividendAristocratsList" :key="`detail-${index}`"
                                 class="rounded square aristocrats" :title="`${elem.dividendincrease} years`"
-                                @click="buildFinanceUrl(elem.ticker);">
+                                @contextmenu.prevent="showDividendModal = true;dataToModal(elem.ticker);">
                                 <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
