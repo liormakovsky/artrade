@@ -163,7 +163,7 @@ new Vue({
             window.open(`https://etfdb.com/stock/${this.stockOrEtfNameForUrl}`);
         },
         buildFinanceUrl(ticker = this.stockOrEtfNameForUrl) {
-            window.open(`https://stockanalysis.com/stocks/${ticker}/financials/`);
+            window.open(`https://www.gurufocus.com/stock/${ticker}/summary`);
         },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
@@ -184,7 +184,7 @@ new Vue({
             let chosenEtfconnected = [];
             let chosenEtfFromStocks = [];
             this.etfArr.forEach(etf => {
-                if (etf.stocks.includes(this.details) || etf.connected.includes(this.details)) {
+                if (etf.stocks.includes(this.details.toLowerCase()) || etf.connected.includes(this.details.toLowerCase())) {
                     chosenEtfFromStocks.push(etf.etf);
                     if (etf.etf === this.details) {
                         chosenEtfArr.push(etf.stocks);
@@ -203,7 +203,7 @@ new Vue({
                 let obj = {};
                 obj['name'] = element,
                     obj['length'] = chosenEtfstocks.filter((v) => (v === element)).length;
-                if (element === this.details) {
+                if (element === this.details.toLowerCase()) {
                     obj['belongtoindex'] = 'isbelong';
                 }
                 if (chosenEtfArr.length) {
@@ -257,7 +257,7 @@ new Vue({
             let finalconnectedObj = [];
             finalconnected.forEach((element) => {
                 let obj = {};
-                if (chosenEtfFromStocks.includes(element) && !finalconnected.includes(this.details) || element === this.details) {
+                if (chosenEtfFromStocks.includes(element) && !finalconnected.includes(this.details.toLowerCase()) || element === this.details.toLowerCase()) {
                     obj['isChosenEtf'] = 'isbelong';
                 };
                 obj['name'] = element,
