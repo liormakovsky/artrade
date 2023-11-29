@@ -75,14 +75,24 @@
   grid-gap: 1rem;
 }
 
+.modalSquarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
 .square {
-  position: relative;
-  top: 0;
-  padding: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0px 4px #A9A9A9;
   color: #fff;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .square.isbelong {
@@ -194,7 +204,7 @@
 }
 
 .linksModal {
-  width: 300px;
+  min-width: 300px;
   z-index: 9999;
   background-color: #fff;
   position: absolute;

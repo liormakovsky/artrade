@@ -169,6 +169,9 @@ new Vue({
         buildStockAnalysisUrl() {
             window.open(`https://stockanalysis.com/stocks/${this.stockOrEtfNameForUrl}/financials/`);
         },
+        buildTradingUrl() {
+            window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
+        },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
         },

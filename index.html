@@ -26,9 +26,12 @@
 
         <!-- Stock modal -->
         <div class="linksModal" v-if="showStockModal">
-            <div class="squarsGrid">
-                <div class="rounded square generic-square" v-on:click="buildNasdaqUrl">
-                    <span>Nasdaq</span>
+            <div class="modalSquarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildTradingUrl">
+                    <span>TradingView</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="buildGuruUrl">
+                    <span>GuruFocus</span>
                 </div>
                 <div class=" rounded square generic-square" v-on:click="buildFinvizUrl">
                     <span>Finviz</span>
@@ -36,8 +39,11 @@
                 <div class="rounded square generic-square" v-on:click="buildStockUrl">
                     <span>Exposure</span>
                 </div>
-                <div class="rounded square generic-square" v-on:click="buildFinanceUrl()">
-                    <span>stock analysis</span>
+                <div class="rounded square generic-square" v-on:click="buildStockAnalysisUrl()">
+                    <span>Stock Analysis</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="buildNasdaqUrl">
+                    <span>Nasdaq</span>
                 </div>
             </div>
         </div>
@@ -46,11 +52,17 @@
         <!-- Dividend modal -->
         <div class="linksModal" v-if="showDividendModal">
             <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildTradingUrl">
+                    <span>TradingView</span>
+                </div>
                 <div class="rounded square generic-square" v-on:click="buildGuruUrl">
-                    <span>Guru Focus</span>
+                    <span>GuruFocus</span>
                 </div>
                 <div class=" rounded square generic-square" v-on:click="buildStockAnalysisUrl">
                     <span>Stock Analysis</span>
+                </div>
+                <div class=" rounded square generic-square" v-on:click="buildFinvizUrl">
+                    <span>Finviz</span>
                 </div>
             </div>
         </div>
@@ -59,6 +71,9 @@
         <!-- ETF modal -->
         <div class="linksModal" v-if="showEtfModal">
             <div class="squarsGrid">
+                <div class="rounded square generic-square" v-on:click="buildTradingUrl">
+                    <span>TradingView</span>
+                </div>
                 <div class="rounded square generic-square" v-on:click="buildFinvizUrl">
                     <span>Finviz</span>
                 </div>
