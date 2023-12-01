@@ -282,8 +282,8 @@
                     <div class="d-flex justify-content-between col-12">
                         <div class="col-6 d-flex align-items-center">
                             <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
-                            <input @keyup.enter="showDetails()" class="form-control w-50 h-50 mt-2" v-model="details"
-                                type="text">
+                            <input @keyup.enter="showDetails()" class="form-control h-50 mt-2" style="width:35%"
+                                v-model="details" type="text">
                         </div>
                         <div class="col-6 d-flex justify-content-end">
                             <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
@@ -291,6 +291,8 @@
                                 @click="showDividendAristocratsList">Aristocrats</button>
                             <button class="btn border ms-1" style="color:white;background-color: #563D7C;"
                                 @click="showSCHDList">SCHD</button>
+                            <button class="btn border ms-1" style="color:white;background-color: #0091F7;"
+                                @click="showDGROList">DGRO</button>
                             <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
                                 Maps</button>
                         </div>
@@ -360,6 +362,18 @@
                         </div>
                     </div>
                     <!-- END of schd list -->
+
+                    <!-- dgro list -->
+                    <div class='mt-2' v-if="displayDGRO">
+                        <div class="squarsGrid mt-2">
+                            <div style="background-color:#0091F7;" v-for="(elem, index) in dgroList"
+                                :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem)"
+                                @click="showDividendModal = true;dataToModal(elem.ticker);">
+                                <span>{{ elem.ticker.toUpperCase() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of dgro list -->
 
                 </div>
             </div>

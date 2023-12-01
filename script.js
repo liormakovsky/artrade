@@ -24,6 +24,7 @@ new Vue({
         dividendkingsArr: dividendkings,
         dividendAristocratsArr: dividendAristocrats,
         schdArr: schd,
+        dgroArr: dgro,
         showUrl: false,
         showStockModal: false,
         showDividendModal: false,
@@ -39,9 +40,11 @@ new Vue({
         displayDividendAristocrats: false,
         displayStocksAndEtfs: false,
         displaySCHD: false,
+        displayDGRO: false,
         dividendKingsList: [],
         dividendAristocratsList: [],
-        schdList: []
+        schdList: [],
+        dgroList: []
     },
     watch: {
         trigger() {
@@ -185,11 +188,9 @@ new Vue({
             this.stockOrEtfNameForUrl = stockOrEtfName;
         },
         showDetails(name) {
-            this.displayDividendkings = false;
-            this.displayDividendAristocrats = false;
+            this.resetDisplayFlags()
             this.displayStocksAndEtfs = true;
-            this.displaySCHD = false;
-            this.details = name ? name : this.details;
+            this.details = name || this.details;
             let chosenEtfArr = [];
             let chosenEtfstocks = [];
             let chosenEtfconnected = [];
@@ -308,53 +309,68 @@ new Vue({
             return isNaN(formattedValue) ? '' : formattedValue;
         },
         showDividendKingsList() {
+            this.resetDisplayFlags()
             this.displayDividendkings = true;
-            this.displayDividendAristocrats = false;
-            this.displayStocksAndEtfs = false;
-            this.displaySCHD = false;
             this.dividendKingsList = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
         },
         showDividendAristocratsList() {
-            this.displayDividendkings = false;
+            this.resetDisplayFlags()
             this.displayDividendAristocrats = true;
-            this.displayStocksAndEtfs = false;
-            this.displaySCHD = false;
             this.dividendAristocratsList = this.dividendAristocratsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
         },
-        showSCHDList() {
-            this.displayDividendkings = false;
-            this.displayDividendAristocrats = false;
-            this.displayStocksAndEtfs = false;
-            this.displaySCHD = true;
+        showDividendList(listType, displayFlag, dataList, dataArr) {
+            this.resetDisplayFlags();
+            this[displayFlag] = true;
 
-            const findDividendStatus = (ticker) => {
-                const kings = dividendkings.find((king) => king.ticker === ticker);
-                const aristocrats = dividendAristocrats.find((aristocrat) => aristocrat.ticker === ticker);
+            const findDividendStatus = (ticker, kings, aristocrats, otherList) => {
+                const king = kings.find((stock) => stock.ticker === ticker);
+                const aristocrat = aristocrats.find((stock) => stock.ticker === ticker);
+                const otherStock = otherList.find((stock) => stock.ticker === ticker);
 
                 const result = { ticker, lists: [] };
 
-                if (kings) {
+                if (king) {
                     result.lists.push("Kings");
                 }
 
-                if (aristocrats) {
+                if (aristocrat) {
                     result.lists.push("Aristocrats");
+                }
+
+                if (otherStock) {
+                    result.lists.push(listType === 'schd' ? "DGRO" : "SCHD");
                 }
 
                 return result;
             };
 
-            this.schdList = this.schdArr.map((stock) => {
-                const dividendStatus = findDividendStatus(stock.ticker);
+            this[dataList] = dataArr.map((stock) => {
+                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, listType === 'schd' ? dgro : schd);
                 return {
                     ...stock,
                     ...dividendStatus,
                 };
             }).sort((a, b) => b.percent - a.percent);
         },
+
+        showSCHDList() {
+            this.showDividendList('schd', 'displaySCHD', 'schdList', this.schdArr);
+        },
+
+        showDGROList() {
+            this.showDividendList('dgro', 'displayDGRO', 'dgroList', this.dgroArr);
+        },
+
         generateTitle(elem) {
             const status = elem.lists.join(', ');
             return `${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
+        },
+        resetDisplayFlags() {
+            this.displayDividendkings = false;
+            this.displayDividendAristocrats = false;
+            this.displayStocksAndEtfs = false;
+            this.displaySCHD = false;
+            this.displayDGRO = false;
         },
     },
 

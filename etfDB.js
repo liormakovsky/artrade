@@ -962,3 +962,122 @@ const schd = [
     "percent": 1.011224214
   }
 ]
+
+// https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf.
+const dgro = [
+  {
+    "ticker": "msft",
+    "name": "microsoft corp",
+    "percent": 3.38
+  },
+  {
+    "ticker": "jpm",
+    "name": "jpmorgan chase & co",
+    "percent": 3.01
+  },
+  {
+    "ticker": "aapl",
+    "name": "apple inc",
+    "percent": 2.95
+  },
+  {
+    "ticker": "jnj",
+    "name": "johnson & johnson",
+    "percent": 2.68
+  },
+  {
+    "ticker": "xom",
+    "name": "exxon mobil corp",
+    "percent": 2.56
+  },
+  {
+    "ticker": "abbv",
+    "name": "abbvie inc",
+    "percent": 2.44
+  },
+  {
+    "ticker": "cvx",
+    "name": "chevron corp",
+    "percent": 2.21
+  },
+  {
+    "ticker": "pg",
+    "name": "procter & gamble",
+    "percent": 2.14
+  },
+  {
+    "ticker": "pfe",
+    "name": "pfizer inc",
+    "percent": 1.96
+  },
+  {
+    "ticker": "avgo",
+    "name": "broadcom inc",
+    "percent": 1.95
+  },
+  {
+    "ticker": "hd",
+    "name": "home depot inc",
+    "percent": 1.95
+  },
+  {
+    "ticker": "unh",
+    "name": "unitedhealth group inc",
+    "percent": 1.94
+  },
+  {
+    "ticker": "bac",
+    "name": "bank of america corp",
+    "percent": 1.71
+  },
+  {
+    "ticker": "mrk",
+    "name": "merck & co inc",
+    "percent": 1.70
+  },
+  {
+    "ticker": "ko",
+    "name": "coca-cola",
+    "percent": 1.70
+  },
+  {
+    "ticker": "pep",
+    "name": "pepsico inc",
+    "percent": 1.60
+  },
+  {
+    "ticker": "csco",
+    "name": "cisco systems inc",
+    "percent": 1.29
+  },
+  {
+    "ticker": "amgn",
+    "name": "amgen inc",
+    "percent": 1.18
+  },
+  {
+    "ticker": "c",
+    "name": "citigroup inc",
+    "percent": 1.10
+  },
+  {
+    "ticker": "mcd",
+    "name": "mcdonalds corp",
+    "percent": 1.09
+  },
+  {
+    "ticker": "cmcsa",
+    "name": "comcast corp class a",
+    "percent": 1.08
+  },
+  {
+    "ticker": "ups",
+    "name": "united parcel service inc class b",
+    "percent": 1.05
+  },
+  {
+    "ticker": "ms",
+    "name": "morgan stanley",
+    "percent": 1.00
+  }
+];
