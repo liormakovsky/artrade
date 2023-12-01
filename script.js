@@ -326,7 +326,35 @@ new Vue({
             this.displayDividendAristocrats = false;
             this.displayStocksAndEtfs = false;
             this.displaySCHD = true;
-            this.schdList = this.schdArr.sort((a, b) => b.percent - a.percent);
+
+            const findDividendStatus = (ticker) => {
+                const kings = dividendkings.find((king) => king.ticker === ticker);
+                const aristocrats = dividendAristocrats.find((aristocrat) => aristocrat.ticker === ticker);
+
+                const result = { ticker, lists: [] };
+
+                if (kings) {
+                    result.lists.push("Kings");
+                }
+
+                if (aristocrats) {
+                    result.lists.push("Aristocrats");
+                }
+
+                return result;
+            };
+
+            this.schdList = this.schdArr.map((stock) => {
+                const dividendStatus = findDividendStatus(stock.ticker);
+                return {
+                    ...stock,
+                    ...dividendStatus,
+                };
+            }).sort((a, b) => b.percent - a.percent);
+        },
+        generateTitle(elem) {
+            const status = elem.lists.join(', ');
+            return `${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
         },
     },
 

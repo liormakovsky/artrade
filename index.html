@@ -353,7 +353,7 @@
                     <div class='mt-2' v-if="displaySCHD">
                         <div class="squarsGrid mt-2">
                             <div style="background-color:#563D7C;" v-for="(elem, index) in schdList"
-                                :key="`detail-${index}`" class="rounded square" :title="`${elem.percent.toFixed(2)}%`"
+                                :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem)"
                                 @click="showDividendModal = true;dataToModal(elem.ticker);">
                                 <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
