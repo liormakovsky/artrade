@@ -808,3 +808,157 @@ const dividendAristocrats = [
     "dividendincrease": 30
   }
 ];
+
+//https://www.schwabassetmanagement.com/products/schd
+const schd = [
+  {
+    "ticker": "vz",
+    "name": "verizon communications inc",
+    "percent": 4.538278868
+  },
+  {
+    "ticker": "amgn",
+    "name": "amgen inc",
+    "percent": 4.382195393
+  },
+  {
+    "ticker": "avgo",
+    "name": "broadcom inc",
+    "percent": 4.294932269
+  },
+  {
+    "ticker": "ko",
+    "name": "coca-cola",
+    "percent": 4.023509138
+  },
+  {
+    "ticker": "abbv",
+    "name": "abbvie inc",
+    "percent": 3.957423013
+  },
+  {
+    "ticker": "pep",
+    "name": "pepsico inc",
+    "percent": 3.89775965
+  },
+  {
+    "ticker": "mrk",
+    "name": "merck & co inc",
+    "percent": 3.894525156
+  },
+  {
+    "ticker": "hd",
+    "name": "home depot inc",
+    "percent": 3.891616754
+  },
+  {
+    "ticker": "blk",
+    "name": "blackrock inc",
+    "percent": 3.693024192
+  },
+  {
+    "ticker": "txn",
+    "name": "texas instrument inc",
+    "percent": 3.677504473
+  },
+  {
+    "ticker": "ups",
+    "name": "united parcel service inc class b",
+    "percent": 3.606950615
+  },
+  {
+    "ticker": "pfe",
+    "name": "pfizer inc",
+    "percent": 3.587710061
+  },
+  {
+    "ticker": "cvx",
+    "name": "chevron corp",
+    "percent": 3.487591741
+  },
+  {
+    "ticker": "csco",
+    "name": "cisco systems inc",
+    "percent": 3.425295365
+  },
+  {
+    "ticker": "lmt",
+    "name": "lockheed martin corp",
+    "percent": 3.312875635
+  },
+  {
+    "ticker": "adp",
+    "name": "automatic data processing inc",
+    "percent": 3.117900277
+  },
+  {
+    "ticker": "bx",
+    "name": "blackstone inc",
+    "percent": 2.60443362
+  },
+  {
+    "ticker": "mo",
+    "name": "altria group inc",
+    "percent": 2.463297965
+  },
+  {
+    "ticker": "eog",
+    "name": "eog resources inc",
+    "percent": 2.362705918
+  },
+  {
+    "ticker": "itw",
+    "name": "illinois tool inc",
+    "percent": 2.198743411
+  },
+  {
+    "ticker": "mmm",
+    "name": "3m",
+    "percent": 1.794027537
+  },
+  {
+    "ticker": "usb",
+    "name": "us bancorp",
+    "percent": 1.745501733
+  },
+  {
+    "ticker": "vlo",
+    "name": "valero energy corp",
+    "percent": 1.487627321
+  },
+  {
+    "ticker": "kmb",
+    "name": "kimberly clark corp",
+    "percent": 1.370255339
+  },
+  {
+    "ticker": "f",
+    "name": "ford motor",
+    "percent": 1.323539967
+  },
+  {
+    "ticker": "payx",
+    "name": "paychex inc",
+    "percent": 1.284559252
+  },
+  {
+    "ticker": "all",
+    "name": "allstate corp",
+    "percent": 1.189561257
+  },
+  {
+    "ticker": "fast",
+    "name": "fastenal",
+    "percent": 1.124073247
+  },
+  {
+    "ticker": "nem",
+    "name": "newmont",
+    "percent": 1.04841683
+  },
+  {
+    "ticker": "oke",
+    "name": "oneok inc",
+    "percent": 1.011224214
+  }
+]

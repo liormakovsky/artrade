@@ -23,6 +23,7 @@ new Vue({
         etfArr: etfDB,
         dividendkingsArr: dividendkings,
         dividendAristocratsArr: dividendAristocrats,
+        schdArr: schd,
         showUrl: false,
         showStockModal: false,
         showDividendModal: false,
@@ -37,8 +38,10 @@ new Vue({
         displayDividendkings: false,
         displayDividendAristocrats: false,
         displayStocksAndEtfs: false,
+        displaySCHD: false,
         dividendKingsList: [],
         dividendAristocratsList: [],
+        schdList: []
     },
     watch: {
         trigger() {
@@ -185,6 +188,7 @@ new Vue({
             this.displayDividendkings = false;
             this.displayDividendAristocrats = false;
             this.displayStocksAndEtfs = true;
+            this.displaySCHD = false;
             this.details = name ? name : this.details;
             let chosenEtfArr = [];
             let chosenEtfstocks = [];
@@ -307,13 +311,22 @@ new Vue({
             this.displayDividendkings = true;
             this.displayDividendAristocrats = false;
             this.displayStocksAndEtfs = false;
+            this.displaySCHD = false;
             this.dividendKingsList = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
         },
         showDividendAristocratsList() {
             this.displayDividendkings = false;
             this.displayDividendAristocrats = true;
             this.displayStocksAndEtfs = false;
+            this.displaySCHD = false;
             this.dividendAristocratsList = this.dividendAristocratsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
+        },
+        showSCHDList() {
+            this.displayDividendkings = false;
+            this.displayDividendAristocrats = false;
+            this.displayStocksAndEtfs = false;
+            this.displaySCHD = true;
+            this.schdList = this.schdArr.sort((a, b) => b.percent - a.percent);
         },
     },
 

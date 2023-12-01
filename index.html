@@ -277,7 +277,7 @@
 
 
             <!-- Information section -->
-            <div class="col-5">
+            <div class="col-6">
                 <div class="d-flex justify-content-center flex-column">
                     <div class="d-flex justify-content-between col-12">
                         <div class="col-6 d-flex align-items-center">
@@ -289,6 +289,8 @@
                             <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
                             <button class="btn btn-info border ms-1"
                                 @click="showDividendAristocratsList">Aristocrats</button>
+                            <button class="btn border ms-1" style="color:white;background-color: #563D7C;"
+                                @click="showSCHDList">SCHD</button>
                             <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
                                 Maps</button>
                         </div>
@@ -328,7 +330,7 @@
                         <div class="squarsGrid mt-2">
                             <div v-for="(elem, index) in dividendKingsList" :key="`detail-${index}`"
                                 class="rounded square kings" :title="`${elem.dividendincrease} years`"
-                                @contextmenu.prevent="showDividendModal = true;dataToModal(elem.ticker);">
+                                @click="showDividendModal = true;dataToModal(elem.ticker);">
                                 <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
@@ -340,18 +342,28 @@
                         <div class="squarsGrid mt-2">
                             <div v-for="(elem, index) in dividendAristocratsList" :key="`detail-${index}`"
                                 class="rounded square aristocrats" :title="`${elem.dividendincrease} years`"
-                                @contextmenu.prevent="showDividendModal = true;dataToModal(elem.ticker);">
+                                @click="showDividendModal = true;dataToModal(elem.ticker);">
                                 <span>{{ elem.ticker.toUpperCase() }}</span>
                             </div>
                         </div>
                     </div>
                     <!-- END of Aristocrates list -->
 
+                    <!-- schd list -->
+                    <div class='mt-2' v-if="displaySCHD">
+                        <div class="squarsGrid mt-2">
+                            <div style="background-color:#563D7C;" v-for="(elem, index) in schdList"
+                                :key="`detail-${index}`" class="rounded square" :title="`${elem.percent.toFixed(2)}%`"
+                                @click="showDividendModal = true;dataToModal(elem.ticker);">
+                                <span>{{ elem.ticker.toUpperCase() }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of schd list -->
+
                 </div>
             </div>
             <!-- END of Information section -->
-
-            <div class="col-1"></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
