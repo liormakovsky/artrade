@@ -1081,3 +1081,107 @@ const dgro = [
     "percent": 1.00
   }
 ];
+
+//https://investor.vanguard.com/investment-products/etfs/profile/vug#portfolio-composition
+const vug = [
+  {
+    "ticker": "aapl",
+    "name": "Apple Inc.",
+    "percent": 13.00
+  },
+  {
+    "ticker": "msft",
+    "name": "Microsoft Corp.",
+    "percent": 12.88
+  },
+  {
+    "ticker": "amzn",
+    "name": "Amazon.com Inc.",
+    "percent": 6.33
+  },
+  {
+    "ticker": "nvda",
+    "name": "NVIDIA Corp.",
+    "percent": 4.90
+  },
+  {
+    "ticker": "googl",
+    "name": "Alphabet Inc. Class A",
+    "percent": 3.77
+  },
+  {
+    "ticker": "meta",
+    "name": "Facebook Inc. Class A",
+    "percent": 3.43
+  },
+  {
+    "ticker": "goog",
+    "name": "Alphabet Inc. Class C",
+    "percent": 3.17
+  },
+  {
+    "ticker": "tsla",
+    "name": "Tesla Inc.",
+    "percent": 2.78
+  },
+  {
+    "ticker": "lly",
+    "name": "Eli Lilly & Co.",
+    "percent": 2.43
+  },
+  {
+    "ticker": "v",
+    "name": "Visa Inc. Class A",
+    "percent": 1.88
+  },
+  {
+    "ticker": "ma",
+    "name": "Mastercard Inc. Class A",
+    "percent": 1.62
+  },
+  {
+    "ticker": "hd",
+    "name": "Home Depot Inc.",
+    "percent": 1.46
+  },
+  {
+    "ticker": "cost",
+    "name": "Costco Wholesale Corp.",
+    "percent": 1.25
+  },
+  {
+    "ticker": "adbe",
+    "name": "Adobe Inc.",
+    "percent": 1.24
+  },
+  {
+    "ticker": "mcd",
+    "name": "McDonald's Corp.",
+    "percent": 0.98
+  },
+  {
+    "ticker": "acn",
+    "name": "Accenture plc Class A",
+    "percent": 0.96
+  },
+  {
+    "ticker": "lin",
+    "name": "Linde plc",
+    "percent": 0.96
+  },
+  {
+    "ticker": "crm",
+    "name": "salesforce.com Inc.",
+    "percent": 0.95
+  },
+  {
+    "ticker": "nflx",
+    "name": "Netflix Inc.",
+    "percent": 0.91
+  },
+  {
+    "ticker": "tmo",
+    "name": "Thermo Fisher Scientific Inc.",
+    "percent": 0.88
+  }
+];

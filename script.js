@@ -25,6 +25,7 @@ new Vue({
         dividendAristocratsArr: dividendAristocrats,
         schdArr: schd,
         dgroArr: dgro,
+        vugArr: vug,
         showUrl: false,
         showStockModal: false,
         showDividendModal: false,
@@ -41,10 +42,12 @@ new Vue({
         displayStocksAndEtfs: false,
         displaySCHD: false,
         displayDGRO: false,
+        displayVUG: false,
         dividendKingsList: [],
         dividendAristocratsList: [],
         schdList: [],
-        dgroList: []
+        dgroList: [],
+        vugList: []
     },
     watch: {
         trigger() {
@@ -312,35 +315,40 @@ new Vue({
             this.resetDisplayFlags();
             this[displayFlag] = true;
 
-            const findDividendStatus = (ticker, kingsDB, aristocratsDB, schdDB, dgroDB, listType) => {
+            const findDividendStatus = (ticker, kingsDB, aristocratsDB, schdDB, dgroDB, vugDB, listType) => {
                 const king = kingsDB.find((stock) => stock.ticker === ticker);
                 const aristocrat = aristocratsDB.find((stock) => stock.ticker === ticker);
                 const schd = schdDB.find((stock) => stock.ticker === ticker);
                 const dgro = dgroDB.find((stock) => stock.ticker === ticker);
+                const vug = vugDB.find((stock) => stock.ticker === ticker);
 
                 const result = { ticker, lists: [] };
 
-                if (king && (listType === "aristocrats" || listType === "schd" || listType === "dgro")) {
+                if (king && (listType === "aristocrats" || listType === "schd" || listType === "dgro" || listType === "vug")) {
                     result.lists.push("Kings");
                 }
 
-                if (aristocrat && (listType === "kings" || listType === "schd" || listType === "dgro")) {
+                if (aristocrat && (listType === "kings" || listType === "schd" || listType === "dgro" || listType === "vug")) {
                     result.lists.push("Aristocrats");
                 }
 
-                if (schd && (listType === "kings" || listType === "aristocrats" || listType === "dgro")) {
+                if (schd && (listType === "kings" || listType === "aristocrats" || listType === "dgro" || listType === "vug")) {
                     result.lists.push("SCHD");
                 }
 
-                if (dgro && (listType === "kings" || listType === "aristocrats" || listType === "schd")) {
+                if (dgro && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "vug")) {
                     result.lists.push("DGRO");
+                }
+
+                if (vug && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "dgro")) {
+                    result.lists.push("VUG");
                 }
 
                 return result;
             };
 
             this[dataList] = dataArr.map((stock) => {
-                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, schd, dgro, listType);
+                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, schd, dgro, vug, listType);
                 return {
                     ...stock,
                     ...dividendStatus,
@@ -361,15 +369,20 @@ new Vue({
         showDGROList() {
             this.showDividendList('dgro', 'displayDGRO', 'dgroList', this.dgroArr);
         },
+        showVUGList() {
+            this.showDividendList('vug', 'displayVUG', 'vugList', this.vugArr);
+        },
 
         generateTitle(elem, listType) {
             const status = elem.lists.join(', ');
+            const uppercaseName = elem.name.charAt(0).toUpperCase() + elem.name.slice(1);
+
             if (listType === 'dividendKings' || listType === 'dividendAristocrats') {
                 // Use the "years" format for dividendKings and dividendAristocrats
-                return `${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
+                return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
+                return `${uppercaseName}\n${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
             }
         },
         resetDisplayFlags() {
@@ -378,6 +391,7 @@ new Vue({
             this.displayStocksAndEtfs = false;
             this.displaySCHD = false;
             this.displayDGRO = false;
+            this.displayVUG = false;
         },
     },
 
