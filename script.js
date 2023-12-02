@@ -308,51 +308,52 @@ new Vue({
             const formattedValue = value % 1 === 0 ? value.toFixed(0) : value.toFixed(2);
             return isNaN(formattedValue) ? '' : formattedValue;
         },
-        showDividendKingsList() {
-            this.resetDisplayFlags()
-            this.displayDividendkings = true;
-            this.dividendKingsList = this.dividendkingsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
-        },
-        showDividendAristocratsList() {
-            this.resetDisplayFlags()
-            this.displayDividendAristocrats = true;
-            this.dividendAristocratsList = this.dividendAristocratsArr.sort((a, b) => b.dividendincrease - a.dividendincrease);
-        },
         showDividendList(listType, displayFlag, dataList, dataArr) {
             this.resetDisplayFlags();
             this[displayFlag] = true;
 
-            const findDividendStatus = (ticker, kings, aristocrats, otherList) => {
-                const king = kings.find((stock) => stock.ticker === ticker);
-                const aristocrat = aristocrats.find((stock) => stock.ticker === ticker);
-                const otherStock = otherList.find((stock) => stock.ticker === ticker);
+            const findDividendStatus = (ticker, kingsDB, aristocratsDB, schdDB, dgroDB, listType) => {
+                const king = kingsDB.find((stock) => stock.ticker === ticker);
+                const aristocrat = aristocratsDB.find((stock) => stock.ticker === ticker);
+                const schd = schdDB.find((stock) => stock.ticker === ticker);
+                const dgro = dgroDB.find((stock) => stock.ticker === ticker);
 
                 const result = { ticker, lists: [] };
 
-                if (king) {
+                if (king && (listType === "aristocrats" || listType === "schd" || listType === "dgro")) {
                     result.lists.push("Kings");
                 }
 
-                if (aristocrat) {
+                if (aristocrat && (listType === "kings" || listType === "schd" || listType === "dgro")) {
                     result.lists.push("Aristocrats");
                 }
 
-                if (otherStock) {
-                    result.lists.push(listType === 'schd' ? "DGRO" : "SCHD");
+                if (schd && (listType === "kings" || listType === "aristocrats" || listType === "dgro")) {
+                    result.lists.push("SCHD");
+                }
+
+                if (dgro && (listType === "kings" || listType === "aristocrats" || listType === "schd")) {
+                    result.lists.push("DGRO");
                 }
 
                 return result;
             };
 
             this[dataList] = dataArr.map((stock) => {
-                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, listType === 'schd' ? dgro : schd);
+                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, schd, dgro, listType);
                 return {
                     ...stock,
                     ...dividendStatus,
                 };
             }).sort((a, b) => b.percent - a.percent);
         },
+        showDividendKingsList() {
+            this.showDividendList('kings', 'displayDividendkings', 'dividendKingsList', this.dividendkingsArr);
+        },
 
+        showDividendAristocratsList() {
+            this.showDividendList('aristocrats', 'displayDividendAristocrats', 'dividendAristocratsList', this.dividendAristocratsArr);
+        },
         showSCHDList() {
             this.showDividendList('schd', 'displaySCHD', 'schdList', this.schdArr);
         },
@@ -361,9 +362,15 @@ new Vue({
             this.showDividendList('dgro', 'displayDGRO', 'dgroList', this.dgroArr);
         },
 
-        generateTitle(elem) {
+        generateTitle(elem, listType) {
             const status = elem.lists.join(', ');
-            return `${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
+            if (listType === 'dividendKings' || listType === 'dividendAristocrats') {
+                // Use the "years" format for dividendKings and dividendAristocrats
+                return `${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
+            } else {
+                // Use the percentage and status format for dgro and schd
+                return `${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
+            }
         },
         resetDisplayFlags() {
             this.displayDividendkings = false;
