@@ -1185,3 +1185,107 @@ const vug = [
     "percent": 0.88
   }
 ];
+
+//https://investor.vanguard.com/investment-products/etfs/profile/vtv#portfolio-composition
+const vtv = [
+  {
+    "ticker": "brk.b",
+    "name": "Berkshire Hathaway Inc. Class B",
+    "percent": 3.82
+  },
+  {
+    "ticker": "unh",
+    "name": "UnitedHealth Group Inc.",
+    "percent": 3.04
+  },
+  {
+    "ticker": "xom",
+    "name": "Exxon Mobil Corp.",
+    "percent": 2.60
+  },
+  {
+    "ticker": "jpm",
+    "name": "JPMorgan Chase & Co.",
+    "percent": 2.48
+  },
+  {
+    "ticker": "jnj",
+    "name": "Johnson & Johnson",
+    "percent": 2.19
+  },
+  {
+    "ticker": "pg",
+    "name": "Procter & Gamble Co.",
+    "percent": 2.17
+  },
+  {
+    "ticker": "avgo",
+    "name": "Broadcom Inc.",
+    "percent": 2.13
+  },
+  {
+    "ticker": "mrk",
+    "name": "Merck & Co. Inc.",
+    "percent": 1.60
+  },
+  {
+    "ticker": "cvx",
+    "name": "Chevron Corp.",
+    "percent": 1.59
+  },
+  {
+    "ticker": "abbv",
+    "name": "AbbVie Inc.",
+    "percent": 1.53
+  },
+  {
+    "ticker": "wmt",
+    "name": "Walmart Inc.",
+    "percent": 1.48
+  },
+  {
+    "ticker": "pep",
+    "name": "PepsiCo Inc.",
+    "percent": 1.38
+  },
+  {
+    "ticker": "ko",
+    "name": "Coca-Cola Co.",
+    "percent": 1.35
+  },
+  {
+    "ticker": "csco",
+    "name": "Cisco Systems Inc.",
+    "percent": 1.17
+  },
+  {
+    "ticker": "bac",
+    "name": "Bank of America Corp.",
+    "percent": 1.09
+  },
+  {
+    "ticker": "pfe",
+    "name": "Pfizer Inc.",
+    "percent": 1.06
+  },
+  {
+    "ticker": "cmcsa",
+    "name": "Comcast Corp. Class A",
+    "percent": 1.04
+  },
+  {
+    "ticker": "orcl",
+    "name": "Oracle Corp.",
+    "percent": 1.03
+  },
+  {
+    "ticker": "abt",
+    "name": "Abbott Laboratories",
+    "percent": 1.01
+  },
+  {
+    "ticker": "intc",
+    "name": "Intel Corp.",
+    "percent": 0.94
+  }
+];

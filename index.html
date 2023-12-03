@@ -280,15 +280,17 @@
             <div class="col-6">
                 <div class="row">
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
+                        <!-- <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
                         <button class="btn btn-info border ms-1"
-                            @click="showDividendAristocratsList">Aristocrats</button>
+                            @click="showDividendAristocratsList">Aristocrats</button> -->
                         <button class="btn border ms-1" style="color:white;background-color: #563D7C;"
                             @click="showSCHDList">SCHD</button>
                         <button class="btn border ms-1" style="color:white;background-color: #0091F7;"
                             @click="showDGROList">DGRO</button>
                         <button class="btn border ms-1" style="color:white;background-color: #C00029;"
                             @click="showVUGList">VUG</button>
+                        <button class="btn border ms-1 text-dark" style="color:white;background-color: #F7F4A8;"
+                            @click="showVTVList">VTV</button>
 
                         <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
                             Maps</button>
@@ -388,6 +390,18 @@
                     </div>
                 </div>
                 <!-- END of vug list -->
+
+                <!-- vtv list -->
+                <div class='mt-2' v-if="displayVTV">
+                    <div class="squarsGrid mt-2">
+                        <div style="background-color: #F7F4A8;" v-for="(elem, index) in vtvList"
+                            :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem, 'vtv')"
+                            @click="showDividendModal = true;dataToModal(elem.ticker);">
+                            <span class="text-dark">{{ elem.ticker.toUpperCase() }}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END of vtv list -->
             </div>
         </div>
         <!-- END of Information section -->

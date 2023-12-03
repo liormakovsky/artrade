@@ -26,6 +26,7 @@ new Vue({
         schdArr: schd,
         dgroArr: dgro,
         vugArr: vug,
+        vtvArr: vtv,
         showUrl: false,
         showStockModal: false,
         showDividendModal: false,
@@ -43,11 +44,13 @@ new Vue({
         displaySCHD: false,
         displayDGRO: false,
         displayVUG: false,
+        displayVTV: false,
         dividendKingsList: [],
         dividendAristocratsList: [],
         schdList: [],
         dgroList: [],
-        vugList: []
+        vugList: [],
+        vtvList: [],
     },
     watch: {
         trigger() {
@@ -315,40 +318,45 @@ new Vue({
             this.resetDisplayFlags();
             this[displayFlag] = true;
 
-            const findDividendStatus = (ticker, kingsDB, aristocratsDB, schdDB, dgroDB, vugDB, listType) => {
+            const findDividendStatus = (ticker, kingsDB, aristocratsDB, schdDB, dgroDB, vugDB, vtvDB, listType) => {
                 const king = kingsDB.find((stock) => stock.ticker === ticker);
                 const aristocrat = aristocratsDB.find((stock) => stock.ticker === ticker);
                 const schd = schdDB.find((stock) => stock.ticker === ticker);
                 const dgro = dgroDB.find((stock) => stock.ticker === ticker);
                 const vug = vugDB.find((stock) => stock.ticker === ticker);
+                const vtv = vtvDB.find((stock) => stock.ticker === ticker);
 
                 const result = { ticker, lists: [] };
 
-                if (king && (listType === "aristocrats" || listType === "schd" || listType === "dgro" || listType === "vug")) {
+                if (king && (listType === "aristocrats" || listType === "schd" || listType === "dgro" || listType === "vug" || listType === "vtv")) {
                     result.lists.push("Kings");
                 }
 
-                if (aristocrat && (listType === "kings" || listType === "schd" || listType === "dgro" || listType === "vug")) {
+                if (aristocrat && (listType === "kings" || listType === "schd" || listType === "dgro" || listType === "vug" || listType === "vtv")) {
                     result.lists.push("Aristocrats");
                 }
 
-                if (schd && (listType === "kings" || listType === "aristocrats" || listType === "dgro" || listType === "vug")) {
+                if (schd && (listType === "kings" || listType === "aristocrats" || listType === "dgro" || listType === "vug" || listType === "vtv")) {
                     result.lists.push("SCHD");
                 }
 
-                if (dgro && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "vug")) {
+                if (dgro && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "vug" || listType === "vtv")) {
                     result.lists.push("DGRO");
                 }
 
-                if (vug && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "dgro")) {
+                if (vug && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "dgro" || listType === "vtv")) {
                     result.lists.push("VUG");
+                }
+
+                if (vtv && (listType === "kings" || listType === "aristocrats" || listType === "schd" || listType === "dgro" || listType === "vug")) {
+                    result.lists.push("VTV");
                 }
 
                 return result;
             };
 
             this[dataList] = dataArr.map((stock) => {
-                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, schd, dgro, vug, listType);
+                const dividendStatus = findDividendStatus(stock.ticker, dividendkings, dividendAristocrats, schd, dgro, vug, vtv, listType);
                 return {
                     ...stock,
                     ...dividendStatus,
@@ -372,6 +380,9 @@ new Vue({
         showVUGList() {
             this.showDividendList('vug', 'displayVUG', 'vugList', this.vugArr);
         },
+        showVTVList() {
+            this.showDividendList('vtv', 'displayVTV', 'vtvList', this.vtvArr);
+        },
 
         generateTitle(elem, listType) {
             const status = elem.lists.join(', ');
@@ -392,6 +403,7 @@ new Vue({
             this.displaySCHD = false;
             this.displayDGRO = false;
             this.displayVUG = false;
+            this.displayVTV = false;
         },
     },
 
