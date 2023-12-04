@@ -1186,106 +1186,142 @@ const vug = [
   }
 ];
 
-//https://investor.vanguard.com/investment-products/etfs/profile/vtv#portfolio-composition
-const vtv = [
+//https://www.wisdomtree.com/investments/etfs/equity/dgrw
+const dgrw = [
   {
-    "ticker": "brk.b",
-    "name": "Berkshire Hathaway Inc. Class B",
-    "percent": 3.82
+    "ticker": "msft",
+    "name": "Microsoft Corporation",
+    "percent": 9.72
   },
   {
-    "ticker": "unh",
-    "name": "UnitedHealth Group Inc.",
-    "percent": 3.04
-  },
-  {
-    "ticker": "xom",
-    "name": "Exxon Mobil Corp.",
-    "percent": 2.60
-  },
-  {
-    "ticker": "jpm",
-    "name": "JPMorgan Chase & Co.",
-    "percent": 2.48
-  },
-  {
-    "ticker": "jnj",
-    "name": "Johnson & Johnson",
-    "percent": 2.19
-  },
-  {
-    "ticker": "pg",
-    "name": "Procter & Gamble Co.",
-    "percent": 2.17
+    "ticker": "aapl",
+    "name": "Apple Inc.",
+    "percent": 6.00
   },
   {
     "ticker": "avgo",
     "name": "Broadcom Inc.",
-    "percent": 2.13
+    "percent": 3.67
+  },
+  {
+    "ticker": "jnj",
+    "name": "Johnson & Johnson",
+    "percent": 3.24
+  },
+  {
+    "ticker": "pg",
+    "name": "Procter & Gamble Company",
+    "percent": 2.83
+  },
+  {
+    "ticker": "hd",
+    "name": "Home Depot, Inc.",
+    "percent": 2.40
+  },
+  {
+    "ticker": "ko",
+    "name": "Coca-Cola Company",
+    "percent": 2.21
   },
   {
     "ticker": "mrk",
-    "name": "Merck & Co. Inc.",
-    "percent": 1.60
+    "name": "Merck & Co., Inc.",
+    "percent": 2.18
   },
   {
-    "ticker": "cvx",
-    "name": "Chevron Corp.",
-    "percent": 1.59
+    "ticker": "pm",
+    "name": "Philip Morris International Inc.",
+    "percent": 2.05
   },
   {
-    "ticker": "abbv",
-    "name": "AbbVie Inc.",
-    "percent": 1.53
+    "ticker": "unh",
+    "name": "UnitedHealth Group Incorporated",
+    "percent": 2.01
   },
   {
     "ticker": "wmt",
     "name": "Walmart Inc.",
-    "percent": 1.48
-  },
-  {
-    "ticker": "pep",
-    "name": "PepsiCo Inc.",
-    "percent": 1.38
-  },
-  {
-    "ticker": "ko",
-    "name": "Coca-Cola Co.",
-    "percent": 1.35
+    "percent": 1.98
   },
   {
     "ticker": "csco",
-    "name": "Cisco Systems Inc.",
-    "percent": 1.17
+    "name": "Cisco Systems, Inc.",
+    "percent": 1.94
   },
   {
-    "ticker": "bac",
-    "name": "Bank of America Corp.",
-    "percent": 1.09
+    "ticker": "nvda",
+    "name": "NVIDIA Corporation",
+    "percent": 1.92
   },
   {
-    "ticker": "pfe",
-    "name": "Pfizer Inc.",
-    "percent": 1.06
+    "ticker": "lly",
+    "name": "Eli Lilly and Company",
+    "percent": 1.89
   },
   {
-    "ticker": "cmcsa",
-    "name": "Comcast Corp. Class A",
-    "percent": 1.04
+    "ticker": "pep",
+    "name": "PepsiCo, Inc.",
+    "percent": 1.84
   },
   {
     "ticker": "orcl",
-    "name": "Oracle Corp.",
-    "percent": 1.03
+    "name": "Oracle Corp",
+    "percent": 1.60
   },
   {
-    "ticker": "abt",
-    "name": "Abbott Laboratories",
-    "percent": 1.01
+    "ticker": "wfc",
+    "name": "Wells Fargo & Co",
+    "percent": 1.49
   },
   {
-    "ticker": "intc",
-    "name": "Intel Corp.",
-    "percent": 0.94
+    "ticker": "ms",
+    "name": "Morgan Stanley",
+    "percent": 1.48
+  },
+  {
+    "ticker": "mcd",
+    "name": "McDonalds Corp",
+    "percent": 1.47
+  },
+  {
+    "ticker": "amgn",
+    "name": "Amgen Inc",
+    "percent": 1.24
+  },
+  {
+    "ticker": "txn",
+    "name": "Texas Instruments Inc",
+    "percent": 1.23
+  },
+  {
+    "ticker": "ups",
+    "name": "United Parcel Service Inc",
+    "percent": 1.20
+  },
+  {
+    "ticker": "qcom",
+    "name": "Qualcomm Inc",
+    "percent": 1.11
+  },
+  {
+    "ticker": "v",
+    "name": "Visa Inc",
+    "percent": 1.10
+  },
+  {
+    "ticker": "mo",
+    "name": "Altria Group Inc",
+    "percent": 1.10
+  },
+  {
+    "ticker": "unp",
+    "name": "Union Pacific Corp",
+    "percent": 1.10
+  },
+  {
+    "ticker": "gs",
+    "name": "Goldman Sachs Group Inc",
+    "percent": 1.00
   }
 ];
+
