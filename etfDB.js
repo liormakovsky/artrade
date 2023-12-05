@@ -87,7 +87,7 @@ const etfDB = [
 ];
 
 //https://www.fool.com/investing/stock-market/types-of-stocks/dividend-stocks/dividend-kings/#:~:text=A%20Dividend%20King%20is%20a,steady%20profits%20year%20after%20year.
-const dividendkings = [
+const kingsDB = [
   {
     "ticker": "awr",
     "name": "american states water",
@@ -398,7 +398,7 @@ const dividendkings = [
 
 
 //https://www.simplysafedividends.com/world-of-dividends/posts/6-2023-dividend-aristocrats-list-all-68-our-top-5-picks
-const dividendAristocrats = [
+const aristocratsDB = [
   {
     "ticker": "wba",
     "name": "walgreens boots alliance",
@@ -810,7 +810,7 @@ const dividendAristocrats = [
 ];
 
 //https://www.schwabassetmanagement.com/products/schd
-const schd = [
+const schdDB = [
   {
     "ticker": "vz",
     "name": "verizon communications inc",
@@ -964,7 +964,7 @@ const schd = [
 ]
 
 // https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf.
-const dgro = [
+const dgroDB = [
   {
     "ticker": "msft",
     "name": "microsoft corp",
@@ -1083,7 +1083,7 @@ const dgro = [
 ];
 
 //https://investor.vanguard.com/investment-products/etfs/profile/vug#portfolio-composition
-const vug = [
+const vugDB = [
   {
     "ticker": "aapl",
     "name": "Apple Inc.",
@@ -1187,7 +1187,7 @@ const vug = [
 ];
 
 //https://www.wisdomtree.com/investments/etfs/equity/dgrw
-const dgrw = [
+const dgrwDB = [
   {
     "ticker": "msft",
     "name": "Microsoft Corporation",
