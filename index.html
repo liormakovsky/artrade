@@ -51,18 +51,21 @@
 
         <!-- Dividend modal -->
         <div class="linksModal" v-if="showDividendModal">
-            <div class="squarsGrid">
+            <div class="modalSquarsGrid">
                 <div class="rounded square generic-square" v-on:click="buildTradingUrl">
                     <span>TradingView</span>
                 </div>
                 <div class="rounded square generic-square" v-on:click="buildGuruUrl">
                     <span>GuruFocus</span>
                 </div>
-                <div class=" rounded square generic-square" v-on:click="buildStockAnalysisUrl">
+                <div class="rounded square generic-square" v-on:click="buildStockAnalysisUrl">
                     <span>Stock Analysis</span>
                 </div>
-                <div class=" rounded square generic-square" v-on:click="buildFinvizUrl">
+                <div class="rounded square generic-square" v-on:click="buildFinvizUrl">
                     <span>Finviz</span>
+                </div>
+                <div class="rounded square generic-square" v-on:click="buildAlphaUrl">
+                    <span>Seeking Alpha</span>
                 </div>
             </div>
         </div>
@@ -297,7 +300,7 @@
                 </div>
                 <div class="row">
                     <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
-                    <input @keyup.enter="showDetails()" class="form-control h-50 mt-2" style="width:35%"
+                    <input @keyup.enter="showDetails()" class="form-control h-50 mt-2 ms-3" style="width:35%"
                         v-model="details" type="text">
                 </div>
 
@@ -357,9 +360,10 @@
                 <!-- schd list -->
                 <div class='mt-2' v-if="displaySCHD">
                     <div class="squarsGrid mt-2">
-                        <div style="background-color:#563D7C;" v-for="(elem, index) in schdList"
-                            :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem, 'schdDB')"
-                            @click="showDividendModal = true;dataToModal(elem.ticker);">
+                        <div :style="{ backgroundColor: elem.chowder ? elem.chowder : '#563D7C' }"
+                            v-for="(elem, index) in schdList" :key="`detail-${index}`" class="rounded square"
+                            :title="generateTitle(elem, 'schdDB')"
+                            @click="showDividendModal = true; dataToModal(elem.ticker);">
                             <span>{{ elem.ticker.toUpperCase() }}</span>
                         </div>
                     </div>

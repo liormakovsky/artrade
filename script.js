@@ -184,6 +184,12 @@ new Vue({
         buildTradingUrl() {
             window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
         },
+        buildTradingUrl() {
+            window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
+        },
+        buildAlphaUrl() {
+            window.open(`https://seekingalpha.com/symbol/${this.stockOrEtfNameForUrl}/dividends/scorecard`);
+        },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
         },
@@ -194,36 +200,56 @@ new Vue({
             this.stockOrEtfNameForUrl = stockOrEtfName;
         },
         showDetails(name) {
-            this.resetDisplayFlags()
+            this.resetDisplayFlags();
             this.displayStocksAndEtfs = true;
             this.details = name || this.details;
+
+            // Step 1: Initialize arrays to store information
             let chosenEtfArr = [];
             let chosenEtfstocks = [];
             let chosenEtfconnected = [];
             let chosenEtfFromStocks = [];
+
+            // Step 2: Iterate over each ETF in etfArr
             this.etfArr.forEach(etf => {
+                // Step 3: Check if the input details match stocks or connected of the current ETF
                 if (etf.stocks.includes(this.details.toLowerCase()) || etf.connected.includes(this.details.toLowerCase())) {
+                    // Step 4: Add ETF to the list if it contains the input details
                     chosenEtfFromStocks.push(etf.etf);
+
+                    // Step 5: If the ETF matches the input details, add its stocks to chosenEtfArr
                     if (etf.etf === this.details) {
                         chosenEtfArr.push(etf.stocks);
                     }
+
+                    // Step 6: Add ETF's stocks to chosenEtfstocks
                     etf.stocks.forEach(element => {
                         chosenEtfstocks.push(element);
                     });
+
+                    // Step 7: Add ETF's connected to chosenEtfconnected
                     etf.connected.forEach(element => {
                         chosenEtfconnected.push(element);
                     });
                 }
             });
 
-            chosenEtfstocksLength = [];
+            // Step 8: Initialize array to store information about each stock
+            let chosenEtfstocksLength = [];
+
+            // Step 9: Iterate over each element in chosenEtfstocks
             chosenEtfstocks.forEach((element, i) => {
                 let obj = {};
-                obj['name'] = element,
-                    obj['length'] = chosenEtfstocks.filter((v) => (v === element)).length;
+                // Step 10: Set the name and length properties
+                obj['name'] = element;
+                obj['length'] = chosenEtfstocks.filter((v) => (v === element)).length;
+
+                // Step 11: Set 'belongtoindex' to 'isbelong' if the element is the selected ETF
                 if (element === this.details.toLowerCase()) {
                     obj['belongtoindex'] = 'isbelong';
                 }
+
+                // Step 12: Check if the element belongs to chosenEtfArr and set 'belongtoindex' accordingly
                 if (chosenEtfArr.length) {
                     chosenEtfArr[0].forEach(el => {
                         if (el === element) {
@@ -232,19 +258,33 @@ new Vue({
                     });
                 }
 
+                // Step 13: Push the object to chosenEtfstocksLength array
                 chosenEtfstocksLength.push(obj);
             });
 
+
+            // Step 14: Initialize map object to keep track of unique stocks
             const map = {};
+
+            // Step 15: Initialize array to store unique information about each stock
             const chosenEtfstocksLengthUniqe = [];
+
+            // Step 16: Iterate over each element in chosenEtfstocksLength
             chosenEtfstocksLength.forEach(el => {
+                // Step 17: Check if the element is not already in the map (unique)
                 if (!map[JSON.stringify(el)]) {
+                    // Step 18: Add the element to the map and push it to chosenEtfstocksLengthUniqe
                     map[JSON.stringify(el)] = true;
                     chosenEtfstocksLengthUniqe.push(el);
                 }
             });
-            chosenEtfstocksLengthUniqe.sort(function (a, b) { return b.length - a.length });
+
+            // Step 19: Sort the array based on the 'length' property in descending order
+            chosenEtfstocksLengthUniqe.sort((a, b) => b.length - a.length);
+
+            // Step 20: Iterate over each element in chosenEtfstocksLengthUniqe
             chosenEtfstocksLengthUniqe.forEach((obj, i) => {
+                // Step 21: Set 'length' property based on the count of stocks
                 switch (obj.length) {
                     case 1:
                         chosenEtfstocksLengthUniqe[i].length = 'lowest-quality';
@@ -266,27 +306,39 @@ new Vue({
                         break;
                 }
             });
+
+            // Step 22: Define a function to filter and return unique elements
             const useFilter = el => {
                 return el.filter((value, index, self) => {
                     return self.indexOf(value) === index;
                 });
             };
+
+            // Step 23: Filter the connected stocks to get unique elements
             let finalconnected = useFilter(chosenEtfconnected);
+
+            // Step 24: Initialize array to store final connected objects
             let finalconnectedObj = [];
+
+            // Step 25: Iterate over each element in finalconnected
             finalconnected.forEach((element) => {
                 let obj = {};
+                // Step 26: Check conditions and set properties accordingly
                 if (chosenEtfFromStocks.includes(element) && !finalconnected.includes(this.details.toLowerCase()) || element === this.details.toLowerCase()) {
                     obj['isChosenEtf'] = 'isbelong';
-                };
-                obj['name'] = element,
-                    finalconnectedObj.push(obj);
+                }
+                obj['name'] = element;
+                finalconnectedObj.push(obj);
             });
 
+            // Step 27: Set detailsResultsStocks with the final results
             this.detailsResultsStocks = {
                 "etf": this.details,
                 "stocks": chosenEtfstocksLengthUniqe,
                 "connected": finalconnectedObj
-            }
+            };
+
+            // Step 28: Reset the details property
             this.details = '';
 
         },
@@ -370,10 +422,12 @@ new Vue({
             this[dataList] = db.map((stock) => {
                 // Create title information for the current stock
                 const title = createTitle(stock.ticker, listType);
+                const chowder = this.checkChowder(stock.ticker);
                 // Merge the stock information with the generated title information
                 return {
                     ...stock,
                     ...title,
+                    ...chowder
                 };
             }).sort((a, b) => b.percent - a.percent); // Sort the list based on the 'percent' property in descending order
         },
@@ -387,7 +441,7 @@ new Vue({
                 return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${uppercaseName}\n${elem.percent.toFixed(2)}%${status ? ' - ' + status : ''}`;
+                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%\n${status ? 'Also in: ' + status : ''}`;
             }
         },
         resetDisplayFlags() {
@@ -399,6 +453,43 @@ new Vue({
             this.displayVUG = false;
             this.displayDGRW = false;
         },
+        checkChowder(ticker) {
+            // Define color constants
+            const GOLD_COLOR = "gold";
+            const SILVER_COLOR = "silver";
+
+            // Define databases for different lists
+            const databases = {
+                kings: this.kingsDB,
+                aristocrats: this.aristocratsDB,
+                schd: this.schdDB,
+                dgro: this.dgroDB,
+                vug: this.vugDB,
+                dgrw: this.dgrwDB,
+            };
+
+            // Iterate through each database
+            for (const key in databases) {
+                // Find the stock in the database for the current key
+                const stock = databases[key].find((item) => item.ticker === ticker);
+
+                // If the stock is found, add the key (list) to the lists array in the result
+                if (stock) {
+
+                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
+                        return { chowder: GOLD_COLOR };
+                    }
+
+                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
+                        return { chowder: SILVER_COLOR };
+                    }
+
+                }
+            }
+
+            // If no matching stock is found, return a default color or value
+            return { chowder: "" };
+        }
     },
 
     mounted() {

@@ -814,62 +814,86 @@ const schdDB = [
   {
     "ticker": "vz",
     "name": "verizon communications inc",
-    "percent": 4.538278868
+    "percent": 4.538278868,
+    "dyield": 6.99,
+    "dgrowth": 2.02
   },
   {
     "ticker": "amgn",
     "name": "amgen inc",
-    "percent": 4.382195393
+    "percent": 4.382195393,
+    "dyield": 3.13,
+    "dgrowth": 10.04
   },
   {
     "ticker": "avgo",
     "name": "broadcom inc",
-    "percent": 4.294932269
+    "percent": 4.294932269,
+    "dyield": 1.99,
+    "dgrowth": 21.32
   },
   {
     "ticker": "ko",
     "name": "coca-cola",
-    "percent": 4.023509138
+    "percent": 4.023509138,
+    "dyield": 3.14,
+    "dgrowth": 3.36
   },
   {
     "ticker": "abbv",
     "name": "abbvie inc",
-    "percent": 3.957423013
+    "percent": 3.957423013,
+    "dyield": 4.30,
+    "dgrowth": 10.52
   },
   {
     "ticker": "pep",
     "name": "pepsico inc",
-    "percent": 3.89775965
+    "percent": 3.89775965,
+    "dyield": 2.99,
+    "dgrowth": 6.63
   },
   {
     "ticker": "mrk",
     "name": "merck & co inc",
-    "percent": 3.894525156
+    "percent": 3.894525156,
+    "dyield": 2.93,
+    "dgrowth": 9.79
   },
   {
     "ticker": "hd",
     "name": "home depot inc",
-    "percent": 3.891616754
+    "percent": 3.891616754,
+    "dyield": 2.58,
+    "dgrowth": 15.20
   },
   {
     "ticker": "blk",
     "name": "blackrock inc",
-    "percent": 3.693024192
+    "percent": 3.693024192,
+    "dyield": 2.64,
+    "dgrowth": 11.78
   },
   {
     "ticker": "txn",
     "name": "texas instrument inc",
-    "percent": 3.677504473
+    "percent": 3.677504473,
+    "dyield": 3.30,
+    "dgrowth": 13.80
   },
   {
     "ticker": "ups",
     "name": "united parcel service inc class b",
-    "percent": 3.606950615
+    "percent": 3.606950615,
+    "dyield": 4.16,
+    "dgrowth": 12.23
   },
   {
     "ticker": "pfe",
     "name": "pfizer inc",
-    "percent": 3.587710061
+    "percent": 3.587710061,
+    "dyield": 5.60,
+    "dgrowth": 4.95
   },
   {
     "ticker": "cvx",
