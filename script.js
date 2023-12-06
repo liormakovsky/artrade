@@ -440,7 +440,7 @@ new Vue({
             let chowderText = '';
 
             if (elem && elem.chowderNumber !== undefined) {
-                chowderText = `Chowder: ${elem.chowderNumber.toFixed(2)}`;
+                chowderText = `Dividend yield: ${elem.dyield}%\nDividend growth: ${elem.dgrowth}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
             }
 
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {
@@ -463,7 +463,8 @@ new Vue({
         checkChowder(ticker) {
             // Define color constants
             const GOLD_COLOR = "gold";
-            const SILVER_COLOR = "#F7F4A8";
+            const SILVER_COLOR = "silver";
+            const BRONZE_COLOR = "#CD7F32";
 
             // Define databases for different lists
             const databases = {
@@ -490,14 +491,20 @@ new Vue({
                         return { chowderColor, chowderNumber };
                     }
 
-                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
+                    if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11) {
                         chowderColor = GOLD_COLOR;
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }
 
-                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
+                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
                         chowderColor = SILVER_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
+
+                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
+                        chowderColor = BRONZE_COLOR;
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }
