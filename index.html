@@ -360,7 +360,7 @@
                 <!-- schd list -->
                 <div class='mt-2' v-if="displaySCHD">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowder ? elem.chowder : '#563D7C' }"
+                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#563D7C' }"
                             v-for="(elem, index) in schdList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'schdDB')"
                             @click="showDividendModal = true; dataToModal(elem.ticker);">

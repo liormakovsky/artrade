@@ -898,32 +898,44 @@ const schdDB = [
   {
     "ticker": "cvx",
     "name": "chevron corp",
-    "percent": 3.487591741
+    "percent": 3.487591741,
+    "dyield": 4.17,
+    "dgrowth": 6.16
   },
   {
     "ticker": "csco",
     "name": "cisco systems inc",
-    "percent": 3.425295365
+    "percent": 3.425295365,
+    "dyield": 3.25,
+    "dgrowth": 3.90
   },
   {
     "ticker": "lmt",
     "name": "lockheed martin corp",
-    "percent": 3.312875635
+    "percent": 3.312875635,
+    "dyield": 2.80,
+    "dgrowth": 8.18
   },
   {
     "ticker": "adp",
     "name": "automatic data processing inc",
-    "percent": 3.117900277
+    "percent": 3.117900277,
+    "dyield": 2.41,
+    "dgrowth": 13.62
   },
   {
     "ticker": "bx",
     "name": "blackstone inc",
-    "percent": 2.60443362
+    "percent": 2.60443362,
+    "dyield": 2.87,
+    "dgrowth": 6.53
   },
   {
     "ticker": "mo",
     "name": "altria group inc",
-    "percent": 2.463297965
+    "percent": 2.463297965,
+    "dyield": 9.22,
+    "dgrowth": 5.85
   },
   {
     "ticker": "eog",

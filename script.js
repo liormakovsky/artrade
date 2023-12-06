@@ -414,8 +414,9 @@ new Vue({
                     }
                 }
 
-                // Return the result object with ticker and associated lists
-                return result;
+                // Return the result object with ticker, associated lists, chowder color, and chowder number
+                const chowderInfo = this.checkChowder(ticker);
+                return { ...result, ...chowderInfo };
             };
 
             // Generate the list by mapping over the stocks in the specified database
@@ -436,12 +437,18 @@ new Vue({
             const status = elem.lists.join(', ');
             const uppercaseName = elem.name.charAt(0).toUpperCase() + elem.name.slice(1);
 
+            let chowderText = '';
+
+            if (elem && elem.chowderNumber !== undefined) {
+                chowderText = `Chowder: ${elem.chowderNumber.toFixed(2)}`;
+            }
+
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {
                 // Use the "years" format for dividendKings and dividendAristocrats
                 return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%\n${status ? 'Also in: ' + status : ''}`;
+                return `${uppercaseName}\nHolding:${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${chowderText ? ' \n' + chowderText : ''}`;
             }
         },
         resetDisplayFlags() {
@@ -475,20 +482,31 @@ new Vue({
 
                 // If the stock is found, add the key (list) to the lists array in the result
                 if (stock) {
+                    let chowderColor = "";
+                    let chowderNumber = 0;
+
+                    if (stock.ticker && (stock.dyield + stock.dgrowth) < 11) {
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
 
                     if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
-                        return { chowder: GOLD_COLOR };
+                        chowderColor = GOLD_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
                     }
 
                     if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
-                        return { chowder: SILVER_COLOR };
+                        chowderColor = SILVER_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
                     }
 
                 }
             }
 
-            // If no matching stock is found, return a default color or value
-            return { chowder: "" };
+            // If no matching stock is found, return a default color and value
+            return { chowderColor: "", chowderNumber: 0 };
         }
     },
 
