@@ -286,13 +286,13 @@
                         <!-- <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
                         <button class="btn btn-info border ms-1"
                             @click="showDividendAristocratsList">Aristocrats</button> -->
-                        <button class="btn border ms-1" style="color:white;background-color: #563D7C;"
+                        <button class="btn border ms-1" style="background-color: #DFCBFF;"
                             @click="showList('schd', 'displaySCHD', 'schdList', schdDB)">SCHD</button>
-                        <button class="btn border ms-1" style="color:white;background-color: #0091F7;"
+                        <button class="btn border ms-1" style="background-color: #0091F7;"
                             @click="showList('dgro', 'displayDGRO', 'dgroList', dgroDB)">DGRO</button>
-                        <button class="btn border ms-1 text-dark" style="color:white;background-color: #F7F4A8;"
+                        <button class="btn border ms-1 text-dark" style="background-color: #F0DCE1;"
                             @click="showList('dgrw', 'displayDGRW', 'dgrwList', dgrwDB)">DGRW</button>
-                        <button class="btn border ms-1" style="color:white;background-color: #C00029;"
+                        <button class="btn border ms-1" style="background-color: #F65959;"
                             @click="showList('vug', 'displayVUG', 'vugList', vugDB)">VUG</button>
                         <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
                             Maps</button>
@@ -360,11 +360,11 @@
                 <!-- schd list -->
                 <div class='mt-2' v-if="displaySCHD">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#563D7C' }"
+                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#DFCBFF' }"
                             v-for="(elem, index) in schdList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'schdDB')"
                             @click="showDividendModal = true; dataToModal(elem.ticker);">
-                            <span>{{ elem.ticker.toUpperCase() }}</span>
+                            <span class="text-dark">{{ elem.ticker.toUpperCase() }}</span>
                         </div>
                     </div>
                 </div>
@@ -373,10 +373,11 @@
                 <!-- dgro list -->
                 <div class='mt-2' v-if="displayDGRO">
                     <div class="squarsGrid mt-2">
-                        <div style="background-color:#0091F7;" v-for="(elem, index) in dgroList"
-                            :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem, 'dgroDB')"
+                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#0091F7' }" v-for="
+                            (elem, index) in dgroList" :key="`detail-${index}`" class="rounded square"
+                            :title="generateTitle(elem, 'dgroDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
-                            <span>{{ elem.ticker.toUpperCase() }}</span>
+                            <span class="text-dark">{{ elem.ticker.toUpperCase() }}</span>
                         </div>
                     </div>
                 </div>
@@ -385,8 +386,9 @@
                 <!-- dgrw list -->
                 <div class='mt-2' v-if="displayDGRW">
                     <div class="squarsGrid mt-2">
-                        <div style="background-color: #F7F4A8;" v-for="(elem, index) in dgrwList"
-                            :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem, 'dgrwDB')"
+                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor :  '#EFC3C3'}"
+                            v-for="(elem, index) in dgrwList" :key="`detail-${index}`" class="rounded square"
+                            :title="generateTitle(elem, 'dgrwDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
                             <span class="text-dark">{{ elem.ticker.toUpperCase() }}</span>
                         </div>
@@ -397,10 +399,11 @@
                 <!-- vug list -->
                 <div class='mt-2' v-if="displayVUG">
                     <div class="squarsGrid mt-2">
-                        <div style="background-color: #C00029;" v-for="(elem, index) in vugList"
-                            :key="`detail-${index}`" class="rounded square" :title="generateTitle(elem, 'vugDB')"
+                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor :  '#F65959'}"
+                            v-for="(elem, index) in vugList" :key="`detail-${index}`" class="rounded square"
+                            :title="generateTitle(elem, 'vugDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
-                            <span>{{ elem.ticker.toUpperCase() }}</span>
+                            <span class="text-dark">{{ elem.ticker.toUpperCase() }}</span>
                         </div>
                     </div>
                 </div>

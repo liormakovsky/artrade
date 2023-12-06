@@ -940,62 +940,86 @@ const schdDB = [
   {
     "ticker": "eog",
     "name": "eog resources inc",
-    "percent": 2.362705918
+    "percent": 2.362705918,
+    "dyield": 2.96,
+    "dgrowth": 34.22
   },
   {
     "ticker": "itw",
     "name": "illinois tool inc",
-    "percent": 2.198743411
+    "percent": 2.198743411,
+    "dyield": 2.26,
+    "dgrowth": 9.80
   },
   {
     "ticker": "mmm",
     "name": "3m",
-    "percent": 1.794027537
+    "percent": 1.794027537,
+    "dyield": 5.80,
+    "dgrowth": 1.98
   },
   {
     "ticker": "usb",
     "name": "us bancorp",
-    "percent": 1.745501733
+    "percent": 1.745501733,
+    "dyield": 4.86,
+    "dgrowth": 8.62
   },
   {
     "ticker": "vlo",
     "name": "valero energy corp",
-    "percent": 1.487627321
+    "percent": 1.487627321,
+    "dyield": 3.23,
+    "dgrowth": 4.98
   },
   {
     "ticker": "kmb",
     "name": "kimberly clark corp",
-    "percent": 1.370255339
+    "percent": 1.370255339,
+    "dyield": 3.80,
+    "dgrowth": 3.43
   },
   {
     "ticker": "f",
     "name": "ford motor",
-    "percent": 1.323539967
+    "percent": 1.323539967,
+    "dyield": 5.61,
+    "dgrowth": 4.56
   },
   {
     "ticker": "payx",
     "name": "paychex inc",
-    "percent": 1.284559252
+    "percent": 1.284559252,
+    "dyield": 2.87,
+    "dgrowth": 9.68
   },
   {
     "ticker": "all",
     "name": "allstate corp",
-    "percent": 1.189561257
+    "percent": 1.189561257,
+    "dyield": 2.57,
+    "dgrowth": 14.11
   },
   {
     "ticker": "fast",
     "name": "fastenal",
-    "percent": 1.124073247
+    "percent": 1.124073247,
+    "dyield": 2.31,
+    "dgrowth": 12.70
   },
   {
     "ticker": "nem",
     "name": "newmont",
-    "percent": 1.04841683
+    "percent": 1.04841683,
+    "dyield": 3.95,
+    "dgrowth": 23.36
   },
   {
     "ticker": "oke",
     "name": "oneok inc",
-    "percent": 1.011224214
+    "percent": 1.011224214,
+    "dyield": 5.44,
+    "dgrowth": 3.32
   }
 ]
 
@@ -1004,221 +1028,163 @@ const dgroDB = [
   {
     "ticker": "msft",
     "name": "microsoft corp",
-    "percent": 3.38
+    "percent": 3.38,
+    "dyield": 0.81,
+    "dgrowth": 10.16
   },
   {
     "ticker": "jpm",
     "name": "jpmorgan chase & co",
-    "percent": 3.01
+    "percent": 3.01,
+    "dyield": 2.66,
+    "dgrowth": 10.31
   },
   {
     "ticker": "aapl",
     "name": "apple inc",
-    "percent": 2.95
+    "percent": 2.95,
+    "dyield": 0.51,
+    "dgrowth": 6.15
   },
   {
     "ticker": "jnj",
     "name": "johnson & johnson",
-    "percent": 2.68
+    "percent": 2.68,
+    "dyield": 3.00,
+    "dgrowth": 5.83
   },
   {
     "ticker": "xom",
     "name": "exxon mobil corp",
-    "percent": 2.56
+    "percent": 2.56,
+    "dyield": 3.71,
+    "dgrowth": 2.64
   },
   {
     "ticker": "abbv",
     "name": "abbvie inc",
-    "percent": 2.44
+    "percent": 2.44,
+    "dyield": 4.30,
+    "dgrowth": 10.52
   },
   {
     "ticker": "cvx",
     "name": "chevron corp",
-    "percent": 2.21
+    "percent": 2.21,
+    "dyield": 4.17,
+    "dgrowth": 6.16
   },
   {
     "ticker": "pg",
     "name": "procter & gamble",
-    "percent": 2.14
+    "percent": 2.14,
+    "dyield": 2.47,
+    "dgrowth": 5.63
   },
   {
     "ticker": "pfe",
     "name": "pfizer inc",
-    "percent": 1.96
+    "percent": 1.96,
+    "dyield": 5.60,
+    "dgrowth": 4.95
   },
   {
     "ticker": "avgo",
     "name": "broadcom inc",
-    "percent": 1.95
+    "percent": 1.95,
+    "dyield": 1.99,
+    "dgrowth": 21.32
   },
   {
     "ticker": "hd",
     "name": "home depot inc",
-    "percent": 1.95
+    "percent": 1.95,
+    "dyield": 2.58,
+    "dgrowth": 15.20
   },
   {
     "ticker": "unh",
     "name": "unitedhealth group inc",
-    "percent": 1.94
+    "percent": 1.94,
+    "dyield": 1.37,
+    "dgrowth": 16.14
   },
   {
     "ticker": "bac",
     "name": "bank of america corp",
-    "percent": 1.71
+    "percent": 1.71,
+    "dyield": 3.11,
+    "dgrowth": 11.24
   },
   {
     "ticker": "mrk",
     "name": "merck & co inc",
-    "percent": 1.70
+    "percent": 1.70,
+    "dyield": 2.93,
+    "dgrowth": 9.79
   },
   {
     "ticker": "ko",
     "name": "coca-cola",
-    "percent": 1.70
+    "percent": 1.70,
+    "dyield": 3.14,
+    "dgrowth": 3.36
   },
   {
     "ticker": "pep",
     "name": "pepsico inc",
-    "percent": 1.60
+    "percent": 1.60,
+    "dyield": 2.99,
+    "dgrowth": 6.63
   },
   {
     "ticker": "csco",
     "name": "cisco systems inc",
-    "percent": 1.29
+    "percent": 1.29,
+    "dyield": 3.25,
+    "dgrowth": 3.90
   },
   {
     "ticker": "amgn",
     "name": "amgen inc",
-    "percent": 1.18
+    "percent": 1.18,
+    "dyield": 3.13,
+    "dgrowth": 10.04
   },
   {
     "ticker": "c",
     "name": "citigroup inc",
-    "percent": 1.10
+    "percent": 1.10,
+    "dyield": 4.48,
+    "dgrowth": 6.20
   },
   {
     "ticker": "mcd",
     "name": "mcdonalds corp",
-    "percent": 1.09
+    "percent": 1.09,
+    "dyield": 2.33,
+    "dgrowth": 8.26
   },
   {
     "ticker": "cmcsa",
     "name": "comcast corp class a",
-    "percent": 1.08
+    "percent": 1.08,
+    "dyield": 2.69,
+    "dgrowth": 9.40
   },
   {
     "ticker": "ups",
     "name": "united parcel service inc class b",
-    "percent": 1.05
+    "percent": 1.05,
+    "dyield": 4.16,
+    "dgrowth": 12.23
   },
   {
     "ticker": "ms",
     "name": "morgan stanley",
-    "percent": 1.00
-  }
-];
-
-//https://investor.vanguard.com/investment-products/etfs/profile/vug#portfolio-composition
-const vugDB = [
-  {
-    "ticker": "aapl",
-    "name": "Apple Inc.",
-    "percent": 13.00
-  },
-  {
-    "ticker": "msft",
-    "name": "Microsoft Corp.",
-    "percent": 12.88
-  },
-  {
-    "ticker": "amzn",
-    "name": "Amazon.com Inc.",
-    "percent": 6.33
-  },
-  {
-    "ticker": "nvda",
-    "name": "NVIDIA Corp.",
-    "percent": 4.90
-  },
-  {
-    "ticker": "googl",
-    "name": "Alphabet Inc. Class A",
-    "percent": 3.77
-  },
-  {
-    "ticker": "meta",
-    "name": "Facebook Inc. Class A",
-    "percent": 3.43
-  },
-  {
-    "ticker": "goog",
-    "name": "Alphabet Inc. Class C",
-    "percent": 3.17
-  },
-  {
-    "ticker": "tsla",
-    "name": "Tesla Inc.",
-    "percent": 2.78
-  },
-  {
-    "ticker": "lly",
-    "name": "Eli Lilly & Co.",
-    "percent": 2.43
-  },
-  {
-    "ticker": "v",
-    "name": "Visa Inc. Class A",
-    "percent": 1.88
-  },
-  {
-    "ticker": "ma",
-    "name": "Mastercard Inc. Class A",
-    "percent": 1.62
-  },
-  {
-    "ticker": "hd",
-    "name": "Home Depot Inc.",
-    "percent": 1.46
-  },
-  {
-    "ticker": "cost",
-    "name": "Costco Wholesale Corp.",
-    "percent": 1.25
-  },
-  {
-    "ticker": "adbe",
-    "name": "Adobe Inc.",
-    "percent": 1.24
-  },
-  {
-    "ticker": "mcd",
-    "name": "McDonald's Corp.",
-    "percent": 0.98
-  },
-  {
-    "ticker": "acn",
-    "name": "Accenture plc Class A",
-    "percent": 0.96
-  },
-  {
-    "ticker": "lin",
-    "name": "Linde plc",
-    "percent": 0.96
-  },
-  {
-    "ticker": "crm",
-    "name": "salesforce.com Inc.",
-    "percent": 0.95
-  },
-  {
-    "ticker": "nflx",
-    "name": "Netflix Inc.",
-    "percent": 0.91
-  },
-  {
-    "ticker": "tmo",
-    "name": "Thermo Fisher Scientific Inc.",
-    "percent": 0.88
+    "percent": 1.00,
+    "dyield": 4.19,
+    "dgrowth": 24.19
   }
 ];
 
@@ -1227,137 +1193,335 @@ const dgrwDB = [
   {
     "ticker": "msft",
     "name": "Microsoft Corporation",
-    "percent": 9.72
+    "percent": 9.72,
+    "dyield": 0.81,
+    "dgrowth": 10.16
   },
   {
     "ticker": "aapl",
     "name": "Apple Inc.",
-    "percent": 6.00
+    "percent": 6.00,
+    "dyield": 0.51,
+    "dgrowth": 6.15
   },
   {
     "ticker": "avgo",
     "name": "Broadcom Inc.",
-    "percent": 3.67
+    "percent": 3.67,
+    "dyield": 1.99,
+    "dgrowth": 21.32
   },
   {
     "ticker": "jnj",
     "name": "Johnson & Johnson",
-    "percent": 3.24
+    "percent": 3.24,
+    "dyield": 3.00,
+    "dgrowth": 5.83
   },
   {
     "ticker": "pg",
     "name": "Procter & Gamble Company",
-    "percent": 2.83
+    "percent": 2.83,
+    "dyield": 2.47,
+    "dgrowth": 5.63
   },
   {
     "ticker": "hd",
     "name": "Home Depot, Inc.",
-    "percent": 2.40
+    "percent": 2.40,
+    "dyield": 2.58,
+    "dgrowth": 15.20
   },
   {
     "ticker": "ko",
     "name": "Coca-Cola Company",
-    "percent": 2.21
+    "percent": 2.21,
+    "dyield": 3.14,
+    "dgrowth": 3.36
   },
   {
     "ticker": "mrk",
     "name": "Merck & Co., Inc.",
-    "percent": 2.18
+    "percent": 2.18,
+    "dyield": 2.93,
+    "dgrowth": 9.79
   },
   {
     "ticker": "pm",
     "name": "Philip Morris International Inc.",
-    "percent": 2.05
+    "percent": 2.05,
+    "dyield": 5.60,
+    "dgrowth": 2.94
   },
   {
     "ticker": "unh",
     "name": "UnitedHealth Group Incorporated",
-    "percent": 2.01
+    "percent": 2.01,
+    "dyield": 1.37,
+    "dgrowth": 16.14
   },
   {
     "ticker": "wmt",
     "name": "Walmart Inc.",
-    "percent": 1.98
+    "percent": 1.98,
+    "dyield": 1.48,
+    "dgrowth": 1.86
   },
   {
     "ticker": "csco",
     "name": "Cisco Systems, Inc.",
-    "percent": 1.94
+    "percent": 1.94,
+    "dyield": 3.25,
+    "dgrowth": 3.90
   },
   {
     "ticker": "nvda",
     "name": "NVIDIA Corporation",
-    "percent": 1.92
+    "percent": 1.92,
+    "dyield": 0.04,
+    "dgrowth": 0.96
   },
   {
     "ticker": "lly",
     "name": "Eli Lilly and Company",
-    "percent": 1.89
+    "percent": 1.89,
+    "dyield": 0.77,
+    "dgrowth": 14.97
   },
   {
     "ticker": "pep",
     "name": "PepsiCo, Inc.",
-    "percent": 1.84
+    "percent": 1.84,
+    "dyield": 2.99,
+    "dgrowth": 6.63
   },
   {
     "ticker": "orcl",
     "name": "Oracle Corp",
-    "percent": 1.60
+    "percent": 1.60,
+    "dyield": 1.38,
+    "dgrowth": 14.87
   },
   {
     "ticker": "wfc",
     "name": "Wells Fargo & Co",
-    "percent": 1.49
+    "percent": 1.49,
+    "dyield": 3.10,
+    "dgrowth": -4.54
   },
   {
     "ticker": "ms",
     "name": "Morgan Stanley",
-    "percent": 1.48
+    "percent": 1.48,
+    "dyield": 4.19,
+    "dgrowth": 24.19
   },
   {
     "ticker": "mcd",
     "name": "McDonalds Corp",
-    "percent": 1.47
+    "percent": 1.47,
+    "dyield": 2.33,
+    "dgrowth": 8.26
   },
   {
     "ticker": "amgn",
     "name": "Amgen Inc",
-    "percent": 1.24
+    "percent": 1.24,
+    "dyield": 3.13,
+    "dgrowth": 10.04
   },
   {
     "ticker": "txn",
     "name": "Texas Instruments Inc",
-    "percent": 1.23
+    "percent": 1.23,
+    "dyield": 3.30,
+    "dgrowth": 13.80
   },
   {
     "ticker": "ups",
     "name": "United Parcel Service Inc",
-    "percent": 1.20
+    "percent": 1.20,
+    "dyield": 4.16,
+    "dgrowth": 12.23
   },
   {
     "ticker": "qcom",
     "name": "Qualcomm Inc",
-    "percent": 1.11
+    "percent": 1.11,
+    "dyield": 2.46,
+    "dgrowth": 5.33
   },
   {
     "ticker": "v",
     "name": "Visa Inc",
-    "percent": 1.10
+    "percent": 1.10,
+    "dyield": 0.82,
+    "dgrowth": 16.27
   },
   {
     "ticker": "mo",
     "name": "Altria Group Inc",
-    "percent": 1.10
+    "percent": 1.10,
+    "dyield": 9.22,
+    "dgrowth": 5.85
   },
   {
     "ticker": "unp",
     "name": "Union Pacific Corp",
-    "percent": 1.10
+    "percent": 1.10,
+    "dyield": 2.22,
+    "dgrowth": 12.20
   },
   {
     "ticker": "gs",
     "name": "Goldman Sachs Group Inc",
-    "percent": 1.00
+    "percent": 1.00,
+    "dyield": 3.15,
+    "dgrowth": 27.23
+  }
+];
+
+//https://investor.vanguard.com/investment-products/etfs/profile/vug#portfolio-composition
+const vugDB = [
+  {
+    "ticker": "aapl",
+    "name": "Apple Inc.",
+    "percent": 13.00,
+    "dyield": 0.51,
+    "dgrowth": 6.15
+  },
+  {
+    "ticker": "msft",
+    "name": "Microsoft Corp.",
+    "percent": 12.88,
+    "dyield": 0.81,
+    "dgrowth": 10.16
+  },
+  {
+    "ticker": "amzn",
+    "name": "Amazon.com Inc.",
+    "percent": 6.33,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "nvda",
+    "name": "NVIDIA Corp.",
+    "percent": 4.90,
+    "dyield": 0.04,
+    "dgrowth": 0.96
+  },
+  {
+    "ticker": "googl",
+    "name": "Alphabet Inc. Class A",
+    "percent": 3.77,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "meta",
+    "name": "Facebook Inc. Class A",
+    "percent": 3.43,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "goog",
+    "name": "Alphabet Inc. Class C",
+    "percent": 3.17,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "tsla",
+    "name": "Tesla Inc.",
+    "percent": 2.78,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "lly",
+    "name": "Eli Lilly & Co.",
+    "percent": 2.43,
+    "dyield": 0.77,
+    "dgrowth": 14.97
+  },
+  {
+    "ticker": "v",
+    "name": "Visa Inc. Class A",
+    "percent": 1.88,
+    "dyield": 0.82,
+    "dgrowth": 16.27
+  },
+  {
+    "ticker": "ma",
+    "name": "Mastercard Inc. Class A",
+    "percent": 1.62,
+    "dyield": 0.56,
+    "dgrowth": 17.92
+  },
+  {
+    "ticker": "hd",
+    "name": "Home Depot Inc.",
+    "percent": 1.46,
+    "dyield": 2.58,
+    "dgrowth": 15.20
+  },
+  {
+    "ticker": "cost",
+    "name": "Costco Wholesale Corp.",
+    "percent": 1.25,
+    "dyield": 0.68,
+    "dgrowth": 12.37
+  },
+  {
+    "ticker": "adbe",
+    "name": "Adobe Inc.",
+    "percent": 1.24,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "mcd",
+    "name": "McDonald's Corp.",
+    "percent": 0.98,
+    "dyield": 2.33,
+    "dgrowth": 8.26
+  },
+  {
+    "ticker": "acn",
+    "name": "Accenture plc Class A",
+    "percent": 0.96,
+    "dyield": 1.53,
+    "dgrowth": 11.82
+  },
+  {
+    "ticker": "lin",
+    "name": "Linde plc",
+    "percent": 0.96,
+    "dyield": 1.25,
+    "dgrowth": 9.50
+  },
+  {
+    "ticker": "crm",
+    "name": "salesforce.com Inc.",
+    "percent": 0.95,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "nflx",
+    "name": "Netflix Inc.",
+    "percent": 0.91,
+    "dyield": 0,
+    "dgrowth": 0
+  },
+  {
+    "ticker": "tmo",
+    "name": "Thermo Fisher Scientific Inc.",
+    "percent": 0.88,
+    "dyield": 0.28,
+    "dgrowth": 15.39
   }
 ];
 

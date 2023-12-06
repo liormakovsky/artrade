@@ -448,7 +448,7 @@ new Vue({
                 return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${uppercaseName}\nHolding:${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${chowderText ? ' \n' + chowderText : ''}`;
+                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${chowderText ? ' \n' + chowderText : ''}`;
             }
         },
         resetDisplayFlags() {
@@ -463,7 +463,7 @@ new Vue({
         checkChowder(ticker) {
             // Define color constants
             const GOLD_COLOR = "gold";
-            const SILVER_COLOR = "silver";
+            const SILVER_COLOR = "#F7F4A8";
 
             // Define databases for different lists
             const databases = {
