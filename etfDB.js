@@ -810,216 +810,248 @@ const aristocratsDB = [
 ];
 
 //https://www.schwabassetmanagement.com/products/schd
+//https://www.gurufocus.com/stock/UPS/dividend
+
 const schdDB = [
   {
     "ticker": "vz",
     "name": "verizon communications inc",
     "percent": 4.538278868,
-    "dyield": 6.99,
-    "dgrowth": 2.02
+    "gfscore": 75,
+    "dyield": 6.91,
+    "dgrowth": 2.1,
   },
   {
     "ticker": "amgn",
     "name": "amgen inc",
     "percent": 4.382195393,
-    "dyield": 3.13,
-    "dgrowth": 10.04
+    "gfscore": 89,
+    "dyield": 3.16,
+    "dgrowth": 10.8,
   },
   {
     "ticker": "avgo",
     "name": "broadcom inc",
     "percent": 4.294932269,
-    "dyield": 1.99,
-    "dgrowth": 21.32
+    "gfscore": 83,
+    "dyield": 2.04,
+    "dgrowth": 30.5,
   },
   {
     "ticker": "ko",
     "name": "coca-cola",
     "percent": 4.023509138,
+    "gfscore": 81,
     "dyield": 3.14,
-    "dgrowth": 3.36
+    "dgrowth": 3.2,
   },
   {
     "ticker": "abbv",
     "name": "abbvie inc",
     "percent": 3.957423013,
-    "dyield": 4.30,
-    "dgrowth": 10.52
+    "gfscore": 91,
+    "dyield": 4.24,
+    "dgrowth": 15.9,
   },
   {
     "ticker": "pep",
     "name": "pepsico inc",
     "percent": 3.89775965,
-    "dyield": 2.99,
-    "dgrowth": 6.63
+    "gfscore": 85,
+    "dyield": 2.95,
+    "dgrowth": 6.9,
   },
   {
     "ticker": "mrk",
     "name": "merck & co inc",
     "percent": 3.894525156,
-    "dyield": 2.93,
-    "dgrowth": 9.79
+    "gfscore": 84,
+    "dyield": 2.92,
+    "dgrowth": 8.7,
   },
   {
     "ticker": "hd",
     "name": "home depot inc",
     "percent": 3.891616754,
-    "dyield": 2.58,
-    "dgrowth": 15.20
+    "gfscore": 94,
+    "dyield": 2.56,
+    "dgrowth": 16.4,
   },
   {
     "ticker": "blk",
     "name": "blackrock inc",
     "percent": 3.693024192,
-    "dyield": 2.64,
-    "dgrowth": 11.78
+    "gfscore": 93,
+    "dyield": 2.69,
+    "dgrowth": 13.4,
   },
   {
     "ticker": "txn",
     "name": "texas instrument inc",
     "percent": 3.677504473,
-    "dyield": 3.30,
-    "dgrowth": 13.80
+    "gfscore": 93,
+    "dyield": 3.33,
+    "dgrowth": 17.1,
   },
   {
     "ticker": "ups",
     "name": "united parcel service inc class b",
     "percent": 3.606950615,
-    "dyield": 4.16,
-    "dgrowth": 12.23
+    "gfscore": 95,
+    "dyield": 4.17,
+    "dgrowth": 10.3,
   },
   {
     "ticker": "pfe",
     "name": "pfizer inc",
     "percent": 3.587710061,
-    "dyield": 5.60,
-    "dgrowth": 4.95
+    "gfscore": 86,
+    "dyield": 5.7,
+    "dgrowth": 4.6,
   },
   {
     "ticker": "cvx",
     "name": "chevron corp",
     "percent": 3.487591741,
-    "dyield": 4.17,
-    "dgrowth": 6.16
+    "gfscore": 86,
+    "dyield": 4.24,
+    "dgrowth": 5.8,
   },
   {
     "ticker": "csco",
     "name": "cisco systems inc",
     "percent": 3.425295365,
-    "dyield": 3.25,
-    "dgrowth": 3.90
+    "gfscore": 93,
+    "dyield": 3.27,
+    "dgrowth": 4.1,
   },
   {
     "ticker": "lmt",
     "name": "lockheed martin corp",
     "percent": 3.312875635,
-    "dyield": 2.80,
-    "dgrowth": 8.18
+    "gfscore": 89,
+    "dyield": 2.8,
+    "dgrowth": 8.9,
   },
   {
     "ticker": "adp",
     "name": "automatic data processing inc",
     "percent": 3.117900277,
+    "gfscore": 94,
     "dyield": 2.41,
-    "dgrowth": 13.62
+    "dgrowth": 12.4,
   },
   {
     "ticker": "bx",
     "name": "blackstone inc",
     "percent": 2.60443362,
-    "dyield": 2.87,
-    "dgrowth": 6.53
+    "gfscore": 61,
+    "dyield": 2.96,
+    "dgrowth": 15.2,
   },
   {
     "ticker": "mo",
     "name": "altria group inc",
     "percent": 2.463297965,
-    "dyield": 9.22,
-    "dgrowth": 5.85
+    "gfscore": 76,
+    "dyield": 9.48,
+    "dgrowth": 7,
   },
   {
     "ticker": "eog",
     "name": "eog resources inc",
     "percent": 2.362705918,
-    "dyield": 2.96,
-    "dgrowth": 34.22
+    "gfscore": 88,
+    "dyield": 3.02,
+    "dgrowth": 33.4,
   },
   {
     "ticker": "itw",
     "name": "illinois tool inc",
     "percent": 2.198743411,
-    "dyield": 2.26,
-    "dgrowth": 9.80
+    "gfscore": 88,
+    "dyield": 2.27,
+    "dgrowth": 11.4,
   },
   {
     "ticker": "mmm",
     "name": "3m",
     "percent": 1.794027537,
-    "dyield": 5.80,
-    "dgrowth": 1.98
+    "gfscore": 83,
+    "dyield": 5.85,
+    "dgrowth": 4.3,
   },
   {
     "ticker": "usb",
     "name": "us bancorp",
     "percent": 1.745501733,
-    "dyield": 4.86,
-    "dgrowth": 8.62
+    "gfscore": 81,
+    "dyield": 4.89,
+    "dgrowth": 9.9,
   },
   {
     "ticker": "vlo",
     "name": "valero energy corp",
     "percent": 1.487627321,
-    "dyield": 3.23,
-    "dgrowth": 4.98
+    "gfscore": 90,
+    "dyield": 3.31,
+    "dgrowth": 7,
   },
   {
     "ticker": "kmb",
     "name": "kimberly clark corp",
     "percent": 1.370255339,
-    "dyield": 3.80,
-    "dgrowth": 3.43
+    "gfscore": 72,
+    "dyield": 3.89,
+    "dgrowth": 3.9,
   },
   {
     "ticker": "f",
     "name": "ford motor",
     "percent": 1.323539967,
-    "dyield": 5.61,
-    "dgrowth": 4.56
+    "gfscore": 73,
+    "dyield": 5.58,
+    "dgrowth": -19.7,
   },
   {
     "ticker": "payx",
     "name": "paychex inc",
     "percent": 1.284559252,
-    "dyield": 2.87,
-    "dgrowth": 9.68
+    "gfscore": 97,
+    "dyield": 2.86,
+    "dgrowth": 8.5,
   },
   {
     "ticker": "all",
     "name": "allstate corp",
     "percent": 1.189561257,
-    "dyield": 2.57,
-    "dgrowth": 14.11
+    "gfscore": 75,
+    "dyield": 2.55,
+    "dgrowth": 18.5,
   },
   {
     "ticker": "fast",
     "name": "fastenal",
     "percent": 1.124073247,
-    "dyield": 2.31,
-    "dgrowth": 12.70
+    "gfscore": 97,
+    "dyield": 2.26,
+    "dgrowth": 14,
   },
   {
     "ticker": "nem",
     "name": "newmont",
     "percent": 1.04841683,
-    "dyield": 3.95,
-    "dgrowth": 23.36
+    "gfscore": 68,
+    "dyield": 4.09,
+    "dgrowth": 56.2,
   },
   {
     "ticker": "oke",
     "name": "oneok inc",
     "percent": 1.011224214,
-    "dyield": 5.44,
-    "dgrowth": 3.32
+    "gfscore": 83,
+    "dyield": 5.56,
+    "dgrowth": 6.1,
   }
 ]
 

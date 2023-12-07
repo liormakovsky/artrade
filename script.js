@@ -188,7 +188,7 @@ new Vue({
             window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
         },
         buildAlphaUrl() {
-            window.open(`https://seekingalpha.com/symbol/${this.stockOrEtfNameForUrl}/dividends/scorecard`);
+            window.open(`https://seekingalpha.com/symbol/${this.stockOrEtfNameForUrl}/growth`);
         },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
@@ -437,10 +437,15 @@ new Vue({
             const status = elem.lists.join(', ');
             const uppercaseName = elem.name.charAt(0).toUpperCase() + elem.name.slice(1);
 
-            let chowderText = '';
+            let gfscore = '';
+            let dividendText = '';
+
+            if (elem && elem.gfscore !== undefined) {
+                gfscore = `GuruFocus Score: ${elem.gfscore}`;
+            }
 
             if (elem && elem.chowderNumber !== undefined) {
-                chowderText = `Dividend yield: ${elem.dyield}%\nDividend growth: ${elem.dgrowth}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
+                dividendText = `Dividend yield: ${elem.dyield}%\nDividend growth(5Y): ${elem.dgrowth}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
             }
 
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {
@@ -448,7 +453,7 @@ new Vue({
                 return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${chowderText ? ' \n' + chowderText : ''}`;
+                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${gfscore ? '\n' + gfscore : ""} ${dividendText ? ' \n' + dividendText : ''}`;
             }
         },
         resetDisplayFlags() {
@@ -462,9 +467,13 @@ new Vue({
         },
         checkChowder(ticker) {
             // Define color constants
+            const WINNER_COLOR = "linear-gradient(0deg, #137413 0%,gold 85%)";
+            const SUBWINNER_COLOR = "linear-gradient(0deg, #24AE24 0%,gold 85%)";
+            const SUBSUBWINNER_COLOR = "linear-gradient(0deg, #AFEAAF 0%,gold 85%)";
             const GOLD_COLOR = "gold";
-            const SILVER_COLOR = "silver";
-            const BRONZE_COLOR = "#CD7F32";
+            const DEEP_GREEN_COLOR = "#137413"
+            const GREEN_COLOR = "#24AE24";
+            const PALE_GREEN_COLOR = "#AFEAAF";
 
             // Define databases for different lists
             const databases = {
@@ -486,25 +495,49 @@ new Vue({
                     let chowderColor = "";
                     let chowderNumber = 0;
 
+                    if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
+                        chowderColor = WINNER_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
+
+                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
+                        chowderColor = SUBWINNER_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
+
+                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
+                        chowderColor = SUBSUBWINNER_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
+
+                    if (stock.ticker && stock.gfscore > 90) {
+                        chowderColor = GOLD_COLOR;
+                        chowderNumber = stock.dyield + stock.dgrowth;
+                        return { chowderColor, chowderNumber };
+                    }
+
                     if (stock.ticker && (stock.dyield + stock.dgrowth) < 11) {
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }
 
                     if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = GOLD_COLOR;
+                        chowderColor = DEEP_GREEN_COLOR;
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }
 
                     if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = SILVER_COLOR;
+                        chowderColor = GREEN_COLOR;
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }
 
                     if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = BRONZE_COLOR;
+                        chowderColor = PALE_GREEN_COLOR;
                         chowderNumber = stock.dyield + stock.dgrowth;
                         return { chowderColor, chowderNumber };
                     }

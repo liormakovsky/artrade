@@ -51,7 +51,7 @@
 
         <!-- Dividend modal -->
         <div class="linksModal" v-if="showDividendModal">
-            <div class="modalSquarsGrid">
+            <div class="squarsGrid">
                 <div class="rounded square generic-square" v-on:click="buildTradingUrl">
                     <span>TradingView</span>
                 </div>
@@ -63,12 +63,6 @@
                 </div>
                 <div class="rounded square generic-square" v-on:click="buildFinvizUrl">
                     <span>Finviz</span>
-                </div>
-                <div class="rounded square generic-square" v-on:click="buildAlphaUrl">
-                    <span>Seeking Alpha</span>
-                </div>
-                <div class="rounded square generic-square" v-on:click="buildStockUrl">
-                    <span>Exposure</span>
                 </div>
             </div>
         </div>
@@ -363,7 +357,7 @@
                 <!-- schd list -->
                 <div class='mt-2' v-if="displaySCHD">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#DFCBFF' }"
+                        <div :style="{ background: elem.chowderColor ? elem.chowderColor : '#DFCBFF' }"
                             v-for="(elem, index) in schdList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'schdDB')"
                             @click="showDividendModal = true; dataToModal(elem.ticker);">
