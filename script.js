@@ -383,47 +383,30 @@ new Vue({
             /**
              * Create title information for a stock based on its presence in different lists.
              * @param {string} ticker - Ticker symbol of the stock.
-             * @param {string} listType - Type of the list for which the title is being generated.
+             * @param {string} listType - Name of DB.
              * @returns {Object} - Object containing the stock ticker and associated lists.
              */
-            const createTitle = (ticker, listType) => {
-                // Define databases for different lists
-                const databases = {
-                    kings: this.kingsDB,
-                    aristocrats: this.aristocratsDB,
-                    schd: this.schdDB,
-                    dgro: this.dgroDB,
-                    vug: this.vugDB,
-                    dgrw: this.dgrwDB,
-                };
+            const connectedDB = (ticker, listType) => {
+                // Define array for different lists
+                const databaseKeys = ['kings', 'aristocrats', 'schd', 'dgro', 'vug', 'dgrw'];
 
                 // Initialize result object with the stock ticker and an empty array for lists
                 const result = { ticker, lists: [] };
 
-                // Iterate through each database
-                for (const key in databases) {
-                    // Check if the current listType is different from the current key
-                    if (listType !== key) {
-                        // Find the stock in the database for the current key
-                        const stock = databases[key].find((item) => item.ticker === ticker);
-
-                        // If the stock is found, add the key (list) to the lists array in the result
-                        if (stock) {
-                            result.lists.push(key);
-                        }
-                    }
+                // Check if the listType is in the array
+                if (databaseKeys.includes(listType)) {
+                    // Filter out the current listType and add the rest to the lists array
+                    result.lists = databaseKeys.filter(key => key !== listType);
                 }
 
-                // Return the result object with ticker, associated lists, chowder color, and chowder number
-                const chowderInfo = this.checkChowder(ticker);
-                return { ...result, ...chowderInfo };
+                return { ...result };
             };
 
             // Generate the list by mapping over the stocks in the specified database
             this[dataList] = db.map((stock) => {
-                // Create title information for the current stock
-                const title = createTitle(stock.ticker, listType);
-                const chowder = this.checkChowder(stock.ticker);
+                // including lists from other databases except the current one.
+                const title = connectedDB(stock.ticker, listType);
+                const chowder = this.checkChowder(stock.ticker, listType);
                 // Merge the stock information with the generated title information
                 return {
                     ...stock,
@@ -465,11 +448,11 @@ new Vue({
             this.displayVUG = false;
             this.displayDGRW = false;
         },
-        checkChowder(ticker) {
+        checkChowder(ticker, listType) {
             // Define color constants
-            const WINNER_COLOR = "linear-gradient(0deg, #137413 0%,gold 85%)";
-            const SUBWINNER_COLOR = "linear-gradient(0deg, #24AE24 0%,gold 85%)";
-            const SUBSUBWINNER_COLOR = "linear-gradient(0deg, #AFEAAF 0%,gold 85%)";
+            const WINNER_COLOR = "linear-gradient(45deg, #137413 0%,gold 50%)";
+            const SUBWINNER_COLOR = "linear-gradient(45deg, #24AE24 0%,gold 50%)";
+            const SUBSUBWINNER_COLOR = "linear-gradient(45deg, #AFEAAF 30%,gold 70%)";
             const GOLD_COLOR = "gold";
             const DEEP_GREEN_COLOR = "#137413"
             const GREEN_COLOR = "#24AE24";
@@ -485,64 +468,59 @@ new Vue({
                 dgrw: this.dgrwDB,
             };
 
-            // Iterate through each database
-            for (const key in databases) {
-                // Find the stock in the database for the current key
-                const stock = databases[key].find((item) => item.ticker === ticker);
-
-                // If the stock is found, add the key (list) to the lists array in the result
-                if (stock) {
-                    let chowderColor = "";
-                    let chowderNumber = 0;
-
-                    if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
-                        chowderColor = WINNER_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
-                        chowderColor = SUBWINNER_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore > 90) {
-                        chowderColor = SUBSUBWINNER_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && stock.gfscore > 90) {
-                        chowderColor = GOLD_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && (stock.dyield + stock.dgrowth) < 11) {
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = DEEP_GREEN_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = GREEN_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
-                    if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
-                        chowderColor = PALE_GREEN_COLOR;
-                        chowderNumber = stock.dyield + stock.dgrowth;
-                        return { chowderColor, chowderNumber };
-                    }
-
+            // Find the stock in the database for the current ticker
+            const stock = databases[listType].find((item) => item.ticker === ticker);
+            // If the stock is found, add the key (list) to the lists array in the result
+            if (stock) {
+                let chowderColor = "";
+                let chowderNumber = 0;
+                if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95) {
+                    chowderColor = WINNER_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
                 }
+
+                if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95) {
+                    chowderColor = SUBWINNER_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95) {
+                    chowderColor = SUBSUBWINNER_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && stock.gfscore >= 95) {
+                    chowderColor = GOLD_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && (stock.dyield + stock.dgrowth) < 11) {
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11) {
+                    chowderColor = DEEP_GREEN_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11) {
+                    chowderColor = GREEN_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
+                if (stock.ticker && (stock.dyield + stock.dgrowth) > 11) {
+                    chowderColor = PALE_GREEN_COLOR;
+                    chowderNumber = stock.dyield + stock.dgrowth;
+                    return { chowderColor, chowderNumber };
+                }
+
             }
 
             // If no matching stock is found, return a default color and value
