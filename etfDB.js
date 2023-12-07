@@ -1060,49 +1060,56 @@ const dgroDB = [
   {
     "ticker": "msft",
     "name": "microsoft corp",
+    "gfscore": 92,
     "percent": 3.38,
     "dyield": 0.81,
-    "dgrowth": 10.16
+    "dgrowth": 10.1
   },
   {
     "ticker": "jpm",
     "name": "jpmorgan chase & co",
+    "gfscore": 92,
     "percent": 3.01,
-    "dyield": 2.66,
-    "dgrowth": 10.31
+    "dyield": 2.69,
+    "dgrowth": 12.9
   },
   {
     "ticker": "aapl",
     "name": "apple inc",
+    "gfscore": 93,
     "percent": 2.95,
-    "dyield": 0.51,
-    "dgrowth": 6.15
+    "dyield": 0.50,
+    "dgrowth": 6.6
   },
   {
     "ticker": "jnj",
     "name": "johnson & johnson",
+    "gfscore": 87,
     "percent": 2.68,
-    "dyield": 3.00,
-    "dgrowth": 5.83
+    "dyield": 3.08,
+    "dgrowth": 6
   },
   {
     "ticker": "xom",
     "name": "exxon mobil corp",
+    "gfscore": 85,
     "percent": 2.56,
-    "dyield": 3.71,
-    "dgrowth": 2.64
+    "dyield": 3.77,
+    "dgrowth": 2.9
   },
   {
     "ticker": "abbv",
     "name": "abbvie inc",
     "percent": 2.44,
-    "dyield": 4.30,
-    "dgrowth": 10.52
+    "gfscore": 91,
+    "dyield": 4.24,
+    "dgrowth": 15.9
   },
   {
     "ticker": "cvx",
     "name": "chevron corp",
     "percent": 2.21,
+    "gfscore": 86,
     "dyield": 4.17,
     "dgrowth": 6.16
   },
@@ -1110,113 +1117,129 @@ const dgroDB = [
     "ticker": "pg",
     "name": "procter & gamble",
     "percent": 2.14,
-    "dyield": 2.47,
-    "dgrowth": 5.63
+    "gfscore": 86,
+    "dyield": 2.57,
+    "dgrowth": 6.00
   },
   {
     "ticker": "pfe",
     "name": "pfizer inc",
     "percent": 1.96,
-    "dyield": 5.60,
-    "dgrowth": 4.95
+    "gfscore": 86,
+    "dyield": 5.7,
+    "dgrowth": 4.6
   },
   {
     "ticker": "avgo",
     "name": "broadcom inc",
     "percent": 1.95,
-    "dyield": 1.99,
-    "dgrowth": 21.32
+    "gfscore": 83,
+    "dyield": 2.04,
+    "dgrowth": 30.5
   },
   {
     "ticker": "hd",
     "name": "home depot inc",
     "percent": 1.95,
-    "dyield": 2.58,
-    "dgrowth": 15.20
+    "gfscore": 94,
+    "dyield": 2.56,
+    "dgrowth": 16.4
   },
   {
     "ticker": "unh",
     "name": "unitedhealth group inc",
     "percent": 1.94,
+    "gfscore": 96,
     "dyield": 1.37,
-    "dgrowth": 16.14
+    "dgrowth": 17.4
   },
   {
     "ticker": "bac",
     "name": "bank of america corp",
     "percent": 1.71,
-    "dyield": 3.11,
-    "dgrowth": 11.24
+    "gfscore": 75,
+    "dyield": 3.10,
+    "dgrowth": 15.80
   },
   {
     "ticker": "mrk",
     "name": "merck & co inc",
     "percent": 1.70,
-    "dyield": 2.93,
-    "dgrowth": 9.79
+    "gfscore": 84,
+    "dyield": 2.92,
+    "dgrowth": 8.7,
   },
   {
     "ticker": "ko",
     "name": "coca-cola",
     "percent": 1.70,
+    "gfscore": 81,
     "dyield": 3.14,
-    "dgrowth": 3.36
+    "dgrowth": 3.2,
   },
   {
     "ticker": "pep",
     "name": "pepsico inc",
     "percent": 1.60,
-    "dyield": 2.99,
-    "dgrowth": 6.63
+    "gfscore": 85,
+    "dyield": 2.95,
+    "dgrowth": 6.9,
   },
   {
     "ticker": "csco",
     "name": "cisco systems inc",
     "percent": 1.29,
-    "dyield": 3.25,
-    "dgrowth": 3.90
+    "gfscore": 93,
+    "dyield": 3.27,
+    "dgrowth": 4.1,
   },
   {
     "ticker": "amgn",
     "name": "amgen inc",
     "percent": 1.18,
-    "dyield": 3.13,
-    "dgrowth": 10.04
+    "gfscore": 89,
+    "dyield": 3.16,
+    "dgrowth": 10.8,
   },
   {
     "ticker": "c",
     "name": "citigroup inc",
+    "gfscore": 73,
     "percent": 1.10,
-    "dyield": 4.48,
-    "dgrowth": 6.20
+    "dyield": 4.30,
+    "dgrowth": 14.3
   },
   {
     "ticker": "mcd",
     "name": "mcdonalds corp",
+    "gfscore": 80,
     "percent": 1.09,
-    "dyield": 2.33,
-    "dgrowth": 8.26
+    "dyield": 2.32,
+    "dgrowth": 8.00
   },
   {
     "ticker": "cmcsa",
     "name": "comcast corp class a",
     "percent": 1.08,
-    "dyield": 2.69,
-    "dgrowth": 9.40
+    "gfscore": 86,
+    "dyield": 2.70,
+    "dgrowth": 10.9
   },
   {
     "ticker": "ups",
     "name": "united parcel service inc class b",
     "percent": 1.05,
-    "dyield": 4.16,
-    "dgrowth": 12.23
+    "gfscore": 95,
+    "dyield": 4.17,
+    "dgrowth": 10.3,
   },
   {
     "ticker": "ms",
     "name": "morgan stanley",
     "percent": 1.00,
-    "dyield": 4.19,
-    "dgrowth": 24.19
+    "gfscore": 81,
+    "dyield": 4.24,
+    "dgrowth": 25.5
   }
 ];
 

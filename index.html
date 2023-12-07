@@ -370,7 +370,7 @@
                 <!-- dgro list -->
                 <div class='mt-2' v-if="displayDGRO">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor : '#0091F7' }" v-for="
+                        <div :style="{ background: elem.chowderColor ? elem.chowderColor : '#0091F7' }" v-for="
                             (elem, index) in dgroList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'dgroDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
@@ -383,7 +383,7 @@
                 <!-- dgrw list -->
                 <div class='mt-2' v-if="displayDGRW">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor :  '#EFC3C3'}"
+                        <div :style="{ background: elem.chowderColor ? elem.chowderColor :  '#EFC3C3'}"
                             v-for="(elem, index) in dgrwList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'dgrwDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
@@ -396,7 +396,7 @@
                 <!-- vug list -->
                 <div class='mt-2' v-if="displayVUG">
                     <div class="squarsGrid mt-2">
-                        <div :style="{ backgroundColor: elem.chowderColor ? elem.chowderColor :  '#F65959'}"
+                        <div :style="{ background: elem.chowderColor ? elem.chowderColor :  '#F65959'}"
                             v-for="(elem, index) in vugList" :key="`detail-${index}`" class="rounded square"
                             :title="generateTitle(elem, 'vugDB')"
                             @click="showDividendModal = true;dataToModal(elem.ticker);">
