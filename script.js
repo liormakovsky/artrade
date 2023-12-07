@@ -441,18 +441,19 @@ new Vue({
             if (stock) {
                 let color = "";
                 let chowderNumber = stock.dyield + stock.dgrowth || 0;
+                const minDgScore = 93
 
                 switch (true) {
-                    case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95:
+                    case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
                         color = HIGH_SCORE_COLOR;
                         break;
-                    case stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95:
+                    case stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
                         color = MODERATE_SCORE_COLOR;
                         break;
-                    case stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= 95:
+                    case stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
                         color = LOW_SCORE_COLOR;
                         break;
-                    case stock.ticker && stock.gfscore >= 95:
+                    case stock.ticker && stock.gfscore >= minDgScore:
                         color = GOLD_SCORE_COLOR;
                         break;
                     case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11:
