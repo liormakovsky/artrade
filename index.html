@@ -295,10 +295,19 @@
                             Maps</button>
                     </div>
                 </div>
-                <div class="row">
-                    <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
-                    <input @keyup.enter="showDetails()" class="form-control h-50 mt-2 ms-3" style="width:35%"
-                        v-model="details" type="text">
+                <div class="row d-flex space-between">
+                    <div class="col-9">
+                        <label style="margin-right: 10px; margin-top: 8px;" for="details">Information</label>
+                        <input @keyup.enter="showDetails()" class="form-control h-50 mt-2" style="width:40%"
+                            v-model="details" type="text">
+                    </div>
+                    <div class="col-3 d-flex flex-column align-items-end">
+                        <label for="minGfScoreInput" style="margin-right: 22px; margin-top: 8px;">Minimum
+                            Score</label>
+                        <input type="text" class="form-control h-50 mt-2" id="minGfScoreInput"
+                            v-model.number="minGfScore"
+                            @keyup.enter="showList('schd', 'displaySCHD', 'schdList', schdDB)" />
+                    </div>
                 </div>
 
                 <!-- Stocks list -->

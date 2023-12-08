@@ -51,6 +51,7 @@ new Vue({
         dgroList: [],
         vugList: [],
         dgrwList: [],
+        minGfScore: 93,
     },
     watch: {
         trigger() {
@@ -383,12 +384,12 @@ new Vue({
             this[dataList] = db.map((stock) => {
                 // including lists from other databases except the current one.
                 const title = this.connectedDB(stock.ticker, listType);
-                const chowder = this.defineTickerColor(stock.ticker, listType);
+                const color = this.defineTickerColor(stock.ticker, listType);
                 // Merge the stock information with the generated title information
                 return {
                     ...stock,
                     ...title,
-                    ...chowder
+                    ...color
                 };
             }).sort((a, b) => b.percent - a.percent); // Sort the list based on the 'percent' property in descending order
         },
@@ -455,19 +456,18 @@ new Vue({
             if (stock) {
                 let color = "";
                 let chowderNumber = stock.dyield + stock.dgrowth || 0;
-                const minDgScore = 93
 
                 switch (true) {
-                    case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
+                    case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= this.minGfScore:
                         color = HIGH_SCORE_COLOR;
                         break;
-                    case stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
+                    case stock.ticker && stock.dyield > 3 && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= this.minGfScore:
                         color = MODERATE_SCORE_COLOR;
                         break;
-                    case stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= minDgScore:
+                    case stock.ticker && (stock.dyield + stock.dgrowth) > 11 && stock.gfscore >= this.minGfScore:
                         color = LOW_SCORE_COLOR;
                         break;
-                    case stock.ticker && stock.gfscore >= minDgScore:
+                    case stock.ticker && stock.gfscore >= this.minGfScore:
                         color = GOLD_SCORE_COLOR;
                         break;
                     case stock.ticker && stock.dyield > 4 && (stock.dyield + stock.dgrowth) > 11:
