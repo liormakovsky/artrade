@@ -401,15 +401,29 @@ new Vue({
          */
         connectedDB(ticker, listType) {
             // Define array for different lists
-            const databaseKeys = ['kings', 'aristocrats', 'schd', 'dgro', 'vug', 'dgrw'];
-
+            const databases = {
+                kings: this.kingsDB,
+                aristocrats: this.aristocratsDB,
+                schd: this.schdDB,
+                dgro: this.dgroDB,
+                vug: this.vugDB,
+                dgrw: this.dgrwDB,
+            };
             // Initialize result object with the stock ticker and an empty array for lists
             const result = { ticker, lists: [] };
 
-            // Check if the listType is in the array
-            if (databaseKeys.includes(listType)) {
-                // Filter out the current listType and add the rest to the lists array
-                result.lists = databaseKeys.filter(key => key !== listType);
+            // Iterate through each database
+            for (const key in databases) {
+                // Check if the current listType is different from the current key
+                if (listType !== key) {
+                    // Find the stock in the database for the current key
+                    const stock = databases[key].find((item) => item.ticker === ticker);
+
+                    // If the stock is found, add the key (list) to the lists array in the result
+                    if (stock) {
+                        result.lists.push(key);
+                    }
+                }
             }
 
             return { ...result };
