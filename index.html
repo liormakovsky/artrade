@@ -305,8 +305,7 @@
                         <label for="minGfScoreInput" style="margin-right: 22px; margin-top: 8px;">Minimum
                             Score</label>
                         <input type="text" class="form-control h-50 mt-2" id="minGfScoreInput"
-                            v-model.number="minGfScore"
-                            @keyup.enter="showList('schd', 'displaySCHD', 'schdList', schdDB)" />
+                            v-model.number="minGfScore" @keyup.enter="showListAfterNewScore()" />
                     </div>
                 </div>
 
