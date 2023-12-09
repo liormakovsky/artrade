@@ -371,28 +371,33 @@ new Vue({
 
         /**
          * Display a list based on the specified parameters.
-         * @param {string} listType - Type of the list (e.g., 'schd', 'dgro', 'dgrw').
-         * @param {string} displayFlag - Flag to control the display of the list in the UI.
-         * @param {string} dataList - Property to store the generated list data in the component.
-         * @param {Array} db - Database or array of stocks to generate the list from.
          */
-        showList(listType, displayFlag, dataList, db) {
+        showList(event) {
+            if (event.target.classList.contains('database-button')) {
+                const buttonText = event.target.textContent.trim();
+                this.currentDB = buttonText.toLowerCase();
+            }
+
+            const displayFlag = "display" + this.currentDB.toUpperCase();
+            const dataList = this.currentDB + "List";
+            const dbName = this.currentDB + "DB";
+
             // Reset all display flags to false
             this.resetDisplayFlags();
+
             // Set the display flag for the current list type to true
             this[displayFlag] = true;
+
             // Generate the list and the titles
-            this[dataList] = db.map((stock) => {
-                // including lists from other databases except the current one.
-                const title = this.connectedDB(stock.ticker, listType);
-                const color = this.defineTickerColor(stock.ticker, listType);
-                // Merge the stock information with the generated title information
+            this[dataList] = this[dbName].map((stock) => {
+                const title = this.connectedDB(stock.ticker, this.currentDB);
+                const color = this.defineTickerColor(stock.ticker, this.currentDB);
                 return {
                     ...stock,
                     ...title,
                     ...color
                 };
-            }).sort((a, b) => b.percent - a.percent); // Sort the list based on the 'percent' property in descending order
+            }).sort((a, b) => b.percent - a.percent);
         },
 
         /**
@@ -519,14 +524,6 @@ new Vue({
                 // Use the percentage and status format for dgro and schd
                 return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${gfscore ? '\n' + gfscore : ""} ${dividendText ? ' \n' + dividendText : ''}`;
             }
-        },
-        showListAfterNewScore(event) {
-            if (event.target.classList.contains('database-button')) {
-                const buttonText = event.target.textContent.trim();
-                this.currentDB = buttonText.toLowerCase();
-            }
-            const dbName = this.currentDB + "DB";
-            this.showList(this.currentDB, "display" + this.currentDB.toUpperCase(), this.currentDB + "List", this[dbName]);
         }
     },
 
