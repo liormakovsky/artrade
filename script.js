@@ -372,7 +372,7 @@ new Vue({
         /**
          * Display a list based on the specified parameters.
          */
-        showList(event) {
+        showList(event, sortCriteria) {
             if (event.target.classList.contains('database-button')) {
                 const buttonText = event.target.textContent.trim();
                 this.currentDB = buttonText.toLowerCase();
@@ -388,7 +388,6 @@ new Vue({
             // Set the display flag for the current list type to true
             this[displayFlag] = true;
 
-            // Generate the list and the titles
             this[dataList] = this[dbName].map((stock) => {
                 const title = this.connectedDB(stock.ticker, this.currentDB);
                 const color = this.defineTickerColor(stock.ticker, this.currentDB);
@@ -397,7 +396,21 @@ new Vue({
                     ...title,
                     ...color
                 };
-            }).sort((a, b) => b.percent - a.percent);
+            }).sort((a, b) => {
+                // Sorting logic based on sortCriteria
+                switch (sortCriteria) {
+                    case 'guruFocusScore':
+                        return b.gfscore - a.gfscore;
+                    case 'dividendYield':
+                        return b.dyield - a.dyield;
+                    case 'dividendGrowth':
+                        return b.dgrowth - a.dgrowth;
+                    case 'dividendYoc':
+                        return b.dyieldoncost - a.dyieldoncost;
+                    default:
+                        return b.percent - a.percent;
+                }
+            });
         },
 
         /**
@@ -514,7 +527,7 @@ new Vue({
             }
 
             if (elem && elem.chowderNumber !== undefined) {
-                dividendText = `Dividend yield: ${elem.dyield}%\nDividend growth(5Y): ${elem.dgrowth}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
+                dividendText = `Dividend yield: ${elem.dyield}%\nDividend growth(5Y): ${elem.dgrowth}%\nDividend Yield On Cost(5Y): ${elem.dyieldoncost}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
             }
 
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {

@@ -819,7 +819,9 @@ const schdDB = [
     "percent": 4.538278868,
     "gfscore": 75,
     "dyield": 6.91,
+    "dyieldoncost": 7.74,
     "dgrowth": 2.1,
+
   },
   {
     "ticker": "amgn",
@@ -827,6 +829,7 @@ const schdDB = [
     "percent": 4.382195393,
     "gfscore": 89,
     "dyield": 3.16,
+    "dyieldoncost": 5.36,
     "dgrowth": 10.8,
   },
   {
@@ -835,6 +838,7 @@ const schdDB = [
     "percent": 4.294932269,
     "gfscore": 83,
     "dyield": 2.04,
+    "dyieldoncost": 4.78,
     "dgrowth": 30.5,
   },
   {
@@ -843,6 +847,7 @@ const schdDB = [
     "percent": 4.023509138,
     "gfscore": 81,
     "dyield": 3.14,
+    "dyieldoncost": 3.68,
     "dgrowth": 3.2,
   },
   {
@@ -851,6 +856,7 @@ const schdDB = [
     "percent": 3.957423013,
     "gfscore": 91,
     "dyield": 4.24,
+    "dyieldoncost": 8.26,
     "dgrowth": 15.9,
   },
   {
@@ -859,6 +865,7 @@ const schdDB = [
     "percent": 3.89775965,
     "gfscore": 85,
     "dyield": 2.95,
+    "dyieldoncost": 4.17,
     "dgrowth": 6.9,
   },
   {
@@ -867,6 +874,7 @@ const schdDB = [
     "percent": 3.894525156,
     "gfscore": 84,
     "dyield": 2.92,
+    "dyieldoncost": 4.29,
     "dgrowth": 8.7,
   },
   {
@@ -875,6 +883,7 @@ const schdDB = [
     "percent": 3.891616754,
     "gfscore": 94,
     "dyield": 2.56,
+    "dyieldoncost": 5.45,
     "dgrowth": 16.4,
   },
   {
@@ -883,6 +892,7 @@ const schdDB = [
     "percent": 3.693024192,
     "gfscore": 93,
     "dyield": 2.69,
+    "dyieldoncost": 5.06,
     "dgrowth": 13.4,
   },
   {
@@ -890,7 +900,8 @@ const schdDB = [
     "name": "texas instrument inc",
     "percent": 3.677504473,
     "gfscore": 93,
-    "dyield": 3.33,
+    "dyield": 3.31,
+    "dyieldoncost": 7.05,
     "dgrowth": 17.1,
   },
   {
@@ -899,6 +910,7 @@ const schdDB = [
     "percent": 3.606950615,
     "gfscore": 95,
     "dyield": 4.17,
+    "dyieldoncost": 6.76,
     "dgrowth": 10.3,
   },
   {
@@ -907,6 +919,7 @@ const schdDB = [
     "percent": 3.587710061,
     "gfscore": 86,
     "dyield": 5.7,
+    "dyieldoncost": 7.12,
     "dgrowth": 4.6,
   },
   {
@@ -915,6 +928,7 @@ const schdDB = [
     "percent": 3.487591741,
     "gfscore": 86,
     "dyield": 4.24,
+    "dyieldoncost": 5.45,
     "dgrowth": 5.8,
   },
   {
@@ -923,6 +937,7 @@ const schdDB = [
     "percent": 3.425295365,
     "gfscore": 93,
     "dyield": 3.27,
+    "dyieldoncost": 3.89,
     "dgrowth": 4.1,
   },
   {
@@ -931,6 +946,7 @@ const schdDB = [
     "percent": 3.312875635,
     "gfscore": 89,
     "dyield": 2.8,
+    "dyieldoncost": 4.12,
     "dgrowth": 8.9,
   },
   {
@@ -939,6 +955,7 @@ const schdDB = [
     "percent": 3.117900277,
     "gfscore": 94,
     "dyield": 2.41,
+    "dyieldoncost": 3.96,
     "dgrowth": 12.4,
   },
   {
@@ -947,6 +964,7 @@ const schdDB = [
     "percent": 2.60443362,
     "gfscore": 61,
     "dyield": 2.96,
+    "dyieldoncost": 5.96,
     "dgrowth": 15.2,
   },
   {
@@ -955,6 +973,7 @@ const schdDB = [
     "percent": 2.463297965,
     "gfscore": 76,
     "dyield": 9.48,
+    "dyieldoncost": 12.89,
     "dgrowth": 7,
   },
   {
@@ -963,6 +982,7 @@ const schdDB = [
     "percent": 2.362705918,
     "gfscore": 88,
     "dyield": 3.02,
+    "dyieldoncost": 11.79,
     "dgrowth": 33.4,
   },
   {
@@ -971,6 +991,7 @@ const schdDB = [
     "percent": 2.198743411,
     "gfscore": 88,
     "dyield": 2.27,
+    "dyieldoncost": 6.78,
     "dgrowth": 11.4,
   },
   {
@@ -979,6 +1000,7 @@ const schdDB = [
     "percent": 1.794027537,
     "gfscore": 83,
     "dyield": 5.85,
+    "dyieldoncost": 7.16,
     "dgrowth": 4.3,
   },
   {
@@ -987,6 +1009,7 @@ const schdDB = [
     "percent": 1.745501733,
     "gfscore": 81,
     "dyield": 4.89,
+    "dyieldoncost": 7.52,
     "dgrowth": 9.9,
   },
   {
@@ -995,6 +1018,7 @@ const schdDB = [
     "percent": 1.487627321,
     "gfscore": 90,
     "dyield": 3.31,
+    "dyieldoncost": 4.68,
     "dgrowth": 7,
   },
   {
@@ -1003,6 +1027,7 @@ const schdDB = [
     "percent": 1.370255339,
     "gfscore": 72,
     "dyield": 3.89,
+    "dyieldoncost": 4.82,
     "dgrowth": 3.9,
   },
   {
@@ -1011,6 +1036,7 @@ const schdDB = [
     "percent": 1.323539967,
     "gfscore": 73,
     "dyield": 5.58,
+    "dyieldoncost": 1.81,
     "dgrowth": -19.7,
   },
   {
@@ -1019,6 +1045,7 @@ const schdDB = [
     "percent": 1.284559252,
     "gfscore": 97,
     "dyield": 2.86,
+    "dyieldoncost": 4.24,
     "dgrowth": 8.5,
   },
   {
@@ -1027,6 +1054,7 @@ const schdDB = [
     "percent": 1.189561257,
     "gfscore": 75,
     "dyield": 2.55,
+    "dyieldoncost": 6.05,
     "dgrowth": 18.5,
   },
   {
@@ -1035,6 +1063,7 @@ const schdDB = [
     "percent": 1.124073247,
     "gfscore": 97,
     "dyield": 2.26,
+    "dyieldoncost": 4.35,
     "dgrowth": 14,
   },
   {
@@ -1043,6 +1072,7 @@ const schdDB = [
     "percent": 1.04841683,
     "gfscore": 68,
     "dyield": 4.09,
+    "dyieldoncost": 38.96,
     "dgrowth": 56.2,
   },
   {
@@ -1051,6 +1081,7 @@ const schdDB = [
     "percent": 1.011224214,
     "gfscore": 83,
     "dyield": 5.56,
+    "dyieldoncost": 7.44,
     "dgrowth": 6.1,
   }
 ]
@@ -1063,6 +1094,7 @@ const dgroDB = [
     "percent": 3.38,
     "gfscore": 92,
     "dyield": 0.81,
+    "dyieldoncost": 1.21,
     "dgrowth": 10.1
   },
   {
@@ -1071,6 +1103,7 @@ const dgroDB = [
     "percent": 3.01,
     "gfscore": 92,
     "dyield": 2.69,
+    "dyieldoncost": 4.64,
     "dgrowth": 12.9
   },
   {
@@ -1079,6 +1112,7 @@ const dgroDB = [
     "percent": 2.98,
     "gfscore": 93,
     "dyield": 0.50,
+    "dyieldoncost": 0.67,
     "dgrowth": 6.6
   },
   {
@@ -1087,6 +1121,7 @@ const dgroDB = [
     "percent": 2.71,
     "gfscore": 87,
     "dyield": 3.08,
+    "dyieldoncost": 4.11,
     "dgrowth": 6
   },
   {
@@ -1095,6 +1130,7 @@ const dgroDB = [
     "percent": 2.50,
     "gfscore": 91,
     "dyield": 4.24,
+    "dyieldoncost": 8.26,
     "dgrowth": 15.9
   },
   {
@@ -1103,6 +1139,7 @@ const dgroDB = [
     "percent": 2.47,
     "gfscore": 85,
     "dyield": 3.77,
+    "dyieldoncost": 4.25,
     "dgrowth": 2.9
   },
   {
@@ -1111,6 +1148,7 @@ const dgroDB = [
     "percent": 2.19,
     "gfscore": 86,
     "dyield": 4.17,
+    "dyieldoncost": 5.45,
     "dgrowth": 6.16
   },
   {
@@ -1119,6 +1157,7 @@ const dgroDB = [
     "percent": 2.04,
     "gfscore": 86,
     "dyield": 2.57,
+    "dyieldoncost": 3.47,
     "dgrowth": 6.00
   },
   {
@@ -1127,6 +1166,7 @@ const dgroDB = [
     "percent": 2.02,
     "gfscore": 94,
     "dyield": 2.56,
+    "dyieldoncost": 5.45,
     "dgrowth": 16.4
   },
   {
@@ -1135,6 +1175,7 @@ const dgroDB = [
     "percent": 1.92,
     "gfscore": 96,
     "dyield": 1.37,
+    "dyieldoncost": 2.97,
     "dgrowth": 17.4
   },
   {
@@ -1143,6 +1184,7 @@ const dgroDB = [
     "percent": 1.90,
     "gfscore": 83,
     "dyield": 2.04,
+    "dyieldoncost": 4.78,
     "dgrowth": 30.5
   },
   {
@@ -1151,6 +1193,7 @@ const dgroDB = [
     "percent": 1.85,
     "gfscore": 86,
     "dyield": 5.7,
+    "dyieldoncost": 7.12,
     "dgrowth": 4.6
   },
   {
@@ -1159,6 +1202,7 @@ const dgroDB = [
     "percent": 1.75,
     "gfscore": 84,
     "dyield": 2.92,
+    "dyieldoncost": 4.29,
     "dgrowth": 8.7,
   },
   {
@@ -1167,6 +1211,7 @@ const dgroDB = [
     "percent": 1.71,
     "gfscore": 75,
     "dyield": 3.10,
+    "dyieldoncost": 6.16,
     "dgrowth": 15.80
   },
   {
@@ -1175,6 +1220,7 @@ const dgroDB = [
     "percent": 1.70,
     "gfscore": 81,
     "dyield": 3.14,
+    "dyieldoncost": 3.68,
     "dgrowth": 3.2,
   },
   {
@@ -1183,6 +1229,7 @@ const dgroDB = [
     "percent": 1.59,
     "gfscore": 85,
     "dyield": 2.95,
+    "dyieldoncost": 4.17,
     "dgrowth": 6.9,
   },
   {
@@ -1191,6 +1238,7 @@ const dgroDB = [
     "percent": 1.27,
     "gfscore": 93,
     "dyield": 3.27,
+    "dyieldoncost": 3.89,
     "dgrowth": 4.1,
   },
   {
@@ -1199,6 +1247,7 @@ const dgroDB = [
     "percent": 1.17,
     "gfscore": 89,
     "dyield": 3.16,
+    "dyieldoncost": 5.36,
     "dgrowth": 10.8,
   },
   {
@@ -1207,6 +1256,7 @@ const dgroDB = [
     "percent": 1.14,
     "gfscore": 73,
     "dyield": 4.30,
+    "dyieldoncost": 8.27,
     "dgrowth": 14.3
   },
   {
@@ -1215,6 +1265,7 @@ const dgroDB = [
     "percent": 1.10,
     "gfscore": 80,
     "dyield": 2.32,
+    "dyieldoncost": 3.19,
     "dgrowth": 8.00
   },
   {
@@ -1223,6 +1274,7 @@ const dgroDB = [
     "percent": 1.07,
     "gfscore": 95,
     "dyield": 4.17,
+    "dyieldoncost": 6.76,
     "dgrowth": 10.3,
   },
   {
@@ -1231,24 +1283,28 @@ const dgroDB = [
     "percent": 1.07,
     "gfscore": 86,
     "dyield": 2.70,
+    "dyieldoncost": 4.55,
     "dgrowth": 10.9
-  },
-  {
-    "ticker": "txn",
-    "name": "morgan stanley",
-    "percent": 1.00,
-    "gfscore": 93,
-    "dyield": 3.33,
-    "dgrowth": 17.1,
   },
   {
     "ticker": "ms",
     "name": "morgan stanley",
-    "percent": 1.00,
+    "percent": 1.01,
     "gfscore": 81,
-    "dyield": 4.24,
+    "dyield": 4.13,
+    "dyieldoncost": 11.89,
     "dgrowth": 25.5
-  }
+  },
+  {
+    "ticker": "txn",
+    "name": "Texas instrument inc",
+    "percent": 1.00,
+    "gfscore": 93,
+    "dyield": 3.31,
+    "dyieldoncost": 7.05,
+    "dgrowth": 17.1,
+  },
+
 ];
 
 //https://www.wisdomtree.com/investments/etfs/equity/dgrw
@@ -1259,6 +1315,7 @@ const dgrwDB = [
     "percent": 9.72,
     "gfscore": 92,
     "dyield": 0.81,
+    "dyieldoncost": 1.21,
     "dgrowth": 10.1
   },
   {
@@ -1267,6 +1324,7 @@ const dgrwDB = [
     "percent": 6.00,
     "gfscore": 93,
     "dyield": 0.50,
+    "dyieldoncost": 0.67,
     "dgrowth": 6.6
   },
   {
@@ -1275,6 +1333,7 @@ const dgrwDB = [
     "percent": 3.67,
     "gfscore": 83,
     "dyield": 2.04,
+    "dyieldoncost": 4.78,
     "dgrowth": 30.5
   },
   {
@@ -1283,6 +1342,7 @@ const dgrwDB = [
     "percent": 3.24,
     "gfscore": 87,
     "dyield": 3.08,
+    "dyieldoncost": 4.11,
     "dgrowth": 6
   },
   {
@@ -1291,6 +1351,7 @@ const dgrwDB = [
     "percent": 2.83,
     "gfscore": 86,
     "dyield": 2.57,
+    "dyieldoncost": 3.47,
     "dgrowth": 6.00
   },
   {
@@ -1299,6 +1360,7 @@ const dgrwDB = [
     "percent": 2.40,
     "gfscore": 94,
     "dyield": 2.56,
+    "dyieldoncost": 5.45,
     "dgrowth": 16.4
   },
   {
@@ -1307,6 +1369,7 @@ const dgrwDB = [
     "percent": 2.21,
     "gfscore": 81,
     "dyield": 3.14,
+    "dyieldoncost": 3.68,
     "dgrowth": 3.2,
   },
   {
@@ -1315,6 +1378,7 @@ const dgrwDB = [
     "percent": 2.18,
     "gfscore": 84,
     "dyield": 2.92,
+    "dyieldoncost": 4.29,
     "dgrowth": 8.7,
   },
   {
@@ -1323,6 +1387,7 @@ const dgrwDB = [
     "percent": 2.05,
     "gfscore": 78,
     "dyield": 5.71,
+    "dyieldoncost": 6.64,
     "dgrowth": 3.4
   },
   {
@@ -1331,6 +1396,7 @@ const dgrwDB = [
     "percent": 2.01,
     "gfscore": 96,
     "dyield": 1.37,
+    "dyieldoncost": 2.97,
     "dgrowth": 17.4
   },
   {
@@ -1339,6 +1405,7 @@ const dgrwDB = [
     "percent": 1.98,
     "gfscore": 83,
     "dyield": 1.48,
+    "dyieldoncost": 1.68,
     "dgrowth": 1.90
   },
   {
@@ -1347,6 +1414,7 @@ const dgrwDB = [
     "percent": 1.94,
     "gfscore": 93,
     "dyield": 3.27,
+    "dyieldoncost": 3.89,
     "dgrowth": 4.1,
   },
   {
@@ -1355,6 +1423,7 @@ const dgrwDB = [
     "percent": 1.92,
     "gfscore": 95,
     "dyield": 0.04,
+    "dyieldoncost": 0.03,
     "dgrowth": 2.00
   },
   {
@@ -1363,6 +1432,7 @@ const dgrwDB = [
     "percent": 1.89,
     "gfscore": 75,
     "dyield": 0.79,
+    "dyieldoncost": 1.46,
     "dgrowth": 13.90
   },
   {
@@ -1371,6 +1441,7 @@ const dgrwDB = [
     "percent": 1.84,
     "gfscore": 85,
     "dyield": 2.95,
+    "dyieldoncost": 4.17,
     "dgrowth": 6.9,
   },
   {
@@ -1379,6 +1450,7 @@ const dgrwDB = [
     "percent": 1.60,
     "gfscore": 84,
     "dyield": 1.42,
+    "dyieldoncost": 2.54,
     "dgrowth": 13.30
   },
   {
@@ -1387,6 +1459,7 @@ const dgrwDB = [
     "percent": 1.49,
     "gfscore": 76,
     "dyield": 3.12,
+    "dyieldoncost": 1.34,
     "dgrowth": -13.7
   },
   {
@@ -1395,6 +1468,7 @@ const dgrwDB = [
     "percent": 1.48,
     "gfscore": 81,
     "dyield": 4.24,
+    "dyieldoncost": 11.89,
     "dgrowth": 25.5
   },
   {
@@ -1403,6 +1477,7 @@ const dgrwDB = [
     "percent": 1.47,
     "gfscore": 80,
     "dyield": 2.32,
+    "dyieldoncost": 3.19,
     "dgrowth": 8.00
   },
   {
@@ -1411,6 +1486,7 @@ const dgrwDB = [
     "percent": 1.24,
     "gfscore": 89,
     "dyield": 3.16,
+    "dyieldoncost": 5.36,
     "dgrowth": 10.8,
   },
   {
@@ -1419,6 +1495,7 @@ const dgrwDB = [
     "percent": 1.23,
     "gfscore": 93,
     "dyield": 3.33,
+    "dyieldoncost": 7.05,
     "dgrowth": 17.1,
   },
   {
@@ -1427,6 +1504,7 @@ const dgrwDB = [
     "percent": 1.20,
     "gfscore": 95,
     "dyield": 4.17,
+    "dyieldoncost": 6.76,
     "dgrowth": 10.3,
   },
   {
@@ -1435,6 +1513,7 @@ const dgrwDB = [
     "percent": 1.11,
     "gfscore": 93,
     "dyield": 2.42,
+    "dyieldoncost": 3.03,
     "dgrowth": 5.30
   },
   {
@@ -1443,6 +1522,7 @@ const dgrwDB = [
     "percent": 1.10,
     "gfscore": 97,
     "dyield": 0.82,
+    "dyieldoncost": 1.53,
     "dgrowth": 16.00
   },
   {
@@ -1451,6 +1531,7 @@ const dgrwDB = [
     "percent": 1.10,
     "gfscore": 81,
     "dyield": 4.24,
+    "dyieldoncost": 12.89,
     "dgrowth": 25.5
   },
   {
@@ -1459,6 +1540,7 @@ const dgrwDB = [
     "percent": 1.10,
     "gfscore": 88,
     "dyield": 2.23,
+    "dyieldoncost": 4.45,
     "dgrowth": 14.20
   },
   {
@@ -1467,6 +1549,7 @@ const dgrwDB = [
     "percent": 1.00,
     "gfscore": 72,
     "dyield": 3.22,
+    "dyieldoncost": 9.33,
     "dgrowth": 25.80
   }
 ];
@@ -1479,6 +1562,7 @@ const vugDB = [
     "percent": 13.00,
     "gfscore": 93,
     "dyield": 0.50,
+    "dyieldoncost": 0.67,
     "dgrowth": 6.6
   },
   {
@@ -1487,6 +1571,7 @@ const vugDB = [
     "percent": 12.88,
     "gfscore": 92,
     "dyield": 0.81,
+    "dyieldoncost": 1.21,
     "dgrowth": 10.1
   },
   {
@@ -1495,6 +1580,7 @@ const vugDB = [
     "percent": 6.33,
     "gfscore": 92,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1503,6 +1589,7 @@ const vugDB = [
     "percent": 4.90,
     "gfscore": 95,
     "dyield": 0.04,
+    "dyieldoncost": 0.03,
     "dgrowth": 2.00
   },
   {
@@ -1511,6 +1598,7 @@ const vugDB = [
     "percent": 3.77,
     "gfscore": 98,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1519,6 +1607,7 @@ const vugDB = [
     "percent": 3.43,
     "gfscore": 89,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1527,6 +1616,7 @@ const vugDB = [
     "percent": 3.17,
     "gfscore": 98,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1535,6 +1625,7 @@ const vugDB = [
     "percent": 2.78,
     "gfscore": 84,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1543,6 +1634,7 @@ const vugDB = [
     "percent": 2.43,
     "gfscore": 75,
     "dyield": 0.79,
+    "dyieldoncost": 1.46,
     "dgrowth": 13.90
   },
   {
@@ -1551,6 +1643,7 @@ const vugDB = [
     "percent": 1.88,
     "gfscore": 97,
     "dyield": 0.82,
+    "dyieldoncost": 1.53,
     "dgrowth": 16.00
   },
   {
@@ -1559,6 +1652,7 @@ const vugDB = [
     "percent": 1.62,
     "gfscore": 98,
     "dyield": 0.56,
+    "dyieldoncost": 1.27,
     "dgrowth": 17.92
   },
   {
@@ -1567,6 +1661,7 @@ const vugDB = [
     "percent": 1.46,
     "gfscore": 94,
     "dyield": 2.56,
+    "dyieldoncost": 5.45,
     "dgrowth": 16.4
   },
   {
@@ -1575,6 +1670,7 @@ const vugDB = [
     "percent": 1.25,
     "gfscore": 92,
     "dyield": 0.67,
+    "dyieldoncost": 1.15,
     "dgrowth": 12.1
   },
   {
@@ -1583,6 +1679,7 @@ const vugDB = [
     "percent": 1.24,
     "gfscore": 92,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1591,6 +1688,7 @@ const vugDB = [
     "percent": 0.98,
     "gfscore": 80,
     "dyield": 2.32,
+    "dyieldoncost": 3.19,
     "dgrowth": 8.00
   },
   {
@@ -1599,6 +1697,7 @@ const vugDB = [
     "percent": 0.96,
     "gfscore": 97,
     "dyield": 1.54,
+    "dyieldoncost": 2.29,
     "dgrowth": 10.70
   },
   {
@@ -1607,6 +1706,7 @@ const vugDB = [
     "percent": 0.96,
     "gfscore": 85,
     "dyield": 1.28,
+    "dyieldoncost": 1.92,
     "dgrowth": 8.40
   },
   {
@@ -1615,6 +1715,7 @@ const vugDB = [
     "percent": 0.95,
     "gfscore": 86,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1623,6 +1724,7 @@ const vugDB = [
     "percent": 0.91,
     "gfscore": 96,
     "dyield": 0,
+    "dyieldoncost": 0,
     "dgrowth": 0
   },
   {
@@ -1631,6 +1733,7 @@ const vugDB = [
     "percent": 0.88,
     "gfscore": 92,
     "dyield": 0.28,
+    "dyieldoncost": 0.54,
     "dgrowth": 15.00
   }
 ];
