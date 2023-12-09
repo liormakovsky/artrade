@@ -283,14 +283,14 @@
                         <!-- <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
                         <button class="btn btn-info border ms-1"
                             @click="showDividendAristocratsList">Aristocrats</button> -->
-                        <button class="btn border ms-1" style="background-color: #DFCBFF;"
-                            @click="showList('schd', 'displaySCHD', 'schdList', schdDB)">SCHD</button>
-                        <button class="btn border ms-1" style="background-color: #0091F7;"
-                            @click="showList('dgro', 'displayDGRO', 'dgroList', dgroDB)">DGRO</button>
-                        <button class="btn border ms-1 text-dark" style="background-color: #F0DCE1;"
-                            @click="showList('dgrw', 'displayDGRW', 'dgrwList', dgrwDB)">DGRW</button>
-                        <button class="btn border ms-1" style="background-color: #F65959;"
-                            @click="showList('vug', 'displayVUG', 'vugList', vugDB)">VUG</button>
+                        <button class="btn border database-button ms-1" style="background-color: #DFCBFF;"
+                            @click="showListAfterNewScore">SCHD</button>
+                        <button class="btn border database-button ms-1" style="background-color: #0091F7;"
+                            @click="showListAfterNewScore">DGRO</button>
+                        <button class="btn border database-button ms-1 text-dark" style="background-color: #F0DCE1;"
+                            @click="showListAfterNewScore">DGRW</button>
+                        <button class="btn border database-button ms-1" style="background-color: #F65959;"
+                            @click="showListAfterNewScore">VUG</button>
                         <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Finviz
                             Maps</button>
                     </div>
@@ -305,7 +305,7 @@
                         <label for="minGfScoreInput" style="margin-right: 22px; margin-top: 8px;">Minimum
                             Score</label>
                         <input type="text" class="form-control h-50 mt-2" id="minGfScoreInput"
-                            v-model.number="minGfScore" @keyup.enter="showListAfterNewScore()" />
+                            v-model.number="minGfScore" @keyup.enter="showListAfterNewScore" />
                     </div>
                 </div>
 

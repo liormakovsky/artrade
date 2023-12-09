@@ -377,7 +377,6 @@ new Vue({
          * @param {Array} db - Database or array of stocks to generate the list from.
          */
         showList(listType, displayFlag, dataList, db) {
-            this.currentDB = listType;
             // Reset all display flags to false
             this.resetDisplayFlags();
             // Set the display flag for the current list type to true
@@ -521,7 +520,11 @@ new Vue({
                 return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${gfscore ? '\n' + gfscore : ""} ${dividendText ? ' \n' + dividendText : ''}`;
             }
         },
-        showListAfterNewScore() {
+        showListAfterNewScore(event) {
+            if (event.target.classList.contains('database-button')) {
+                const buttonText = event.target.textContent.trim();
+                this.currentDB = buttonText.toLowerCase();
+            }
             const dbName = this.currentDB + "DB";
             this.showList(this.currentDB, "display" + this.currentDB.toUpperCase(), this.currentDB + "List", this[dbName]);
         }
