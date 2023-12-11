@@ -811,6 +811,7 @@ const aristocratsDB = [
 
 //https://www.schwabassetmanagement.com/products/schd
 //https://www.gurufocus.com/stock/UPS/dividend
+//https://www.financecharts.com/stocks/VZ/performance/total-return
 
 const schdDB = [
   {
@@ -818,8 +819,9 @@ const schdDB = [
     "name": "verizon communications inc",
     "percent": 4.538278868,
     "gfscore": 75,
-    "dyield": 6.91,
+    "totalreturn": -15.49,
     "dyieldoncost": 7.74,
+    "dyield": 6.91,
     "dgrowth": 2.1,
 
   },
@@ -828,8 +830,9 @@ const schdDB = [
     "name": "amgen inc",
     "percent": 4.382195393,
     "gfscore": 89,
-    "dyield": 3.16,
+    "totalreturn": 61.56,
     "dyieldoncost": 5.36,
+    "dyield": 3.16,
     "dgrowth": 10.8,
   },
   {
@@ -837,8 +840,9 @@ const schdDB = [
     "name": "broadcom inc",
     "percent": 4.294932269,
     "gfscore": 83,
-    "dyield": 2.04,
+    "totalreturn": 368.61,
     "dyieldoncost": 4.78,
+    "dyield": 2.04,
     "dgrowth": 30.5,
   },
   {
@@ -846,8 +850,9 @@ const schdDB = [
     "name": "coca-cola",
     "percent": 4.023509138,
     "gfscore": 81,
-    "dyield": 3.14,
+    "totalreturn": 39.14,
     "dyieldoncost": 3.68,
+    "dyield": 3.14,
     "dgrowth": 3.2,
   },
   {
@@ -855,8 +860,9 @@ const schdDB = [
     "name": "abbvie inc",
     "percent": 3.957423013,
     "gfscore": 91,
-    "dyield": 4.24,
+    "totalreturn": 115.21,
     "dyieldoncost": 8.26,
+    "dyield": 4.24,
     "dgrowth": 15.9,
   },
   {
@@ -864,8 +870,9 @@ const schdDB = [
     "name": "pepsico inc",
     "percent": 3.89775965,
     "gfscore": 85,
-    "dyield": 2.95,
+    "totalreturn": 64.26,
     "dyieldoncost": 4.17,
+    "dyield": 2.95,
     "dgrowth": 6.9,
   },
   {
@@ -873,8 +880,9 @@ const schdDB = [
     "name": "merck & co inc",
     "percent": 3.894525156,
     "gfscore": 84,
-    "dyield": 2.92,
+    "totalreturn": 64.34,
     "dyieldoncost": 4.29,
+    "dyield": 2.92,
     "dgrowth": 8.7,
   },
   {
@@ -882,8 +890,9 @@ const schdDB = [
     "name": "home depot inc",
     "percent": 3.891616754,
     "gfscore": 94,
-    "dyield": 2.56,
+    "totalreturn": 115.07,
     "dyieldoncost": 5.45,
+    "dyield": 2.56,
     "dgrowth": 16.4,
   },
   {
@@ -891,8 +900,9 @@ const schdDB = [
     "name": "blackrock inc",
     "percent": 3.693024192,
     "gfscore": 93,
-    "dyield": 2.69,
+    "totalreturn": 115.94,
     "dyieldoncost": 5.06,
+    "dyield": 2.69,
     "dgrowth": 13.4,
   },
   {
@@ -900,8 +910,9 @@ const schdDB = [
     "name": "texas instrument inc",
     "percent": 3.677504473,
     "gfscore": 93,
-    "dyield": 3.31,
+    "totalreturn": 92.31,
     "dyieldoncost": 7.05,
+    "dyield": 3.31,
     "dgrowth": 17.1,
   },
   {
@@ -909,8 +920,9 @@ const schdDB = [
     "name": "united parcel service inc class b",
     "percent": 3.606950615,
     "gfscore": 95,
-    "dyield": 4.17,
+    "totalreturn": 75.70,
     "dyieldoncost": 6.76,
+    "dyield": 4.17,
     "dgrowth": 10.3,
   },
   {
@@ -918,8 +930,9 @@ const schdDB = [
     "name": "pfizer inc",
     "percent": 3.587710061,
     "gfscore": 86,
-    "dyield": 5.7,
+    "totalreturn": -16.86,
     "dyieldoncost": 7.12,
+    "dyield": 5.7,
     "dgrowth": 4.6,
   },
   {
@@ -927,8 +940,9 @@ const schdDB = [
     "name": "chevron corp",
     "percent": 3.487591741,
     "gfscore": 86,
-    "dyield": 4.24,
+    "totalreturn": 56.44,
     "dyieldoncost": 5.45,
+    "dyield": 4.24,
     "dgrowth": 5.8,
   },
   {
@@ -936,8 +950,9 @@ const schdDB = [
     "name": "cisco systems inc",
     "percent": 3.425295365,
     "gfscore": 93,
-    "dyield": 3.27,
+    "totalreturn": 20.15,
     "dyieldoncost": 3.89,
+    "dyield": 3.27,
     "dgrowth": 4.1,
   },
   {
@@ -945,8 +960,9 @@ const schdDB = [
     "name": "lockheed martin corp",
     "percent": 3.312875635,
     "gfscore": 89,
-    "dyield": 2.8,
+    "totalreturn": 71.55,
     "dyieldoncost": 4.12,
+    "dyield": 2.8,
     "dgrowth": 8.9,
   },
   {
@@ -954,8 +970,9 @@ const schdDB = [
     "name": "automatic data processing inc",
     "percent": 3.117900277,
     "gfscore": 94,
-    "dyield": 2.41,
+    "totalreturn": 83.20,
     "dyieldoncost": 3.96,
+    "dyield": 2.41,
     "dgrowth": 12.4,
   },
   {
@@ -963,8 +980,9 @@ const schdDB = [
     "name": "blackstone inc",
     "percent": 2.60443362,
     "gfscore": 61,
-    "dyield": 2.96,
+    "totalreturn": 348.87,
     "dyieldoncost": 5.96,
+    "dyield": 2.96,
     "dgrowth": 15.2,
   },
   {
@@ -972,8 +990,9 @@ const schdDB = [
     "name": "altria group inc",
     "percent": 2.463297965,
     "gfscore": 76,
-    "dyield": 9.48,
+    "totalreturn": 13.77,
     "dyieldoncost": 12.89,
+    "dyield": 9.48,
     "dgrowth": 7,
   },
   {
@@ -981,8 +1000,9 @@ const schdDB = [
     "name": "eog resources inc",
     "percent": 2.362705918,
     "gfscore": 88,
-    "dyield": 3.02,
+    "totalreturn": 43.95,
     "dyieldoncost": 11.79,
+    "dyield": 3.02,
     "dgrowth": 33.4,
   },
   {
@@ -990,8 +1010,9 @@ const schdDB = [
     "name": "illinois tool inc",
     "percent": 2.198743411,
     "gfscore": 88,
-    "dyield": 2.27,
+    "totalreturn": 116,
     "dyieldoncost": 6.78,
+    "dyield": 2.27,
     "dgrowth": 11.4,
   },
   {
@@ -999,8 +1020,9 @@ const schdDB = [
     "name": "3m",
     "percent": 1.794027537,
     "gfscore": 83,
-    "dyield": 5.85,
+    "totalreturn": -36.26,
     "dyieldoncost": 7.16,
+    "dyield": 5.85,
     "dgrowth": 4.3,
   },
   {
@@ -1008,8 +1030,9 @@ const schdDB = [
     "name": "us bancorp",
     "percent": 1.745501733,
     "gfscore": 81,
-    "dyield": 4.89,
+    "totalreturn": -2.69,
     "dyieldoncost": 7.52,
+    "dyield": 4.89,
     "dgrowth": 9.9,
   },
   {
@@ -1017,8 +1040,9 @@ const schdDB = [
     "name": "valero energy corp",
     "percent": 1.487627321,
     "gfscore": 90,
-    "dyield": 3.31,
+    "totalreturn": 109.92,
     "dyieldoncost": 4.68,
+    "dyield": 3.31,
     "dgrowth": 7,
   },
   {
@@ -1026,8 +1050,9 @@ const schdDB = [
     "name": "kimberly clark corp",
     "percent": 1.370255339,
     "gfscore": 72,
-    "dyield": 3.89,
+    "totalreturn": 24.77,
     "dyieldoncost": 4.82,
+    "dyield": 3.89,
     "dgrowth": 3.9,
   },
   {
@@ -1035,8 +1060,9 @@ const schdDB = [
     "name": "ford motor",
     "percent": 1.323539967,
     "gfscore": 73,
-    "dyield": 5.58,
+    "totalreturn": 60.72,
     "dyieldoncost": 1.81,
+    "dyield": 5.58,
     "dgrowth": -19.7,
   },
   {
@@ -1044,8 +1070,9 @@ const schdDB = [
     "name": "paychex inc",
     "percent": 1.284559252,
     "gfscore": 97,
-    "dyield": 2.86,
+    "totalreturn": 110.14,
     "dyieldoncost": 4.24,
+    "dyield": 2.86,
     "dgrowth": 8.5,
   },
   {
@@ -1053,8 +1080,9 @@ const schdDB = [
     "name": "allstate corp",
     "percent": 1.189561257,
     "gfscore": 75,
-    "dyield": 2.55,
+    "totalreturn": 89.42,
     "dyieldoncost": 6.05,
+    "dyield": 2.55,
     "dgrowth": 18.5,
   },
   {
@@ -1062,8 +1090,9 @@ const schdDB = [
     "name": "fastenal",
     "percent": 1.124073247,
     "gfscore": 97,
-    "dyield": 2.26,
+    "totalreturn": 163.77,
     "dyieldoncost": 4.35,
+    "dyield": 2.26,
     "dgrowth": 14,
   },
   {
@@ -1071,8 +1100,9 @@ const schdDB = [
     "name": "newmont",
     "percent": 1.04841683,
     "gfscore": 68,
-    "dyield": 4.09,
+    "totalreturn": 42.27,
     "dyieldoncost": 38.96,
+    "dyield": 4.09,
     "dgrowth": 56.2,
   },
   {
@@ -1080,8 +1110,9 @@ const schdDB = [
     "name": "oneok inc",
     "percent": 1.011224214,
     "gfscore": 83,
-    "dyield": 5.56,
+    "totalreturn": 64.09,
     "dyieldoncost": 7.44,
+    "dyield": 5.56,
     "dgrowth": 6.1,
   }
 ]

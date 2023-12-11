@@ -55,14 +55,14 @@
                 <div class="rounded square generic-square" v-on:click="buildTradingUrl">
                     <span>TradingView</span>
                 </div>
+                <div class="rounded square generic-square" v-on:click="buildFinanceChartsUrl">
+                    <span>Finance Charts</span>
+                </div>
                 <div class="rounded square generic-square" v-on:click="buildGuruUrl">
                     <span>GuruFocus</span>
                 </div>
                 <div class="rounded square generic-square" v-on:click="buildStockAnalysisUrl">
                     <span>Stock Analysis</span>
-                </div>
-                <div class="rounded square generic-square" v-on:click="buildFinvizUrl">
-                    <span>Finviz</span>
                 </div>
             </div>
         </div>
@@ -279,37 +279,40 @@
             <!-- Information section -->
             <div class="col-6">
                 <div class="row d-flex justify-content-between">
-                    <div class="col-4 d-flex flex-column ">
+                    <div class="col-6 d-flex flex-column ">
                         <!-- <label for="sortby" style="margin-right: 22px; margin-top: 8px;">Sort By</label> -->
                         <div class="sortByButtons">
                             <div class="d-flex">
-                                <button class="btn btn-secondary ms-1 mt-2 w-75"
-                                    @click="showList($event,'guruFocusScore')" style="height: 35px;">Score</button>
+                                <button class="btn btn-secondary ms-1" @click="showList($event,'guruFocusScore')"
+                                    title="GuruFocus Score" style="height: 35px;">Score</button>
+                                <button class="btn btn-secondary ms-1"
+                                    title="Total Return: Total return includes any dividends being re-invested"
+                                    @click="showList($event,'totalReturn')" style="height: 35px;">Total Return</button>
+                                <button class="btn btn-secondary ms-1"
+                                    title="Yield On Cost: Annual dividend income percentage relative to investment cost"
+                                    @click="showList($event,'dividendYoc')" style="height: 35px;">YOC</button>
+                            </div>
+                            <!-- <div class="d-flex">
+                                        <button class="btn btn-secondary ms-1 mt-2 w-75"
+                                    @click="showList($event,'dividendGrowth')" style="height: 35px;">Growth</button>
                                 <button class="btn btn-secondary ms-1 mt-2 w-75"
                                     @click="showList($event,'dividendYield')" style="height: 35px;">Yield</button>
-                            </div>
-                            <div class="d-flex">
-                                <button class="btn btn-secondary ms-1 mt-2 w-75"
-                                    @click="showList($event,'dividendGrowth')" style="height: 35px;">Growth</button>
-                                <button class="btn btn-secondary ms-1 mt-2 w-75" @click="showList($event,'dividendYoc')"
-                                    style="height: 35px;">YOC</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-end mt-2">
+                    <div class="col-6 d-flex justify-content-end">
                         <!-- <button class="btn btn-warning border" @click="showDividendKingsList">Kings</button>
                         <button class="btn btn-info border ms-1"
                             @click="showDividendAristocratsList">Aristocrats</button> -->
-                        <button class="btn border database-button ms-1 h-75" style="background-color: #DFCBFF;"
+                        <button class="btn border database-button ms-1" style="background-color: #DFCBFF;"
                             @click="showList">SCHD</button>
-                        <button class="btn border database-button ms-1 h-75" style="background-color: #0091F7;"
+                        <button class="btn border database-button ms-1" style="background-color: #0091F7;"
                             @click="showList">DGRO</button>
-                        <button class="btn border database-button ms-1 text-dark h-75"
-                            style="background-color: #F0DCE1;" @click="showList">DGRW</button>
-                        <button class="btn border database-button ms-1 h-75" style="background-color: #F65959;"
+                        <button class="btn border database-button ms-1 text-dark" style="background-color: #F0DCE1;"
+                            @click="showList">DGRW</button>
+                        <button class="btn border database-button ms-1" style="background-color: #F65959;"
                             @click="showList">VUG</button>
-                        <button class="btn btn-success border ms-1 h-75" @click="showFinvizModal = true">Finviz
-                            Maps</button>
+                        <button class="btn btn-success border ms-1" @click="showFinvizModal = true">Maps</button>
                     </div>
                 </div>
                 <div class="row d-flex space-between">

@@ -186,11 +186,11 @@ new Vue({
         buildTradingUrl() {
             window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
         },
-        buildTradingUrl() {
-            window.open(`https://www.tradingview.com/chart/EvRa3Cdl/?symbol=${this.stockOrEtfNameForUrl}`);
-        },
         buildAlphaUrl() {
             window.open(`https://seekingalpha.com/symbol/${this.stockOrEtfNameForUrl}/growth`);
+        },
+        buildFinanceChartsUrl() {
+            window.open(`https://www.financecharts.com/stocks/${this.stockOrEtfNameForUrl}/all-metrics`);
         },
         openStockMap() {
             window.open(`https://finviz.com/map.ashx?t=sec`);
@@ -407,6 +407,8 @@ new Vue({
                         return b.dgrowth - a.dgrowth;
                     case 'dividendYoc':
                         return b.dyieldoncost - a.dyieldoncost;
+                    case 'totalReturn':
+                        return b.totalreturn - a.totalreturn;
                     default:
                         return b.percent - a.percent;
                 }
@@ -521,13 +523,18 @@ new Vue({
 
             let gfscore = '';
             let dividendText = '';
+            let totalReturnText = '';
 
             if (elem && elem.gfscore !== undefined) {
                 gfscore = `GuruFocus Score: ${elem.gfscore}`;
             }
 
             if (elem && elem.chowderNumber !== undefined) {
-                dividendText = `Dividend yield: ${elem.dyield}%\nDividend growth(5Y): ${elem.dgrowth}%\nDividend Yield On Cost(5Y): ${elem.dyieldoncost}%\nChowder: ${elem.chowderNumber.toFixed(2)}`;
+                dividendText = `Dividend Yield On Cost(5Y): ${elem.dyieldoncost}%\nChowder: ${elem.chowderNumber.toFixed(2)}\nDividend yield: ${elem.dyield}%\nDividend growth(3Y): ${elem.dgrowth}%`;
+            }
+
+            if (elem && elem.totalreturn !== undefined) {
+                totalReturnText = `Total Return(5Y): ${elem.totalreturn}%`;
             }
 
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {
@@ -535,7 +542,7 @@ new Vue({
                 return `${uppercaseName}\n${elem.dividendincrease} years ${status ? ' - ' + status : ''}`;
             } else {
                 // Use the percentage and status format for dgro and schd
-                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${gfscore ? '\n' + gfscore : ""} ${dividendText ? ' \n' + dividendText : ''}`;
+                return `${uppercaseName}\nHolding: ${elem.percent.toFixed(2)}%${status ? ' \nAlso in: ' + status : ''}${gfscore ? '\n' + gfscore : ""} ${totalReturnText ? '\n' + totalReturnText : ""}${dividendText ? ' \n' + dividendText : ''}`;
             }
         }
     },
