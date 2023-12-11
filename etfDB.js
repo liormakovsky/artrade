@@ -811,7 +811,7 @@ const aristocratsDB = [
 
 //https://www.schwabassetmanagement.com/products/schd
 //https://www.gurufocus.com/stock/UPS/dividend
-//https://www.financecharts.com/stocks/VZ/performance/total-return
+//https://www.financecharts.com/stocks/FAST/all-metrics
 
 const schdDB = [
   {
@@ -819,7 +819,7 @@ const schdDB = [
     "name": "verizon communications inc",
     "percent": 4.538278868,
     "gfscore": 75,
-    "totalreturn": -15.49,
+    "cagr": -3.26,
     "dyieldoncost": 7.74,
     "dyield": 6.91,
     "dgrowth": 2.1,
@@ -830,7 +830,7 @@ const schdDB = [
     "name": "amgen inc",
     "percent": 4.382195393,
     "gfscore": 89,
-    "totalreturn": 61.56,
+    "cagr": 9.06,
     "dyieldoncost": 5.36,
     "dyield": 3.16,
     "dgrowth": 10.8,
@@ -840,7 +840,7 @@ const schdDB = [
     "name": "broadcom inc",
     "percent": 4.294932269,
     "gfscore": 83,
-    "totalreturn": 368.61,
+    "cagr": 35.74,
     "dyieldoncost": 4.78,
     "dyield": 2.04,
     "dgrowth": 30.5,
@@ -850,7 +850,7 @@ const schdDB = [
     "name": "coca-cola",
     "percent": 4.023509138,
     "gfscore": 81,
-    "totalreturn": 39.14,
+    "cagr": 6.61,
     "dyieldoncost": 3.68,
     "dyield": 3.14,
     "dgrowth": 3.2,
@@ -860,7 +860,7 @@ const schdDB = [
     "name": "abbvie inc",
     "percent": 3.957423013,
     "gfscore": 91,
-    "totalreturn": 115.21,
+    "cagr": 14.97,
     "dyieldoncost": 8.26,
     "dyield": 4.24,
     "dgrowth": 15.9,
@@ -870,7 +870,7 @@ const schdDB = [
     "name": "pepsico inc",
     "percent": 3.89775965,
     "gfscore": 85,
-    "totalreturn": 64.26,
+    "cagr": 10.05,
     "dyieldoncost": 4.17,
     "dyield": 2.95,
     "dgrowth": 6.9,
@@ -880,7 +880,7 @@ const schdDB = [
     "name": "merck & co inc",
     "percent": 3.894525156,
     "gfscore": 84,
-    "totalreturn": 64.34,
+    "cagr": 9.91,
     "dyieldoncost": 4.29,
     "dyield": 2.92,
     "dgrowth": 8.7,
@@ -890,7 +890,7 @@ const schdDB = [
     "name": "home depot inc",
     "percent": 3.891616754,
     "gfscore": 94,
-    "totalreturn": 115.07,
+    "cagr": 15.18,
     "dyieldoncost": 5.45,
     "dyield": 2.56,
     "dgrowth": 16.4,
@@ -900,7 +900,7 @@ const schdDB = [
     "name": "blackrock inc",
     "percent": 3.693024192,
     "gfscore": 93,
-    "totalreturn": 115.94,
+    "cagr": 14.45,
     "dyieldoncost": 5.06,
     "dyield": 2.69,
     "dgrowth": 13.4,
@@ -910,7 +910,7 @@ const schdDB = [
     "name": "texas instrument inc",
     "percent": 3.677504473,
     "gfscore": 93,
-    "totalreturn": 92.31,
+    "cagr": 12.22,
     "dyieldoncost": 7.05,
     "dyield": 3.31,
     "dgrowth": 17.1,
@@ -920,7 +920,7 @@ const schdDB = [
     "name": "united parcel service inc class b",
     "percent": 3.606950615,
     "gfscore": 95,
-    "totalreturn": 75.70,
+    "cagr": 9.70,
     "dyieldoncost": 6.76,
     "dyield": 4.17,
     "dgrowth": 10.3,
@@ -930,7 +930,7 @@ const schdDB = [
     "name": "pfizer inc",
     "percent": 3.587710061,
     "gfscore": 86,
-    "totalreturn": -16.86,
+    "cagr": -4.29,
     "dyieldoncost": 7.12,
     "dyield": 5.7,
     "dgrowth": 4.6,
@@ -940,7 +940,7 @@ const schdDB = [
     "name": "chevron corp",
     "percent": 3.487591741,
     "gfscore": 86,
-    "totalreturn": 56.44,
+    "cagr": 8.28,
     "dyieldoncost": 5.45,
     "dyield": 4.24,
     "dgrowth": 5.8,
@@ -950,7 +950,7 @@ const schdDB = [
     "name": "cisco systems inc",
     "percent": 3.425295365,
     "gfscore": 93,
-    "totalreturn": 20.15,
+    "cagr": 2.92,
     "dyieldoncost": 3.89,
     "dyield": 3.27,
     "dgrowth": 4.1,
@@ -960,7 +960,7 @@ const schdDB = [
     "name": "lockheed martin corp",
     "percent": 3.312875635,
     "gfscore": 89,
-    "totalreturn": 71.55,
+    "cagr": 11.48,
     "dyieldoncost": 4.12,
     "dyield": 2.8,
     "dgrowth": 8.9,
@@ -970,7 +970,7 @@ const schdDB = [
     "name": "automatic data processing inc",
     "percent": 3.117900277,
     "gfscore": 94,
-    "totalreturn": 83.20,
+    "cagr": 11.63,
     "dyieldoncost": 3.96,
     "dyield": 2.41,
     "dgrowth": 12.4,
@@ -980,7 +980,7 @@ const schdDB = [
     "name": "blackstone inc",
     "percent": 2.60443362,
     "gfscore": 61,
-    "totalreturn": 348.87,
+    "cagr": 31.35,
     "dyieldoncost": 5.96,
     "dyield": 2.96,
     "dgrowth": 15.2,
@@ -990,7 +990,7 @@ const schdDB = [
     "name": "altria group inc",
     "percent": 2.463297965,
     "gfscore": 76,
-    "totalreturn": 13.77,
+    "cagr": 1.72,
     "dyieldoncost": 12.89,
     "dyield": 9.48,
     "dgrowth": 7,
@@ -1000,7 +1000,7 @@ const schdDB = [
     "name": "eog resources inc",
     "percent": 2.362705918,
     "gfscore": 88,
-    "totalreturn": 43.95,
+    "cagr": 6.23,
     "dyieldoncost": 11.79,
     "dyield": 3.02,
     "dgrowth": 33.4,
@@ -1010,7 +1010,7 @@ const schdDB = [
     "name": "illinois tool inc",
     "percent": 2.198743411,
     "gfscore": 88,
-    "totalreturn": 116,
+    "cagr": 15.09,
     "dyieldoncost": 6.78,
     "dyield": 2.27,
     "dgrowth": 11.4,
@@ -1020,7 +1020,7 @@ const schdDB = [
     "name": "3m",
     "percent": 1.794027537,
     "gfscore": 83,
-    "totalreturn": -36.26,
+    "cagr": -9.52,
     "dyieldoncost": 7.16,
     "dyield": 5.85,
     "dgrowth": 4.3,
@@ -1030,7 +1030,7 @@ const schdDB = [
     "name": "us bancorp",
     "percent": 1.745501733,
     "gfscore": 81,
-    "totalreturn": -2.69,
+    "cagr": -1.98,
     "dyieldoncost": 7.52,
     "dyield": 4.89,
     "dgrowth": 9.9,
@@ -1040,7 +1040,7 @@ const schdDB = [
     "name": "valero energy corp",
     "percent": 1.487627321,
     "gfscore": 90,
-    "totalreturn": 109.92,
+    "cagr": 13.59,
     "dyieldoncost": 4.68,
     "dyield": 3.31,
     "dgrowth": 7,
@@ -1050,7 +1050,7 @@ const schdDB = [
     "name": "kimberly clark corp",
     "percent": 1.370255339,
     "gfscore": 72,
-    "totalreturn": 24.77,
+    "cagr": 4.79,
     "dyieldoncost": 4.82,
     "dyield": 3.89,
     "dgrowth": 3.9,
@@ -1060,7 +1060,7 @@ const schdDB = [
     "name": "ford motor",
     "percent": 1.323539967,
     "gfscore": 73,
-    "totalreturn": 60.72,
+    "cagr": 7.34,
     "dyieldoncost": 1.81,
     "dyield": 5.58,
     "dgrowth": -19.7,
@@ -1070,7 +1070,7 @@ const schdDB = [
     "name": "paychex inc",
     "percent": 1.284559252,
     "gfscore": 97,
-    "totalreturn": 110.14,
+    "cagr": 15,
     "dyieldoncost": 4.24,
     "dyield": 2.86,
     "dgrowth": 8.5,
@@ -1080,7 +1080,7 @@ const schdDB = [
     "name": "allstate corp",
     "percent": 1.189561257,
     "gfscore": 75,
-    "totalreturn": 89.42,
+    "cagr": 12.15,
     "dyieldoncost": 6.05,
     "dyield": 2.55,
     "dgrowth": 18.5,
@@ -1090,7 +1090,7 @@ const schdDB = [
     "name": "fastenal",
     "percent": 1.124073247,
     "gfscore": 97,
-    "totalreturn": 163.77,
+    "cagr": 19.19,
     "dyieldoncost": 4.35,
     "dyield": 2.26,
     "dgrowth": 14,
@@ -1100,7 +1100,7 @@ const schdDB = [
     "name": "newmont",
     "percent": 1.04841683,
     "gfscore": 68,
-    "totalreturn": 42.27,
+    "cagr": 7.57,
     "dyieldoncost": 38.96,
     "dyield": 4.09,
     "dgrowth": 56.2,
@@ -1110,12 +1110,12 @@ const schdDB = [
     "name": "oneok inc",
     "percent": 1.011224214,
     "gfscore": 83,
-    "totalreturn": 64.09,
+    "cagr": 9.09,
     "dyieldoncost": 7.44,
     "dyield": 5.56,
     "dgrowth": 6.1,
   }
-]
+];
 
 // https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf.
 const dgroDB = [
@@ -1124,6 +1124,7 @@ const dgroDB = [
     "name": "microsoft corp",
     "percent": 3.38,
     "gfscore": 92,
+    "cagr": 28.48,
     "dyield": 0.81,
     "dyieldoncost": 1.21,
     "dgrowth": 10.1
@@ -1133,6 +1134,7 @@ const dgroDB = [
     "name": "jpmorgan chase & co",
     "percent": 3.01,
     "gfscore": 92,
+    "cagr": 10.41,
     "dyield": 2.69,
     "dyieldoncost": 4.64,
     "dgrowth": 12.9
@@ -1142,6 +1144,7 @@ const dgroDB = [
     "name": "apple inc",
     "percent": 2.98,
     "gfscore": 93,
+    "cagr": 34.44,
     "dyield": 0.50,
     "dyieldoncost": 0.67,
     "dgrowth": 6.6
@@ -1151,6 +1154,7 @@ const dgroDB = [
     "name": "johnson & johnson",
     "percent": 2.71,
     "gfscore": 87,
+    "cagr": 3.86,
     "dyield": 3.08,
     "dyieldoncost": 4.11,
     "dgrowth": 6
@@ -1160,6 +1164,7 @@ const dgroDB = [
     "name": "abbvie inc",
     "percent": 2.50,
     "gfscore": 91,
+    "cagr": 14.97,
     "dyield": 4.24,
     "dyieldoncost": 8.26,
     "dgrowth": 15.9
@@ -1169,6 +1174,7 @@ const dgroDB = [
     "name": "exxon mobil corp",
     "percent": 2.47,
     "gfscore": 85,
+    "cagr": 9.59,
     "dyield": 3.77,
     "dyieldoncost": 4.25,
     "dgrowth": 2.9
@@ -1178,6 +1184,7 @@ const dgroDB = [
     "name": "chevron corp",
     "percent": 2.19,
     "gfscore": 86,
+    "cagr": 8.28,
     "dyield": 4.17,
     "dyieldoncost": 5.45,
     "dgrowth": 6.16
@@ -1187,6 +1194,7 @@ const dgroDB = [
     "name": "procter & gamble",
     "percent": 2.04,
     "gfscore": 86,
+    "cagr": 12,
     "dyield": 2.57,
     "dyieldoncost": 3.47,
     "dgrowth": 6.00
@@ -1196,6 +1204,7 @@ const dgroDB = [
     "name": "home depot inc",
     "percent": 2.02,
     "gfscore": 94,
+    "cagr": 15.18,
     "dyield": 2.56,
     "dyieldoncost": 5.45,
     "dgrowth": 16.4
@@ -1205,6 +1214,7 @@ const dgroDB = [
     "name": "unitedhealth group inc",
     "percent": 1.92,
     "gfscore": 96,
+    "cagr": 15.60,
     "dyield": 1.37,
     "dyieldoncost": 2.97,
     "dgrowth": 17.4
@@ -1214,6 +1224,7 @@ const dgroDB = [
     "name": "broadcom inc",
     "percent": 1.90,
     "gfscore": 83,
+    "cagr": 35.74,
     "dyield": 2.04,
     "dyieldoncost": 4.78,
     "dgrowth": 30.5
@@ -1223,6 +1234,7 @@ const dgroDB = [
     "name": "pfizer inc",
     "percent": 1.85,
     "gfscore": 86,
+    "cagr": -4.29,
     "dyield": 5.7,
     "dyieldoncost": 7.12,
     "dgrowth": 4.6
@@ -1232,6 +1244,7 @@ const dgroDB = [
     "name": "merck & co inc",
     "percent": 1.75,
     "gfscore": 84,
+    "cagr": 9.91,
     "dyield": 2.92,
     "dyieldoncost": 4.29,
     "dgrowth": 8.7,
@@ -1241,6 +1254,7 @@ const dgroDB = [
     "name": "bank of america corp",
     "percent": 1.71,
     "gfscore": 75,
+    "cagr": 4.25,
     "dyield": 3.10,
     "dyieldoncost": 6.16,
     "dgrowth": 15.80
@@ -1250,6 +1264,7 @@ const dgroDB = [
     "name": "coca-cola",
     "percent": 1.70,
     "gfscore": 81,
+    "cagr": 6.61,
     "dyield": 3.14,
     "dyieldoncost": 3.68,
     "dgrowth": 3.2,
@@ -1259,6 +1274,7 @@ const dgroDB = [
     "name": "pepsico inc",
     "percent": 1.59,
     "gfscore": 85,
+    "cagr": 10.05,
     "dyield": 2.95,
     "dyieldoncost": 4.17,
     "dgrowth": 6.9,
@@ -1268,6 +1284,7 @@ const dgroDB = [
     "name": "cisco systems inc",
     "percent": 1.27,
     "gfscore": 93,
+    "cagr": 2.92,
     "dyield": 3.27,
     "dyieldoncost": 3.89,
     "dgrowth": 4.1,
@@ -1277,6 +1294,7 @@ const dgroDB = [
     "name": "amgen inc",
     "percent": 1.17,
     "gfscore": 89,
+    "cagr": 9.06,
     "dyield": 3.16,
     "dyieldoncost": 5.36,
     "dgrowth": 10.8,
@@ -1286,6 +1304,7 @@ const dgroDB = [
     "name": "citigroup inc",
     "percent": 1.14,
     "gfscore": 73,
+    "cagr": -2.07,
     "dyield": 4.30,
     "dyieldoncost": 8.27,
     "dgrowth": 14.3
@@ -1295,6 +1314,7 @@ const dgroDB = [
     "name": "mcdonalds corp",
     "percent": 1.10,
     "gfscore": 80,
+    "cagr": 11.54,
     "dyield": 2.32,
     "dyieldoncost": 3.19,
     "dgrowth": 8.00
@@ -1304,6 +1324,7 @@ const dgroDB = [
     "name": "united parcel service inc class b",
     "percent": 1.07,
     "gfscore": 95,
+    "cagr": 9.70,
     "dyield": 4.17,
     "dyieldoncost": 6.76,
     "dgrowth": 10.3,
@@ -1313,6 +1334,7 @@ const dgroDB = [
     "name": "comcast corp class a",
     "percent": 1.07,
     "gfscore": 86,
+    "cagr": 3.82,
     "dyield": 2.70,
     "dyieldoncost": 4.55,
     "dgrowth": 10.9
@@ -1322,6 +1344,7 @@ const dgroDB = [
     "name": "morgan stanley",
     "percent": 1.01,
     "gfscore": 81,
+    "cagr": 16.24,
     "dyield": 4.13,
     "dyieldoncost": 11.89,
     "dgrowth": 25.5
@@ -1331,11 +1354,11 @@ const dgroDB = [
     "name": "Texas instrument inc",
     "percent": 1.00,
     "gfscore": 93,
+    "cagr": 12.22,
     "dyield": 3.31,
     "dyieldoncost": 7.05,
     "dgrowth": 17.1,
   },
-
 ];
 
 //https://www.wisdomtree.com/investments/etfs/equity/dgrw
@@ -1345,6 +1368,7 @@ const dgrwDB = [
     "name": "Microsoft Corporation",
     "percent": 9.72,
     "gfscore": 92,
+    "cagr": 28.48,
     "dyield": 0.81,
     "dyieldoncost": 1.21,
     "dgrowth": 10.1
@@ -1354,6 +1378,7 @@ const dgrwDB = [
     "name": "Apple Inc.",
     "percent": 6.00,
     "gfscore": 93,
+    "cagr": 34.44,
     "dyield": 0.50,
     "dyieldoncost": 0.67,
     "dgrowth": 6.6
@@ -1363,6 +1388,7 @@ const dgrwDB = [
     "name": "Broadcom Inc.",
     "percent": 3.67,
     "gfscore": 83,
+    "cagr": 35.74,
     "dyield": 2.04,
     "dyieldoncost": 4.78,
     "dgrowth": 30.5
@@ -1372,6 +1398,7 @@ const dgrwDB = [
     "name": "Johnson & Johnson",
     "percent": 3.24,
     "gfscore": 87,
+    "cagr": 3.86,
     "dyield": 3.08,
     "dyieldoncost": 4.11,
     "dgrowth": 6
@@ -1381,6 +1408,7 @@ const dgrwDB = [
     "name": "Procter & Gamble Company",
     "percent": 2.83,
     "gfscore": 86,
+    "cagr": 12,
     "dyield": 2.57,
     "dyieldoncost": 3.47,
     "dgrowth": 6.00
@@ -1390,6 +1418,7 @@ const dgrwDB = [
     "name": "Home Depot, Inc.",
     "percent": 2.40,
     "gfscore": 94,
+    "cagr": 15.18,
     "dyield": 2.56,
     "dyieldoncost": 5.45,
     "dgrowth": 16.4
@@ -1399,6 +1428,7 @@ const dgrwDB = [
     "name": "Coca-Cola Company",
     "percent": 2.21,
     "gfscore": 81,
+    "cagr": 6.61,
     "dyield": 3.14,
     "dyieldoncost": 3.68,
     "dgrowth": 3.2,
@@ -1408,6 +1438,7 @@ const dgrwDB = [
     "name": "Merck & Co., Inc.",
     "percent": 2.18,
     "gfscore": 84,
+    "cagr": 9.91,
     "dyield": 2.92,
     "dyieldoncost": 4.29,
     "dgrowth": 8.7,
@@ -1417,6 +1448,7 @@ const dgrwDB = [
     "name": "Philip Morris International Inc.",
     "percent": 2.05,
     "gfscore": 78,
+    "cagr": 6.77,
     "dyield": 5.71,
     "dyieldoncost": 6.64,
     "dgrowth": 3.4
@@ -1426,6 +1458,7 @@ const dgrwDB = [
     "name": "UnitedHealth Group Incorporated",
     "percent": 2.01,
     "gfscore": 96,
+    "cagr": 15.60,
     "dyield": 1.37,
     "dyieldoncost": 2.97,
     "dgrowth": 17.4
@@ -1435,6 +1468,7 @@ const dgrwDB = [
     "name": "Walmart Inc.",
     "percent": 1.98,
     "gfscore": 83,
+    "cagr": 10.75,
     "dyield": 1.48,
     "dyieldoncost": 1.68,
     "dgrowth": 1.90
@@ -1444,6 +1478,7 @@ const dgrwDB = [
     "name": "Cisco Systems, Inc.",
     "percent": 1.94,
     "gfscore": 93,
+    "cagr": 2.92,
     "dyield": 3.27,
     "dyieldoncost": 3.89,
     "dgrowth": 4.1,
@@ -1453,6 +1488,7 @@ const dgrwDB = [
     "name": "NVIDIA Corporation",
     "percent": 1.92,
     "gfscore": 95,
+    "cagr": 62.05,
     "dyield": 0.04,
     "dyieldoncost": 0.03,
     "dgrowth": 2.00
@@ -1462,6 +1498,7 @@ const dgrwDB = [
     "name": "Eli Lilly and Company",
     "percent": 1.89,
     "gfscore": 75,
+    "cagr": 40.32,
     "dyield": 0.79,
     "dyieldoncost": 1.46,
     "dgrowth": 13.90
@@ -1471,6 +1508,7 @@ const dgrwDB = [
     "name": "PepsiCo, Inc.",
     "percent": 1.84,
     "gfscore": 85,
+    "cagr": 10.05,
     "dyield": 2.95,
     "dyieldoncost": 4.17,
     "dgrowth": 6.9,
@@ -1480,6 +1518,7 @@ const dgrwDB = [
     "name": "Oracle Corp",
     "percent": 1.60,
     "gfscore": 84,
+    "cagr": 19.80,
     "dyield": 1.42,
     "dyieldoncost": 2.54,
     "dgrowth": 13.30
@@ -1489,6 +1528,7 @@ const dgrwDB = [
     "name": "Wells Fargo & Co",
     "percent": 1.49,
     "gfscore": 76,
+    "cagr": -0.32,
     "dyield": 3.12,
     "dyieldoncost": 1.34,
     "dgrowth": -13.7
@@ -1498,6 +1538,7 @@ const dgrwDB = [
     "name": "Morgan Stanley",
     "percent": 1.48,
     "gfscore": 81,
+    "cagr": 16.24,
     "dyield": 4.24,
     "dyieldoncost": 11.89,
     "dgrowth": 25.5
@@ -1507,6 +1548,7 @@ const dgrwDB = [
     "name": "McDonalds Corp",
     "percent": 1.47,
     "gfscore": 80,
+    "cagr": 11.54,
     "dyield": 2.32,
     "dyieldoncost": 3.19,
     "dgrowth": 8.00
@@ -1516,6 +1558,7 @@ const dgrwDB = [
     "name": "Amgen Inc",
     "percent": 1.24,
     "gfscore": 89,
+    "cagr": 9.06,
     "dyield": 3.16,
     "dyieldoncost": 5.36,
     "dgrowth": 10.8,
@@ -1525,6 +1568,7 @@ const dgrwDB = [
     "name": "Texas Instruments Inc",
     "percent": 1.23,
     "gfscore": 93,
+    "cagr": 12.22,
     "dyield": 3.33,
     "dyieldoncost": 7.05,
     "dgrowth": 17.1,
@@ -1534,6 +1578,7 @@ const dgrwDB = [
     "name": "United Parcel Service Inc",
     "percent": 1.20,
     "gfscore": 95,
+    "cagr": 9.70,
     "dyield": 4.17,
     "dyieldoncost": 6.76,
     "dgrowth": 10.3,
@@ -1543,6 +1588,7 @@ const dgrwDB = [
     "name": "Qualcomm Inc",
     "percent": 1.11,
     "gfscore": 93,
+    "cagr": 20.82,
     "dyield": 2.42,
     "dyieldoncost": 3.03,
     "dgrowth": 5.30
@@ -1552,6 +1598,7 @@ const dgrwDB = [
     "name": "Visa Inc",
     "percent": 1.10,
     "gfscore": 97,
+    "cagr": 12.74,
     "dyield": 0.82,
     "dyieldoncost": 1.53,
     "dgrowth": 16.00
@@ -1561,6 +1608,7 @@ const dgrwDB = [
     "name": "Altria Group Inc",
     "percent": 1.10,
     "gfscore": 81,
+    "cagr": 1.72,
     "dyield": 4.24,
     "dyieldoncost": 12.89,
     "dgrowth": 25.5
@@ -1570,6 +1618,7 @@ const dgrwDB = [
     "name": "Union Pacific Corp",
     "percent": 1.10,
     "gfscore": 88,
+    "cagr": 10.25,
     "dyield": 2.23,
     "dyieldoncost": 4.45,
     "dgrowth": 14.20
@@ -1579,6 +1628,7 @@ const dgrwDB = [
     "name": "Goldman Sachs Group Inc",
     "percent": 1.00,
     "gfscore": 72,
+    "cagr": 15.52,
     "dyield": 3.22,
     "dyieldoncost": 9.33,
     "dgrowth": 25.80
@@ -1592,6 +1642,7 @@ const vugDB = [
     "name": "Apple Inc.",
     "percent": 13.00,
     "gfscore": 93,
+    "cagr": 34.44,
     "dyield": 0.50,
     "dyieldoncost": 0.67,
     "dgrowth": 6.6
@@ -1601,6 +1652,7 @@ const vugDB = [
     "name": "Microsoft Corp.",
     "percent": 12.88,
     "gfscore": 92,
+    "cagr": 28.48,
     "dyield": 0.81,
     "dyieldoncost": 1.21,
     "dgrowth": 10.1
@@ -1610,6 +1662,7 @@ const vugDB = [
     "name": "Amazon.com Inc.",
     "percent": 6.33,
     "gfscore": 92,
+    "cagr": 10.68,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1619,6 +1672,7 @@ const vugDB = [
     "name": "NVIDIA Corp.",
     "percent": 4.90,
     "gfscore": 95,
+    "cagr": 62.05,
     "dyield": 0.04,
     "dyieldoncost": 0.03,
     "dgrowth": 2.00
@@ -1628,6 +1682,7 @@ const vugDB = [
     "name": "Alphabet Inc. Class A",
     "percent": 3.77,
     "gfscore": 98,
+    "cagr": 19.25,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1637,6 +1692,7 @@ const vugDB = [
     "name": "Facebook Inc. Class A",
     "percent": 3.43,
     "gfscore": 89,
+    "cagr": 18.65,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1646,6 +1702,7 @@ const vugDB = [
     "name": "Alphabet Inc. Class C",
     "percent": 3.17,
     "gfscore": 98,
+    "cagr": 19.75,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1655,6 +1712,7 @@ const vugDB = [
     "name": "Tesla Inc.",
     "percent": 2.78,
     "gfscore": 84,
+    "cagr": 58.89,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1664,6 +1722,7 @@ const vugDB = [
     "name": "Eli Lilly & Co.",
     "percent": 2.43,
     "gfscore": 75,
+    "cagr": 40.32,
     "dyield": 0.79,
     "dyieldoncost": 1.46,
     "dgrowth": 13.90
@@ -1673,6 +1732,7 @@ const vugDB = [
     "name": "Visa Inc. Class A",
     "percent": 1.88,
     "gfscore": 97,
+    "cagr": 12.74,
     "dyield": 0.82,
     "dyieldoncost": 1.53,
     "dgrowth": 16.00
@@ -1682,6 +1742,7 @@ const vugDB = [
     "name": "Mastercard Inc. Class A",
     "percent": 1.62,
     "gfscore": 98,
+    "cagr": 15.04,
     "dyield": 0.56,
     "dyieldoncost": 1.27,
     "dgrowth": 17.92
@@ -1691,6 +1752,7 @@ const vugDB = [
     "name": "Home Depot Inc.",
     "percent": 1.46,
     "gfscore": 94,
+    "cagr": 15.18,
     "dyield": 2.56,
     "dyieldoncost": 5.45,
     "dgrowth": 16.4
@@ -1700,6 +1762,7 @@ const vugDB = [
     "name": "Costco Wholesale Corp.",
     "percent": 1.25,
     "gfscore": 92,
+    "cagr": 24.22,
     "dyield": 0.67,
     "dyieldoncost": 1.15,
     "dgrowth": 12.1
@@ -1709,6 +1772,7 @@ const vugDB = [
     "name": "Adobe Inc.",
     "percent": 1.24,
     "gfscore": 92,
+    "cagr": 18.97,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1718,6 +1782,7 @@ const vugDB = [
     "name": "McDonald's Corp.",
     "percent": 0.98,
     "gfscore": 80,
+    "cagr": 11.54,
     "dyield": 2.32,
     "dyieldoncost": 3.19,
     "dgrowth": 8.00
@@ -1727,6 +1792,7 @@ const vugDB = [
     "name": "Accenture plc Class A",
     "percent": 0.96,
     "gfscore": 97,
+    "cagr": 16.68,
     "dyield": 1.54,
     "dyieldoncost": 2.29,
     "dgrowth": 10.70
@@ -1736,6 +1802,7 @@ const vugDB = [
     "name": "Linde plc",
     "percent": 0.96,
     "gfscore": 85,
+    "cagr": 20.24,
     "dyield": 1.28,
     "dyieldoncost": 1.92,
     "dgrowth": 8.40
@@ -1745,6 +1812,7 @@ const vugDB = [
     "name": "salesforce.com Inc.",
     "percent": 0.95,
     "gfscore": 86,
+    "cagr": 11.67,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1754,6 +1822,7 @@ const vugDB = [
     "name": "Netflix Inc.",
     "percent": 0.91,
     "gfscore": 96,
+    "cagr": 9.31,
     "dyield": 0,
     "dyieldoncost": 0,
     "dgrowth": 0
@@ -1763,6 +1832,7 @@ const vugDB = [
     "name": "Thermo Fisher Scientific Inc.",
     "percent": 0.88,
     "gfscore": 92,
+    "cagr": 14.44,
     "dyield": 0.28,
     "dyieldoncost": 0.54,
     "dgrowth": 15.00

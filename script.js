@@ -407,8 +407,8 @@ new Vue({
                         return b.dgrowth - a.dgrowth;
                     case 'dividendYoc':
                         return b.dyieldoncost - a.dyieldoncost;
-                    case 'totalReturn':
-                        return b.totalreturn - a.totalreturn;
+                    case 'cagr':
+                        return b.cagr - a.cagr;
                     default:
                         return b.percent - a.percent;
                 }
@@ -533,8 +533,8 @@ new Vue({
                 dividendText = `Dividend Yield On Cost(5Y): ${elem.dyieldoncost}%\nChowder: ${elem.chowderNumber.toFixed(2)}\nDividend yield: ${elem.dyield}%\nDividend growth(3Y): ${elem.dgrowth}%`;
             }
 
-            if (elem && elem.totalreturn !== undefined) {
-                totalReturnText = `Total Return(5Y): ${elem.totalreturn}%`;
+            if (elem && elem.cagr !== undefined) {
+                totalReturnText = `Total Return cagr(5Y): ${elem.cagr}%`;
             }
 
             if (listType === 'kingsDB' || listType === 'aristocratsDB') {
