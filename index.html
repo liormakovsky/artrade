@@ -140,7 +140,7 @@
                     <!-- Trigger -->
                     <div class="form-group">
                         <label for="trigger">Trigger</label>
-                        <input type="text" @keydown.esc="clearRow" ref="trigger" @keyup.enter="enterDot"
+                        <input type="text" @keydown.esc="clearRow" ref="trigger" 
                             class="form-control mt-2" v-model="trigger" placeholder="Enter Trigger">
                     </div>
 
@@ -148,7 +148,7 @@
                     <div class="d-flex justify-content-between align-items-end mt-2">
                         <div class="form-group col-6">
                             <label for="stopVal">Stop</label>
-                            <input type="text" @keydown.esc="clearRow" ref="stopVal" @keyup.enter="enterDot"
+                            <input type="text" @keydown.esc="clearRow" ref="stopVal"
                                 class="form-control mt-2" v-model="stopVal" placeholder="By Price">
                         </div>
                         <div class="form-group col-6 d-flex justify-content-end">
@@ -163,7 +163,7 @@
                     <div class="d-flex justify-content-between align-items-end mt-2">
                         <div class="form-group col-3">
                             <label>Targets</label>
-                            <input type="text" @keydown.esc="clearRow" ref="firstTarget" @keyup.enter="enterDot"
+                            <input type="text" @keydown.esc="clearRow" ref="firstTarget"
                                 class="form-control mt-2" v-model="firstTarget" placeholder="1st Target" disabled>
                         </div>
                         <div class="form-group col-3 d-flex justify-content-end">
@@ -172,7 +172,7 @@
                                 placeholder="2nd Target" style="width:98%" disabled>
                         </div>
                         <div class="form-group col-3 d-flex justify-content-end">
-                            <input type="text" @keydown.esc="clearRow" ref="thirdTarget" @keyup.enter="enterDot"
+                            <input type="text" @keydown.esc="clearRow" ref="thirdTarget"
                                 class="form-control mt-2" v-model="thirdTarget" placeholder="3rd Target"
                                 style="width:98%" disabled>
                         </div>
