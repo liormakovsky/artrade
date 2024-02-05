@@ -85,11 +85,6 @@ const etfDB = [
     connected: ["spy", "qqq", "dia", "vt"],
   },
   {
-    etf: "iyr",
-    stocks: [],
-    connected: ["iyr"],
-  },
-  {
     etf: "xbi",
     stocks: [],
     connected: ["xbi"],
@@ -98,16 +93,6 @@ const etfDB = [
     etf: "xlre",
     stocks: [],
     connected: ["xlre"],
-  },
-  {
-    etf: "vnq",
-    stocks: [],
-    connected: ["vnq"],
-  },
-  {
-    etf: "schh",
-    stocks: [],
-    connected: ["schh"],
   },
   {
     etf: "schd",
@@ -130,6 +115,31 @@ const etfDB = [
     etf: "spyv",
     stocks: [],
     connected: ["spyv"],
+  },
+  {
+    etf: "dgro",
+    stocks: [],
+    connected: ["dgro"],
+  },
+  {
+    etf: "fvd",
+    stocks: [],
+    connected: ["fvd"],
+  },
+  {
+    etf: "sphd",
+    stocks: [],
+    connected: ["sphd"],
+  },
+  {
+    etf: "vig",
+    stocks: [],
+    connected: ["vig"],
+  },
+  {
+    etf: "vym",
+    stocks: [],
+    connected: ["vym"],
   },
 ];
 
